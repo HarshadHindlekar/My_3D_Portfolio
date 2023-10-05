@@ -88,7 +88,7 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition:  0.32s ease-in-out;
+  transition:  0.32s ease-in-out, height 2s;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -474,8 +474,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-  background: linear-gradient(90.21deg, #36aa38 -5.91%, #4A2FBD 111.58%);
-  padding: 60px 0 200px 0;
+  background: linear-gradient(90.21deg, #08024e 21.09%, #ea8481 111.58%);
+  padding: 15px 0 139px 0;
 }
 .contact img {
   width: 92%;
@@ -623,4 +623,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+/* 3d-css */
+.earth-container {
+  height: 80vh;
 }
