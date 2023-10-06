@@ -475,7 +475,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Projects Css ************/
 .contact {
   background: linear-gradient(90.21deg, #08024e 21.09%, #ea8481 111.58%);
-  padding: 15px 0 139px 0;
+  padding: 15px 0 174px 0;
 }
 .contact img {
   width: 92%;
@@ -548,7 +548,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer Css ************/
 .footer {
-  padding: 0 0 50px 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0 15px 0;
   background-image: url('./assets/img/footer-bg.png');
   background-position: center center;
   background-size: cover;
@@ -615,7 +617,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 18px;
 }
 .footer img {
-  width: 26%;
+  width: 12%;
 }
 .footer p {
   font-weight: 400;
@@ -625,6 +627,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 20px;
 }
 
+
+element.style {
+}
+.footer-cointainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /* 3d-css */
 .earth-container {
   height: 80vh;
