@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import "../css/ImageSwitcher.css";
-import imagePath2 from "../assets/img/me-after.svg";
-import imagepath1 from "../assets/img/me-before.svg";
+import "../../css/ImageSwitcher.css";
+import imagePath2 from "../../assets/img/me-after.svg";
+import imagepath1 from "../../assets/img/me-before.svg";
 
 
 const ImageSwitcher = () => {

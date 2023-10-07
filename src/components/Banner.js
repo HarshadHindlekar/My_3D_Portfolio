@@ -4,6 +4,7 @@ import headerImg from "../assets/img/header-img1.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import StarsCanvas from "./Banner-Comps/Stars";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -74,6 +75,7 @@ export const Banner = () => {
           </Col>
         </Row>
       </Container>
+      <StarsCanvas />
     </section>
   )
 }
