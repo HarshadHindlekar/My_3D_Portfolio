@@ -14,13 +14,5 @@
 }
 
 img.my-image {
-  width: 50%;
-  margin-top: -182px;
-}
-
-img.my-image-old {
-  margin-top: -520px;
-  margin-left: 88px;
-  width: 100%;
-  height: 63vh;
+  width: 60%;
 }
