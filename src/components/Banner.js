@@ -15,15 +15,6 @@ export const Banner = () => {
   const toRotate = ["Software Developer", "Web Developer", "Software Engineer", "UI/UX Designer", "Full Stack Web Developer"];
   const period = 2000;
 
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => { clearInterval(ticker) };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [text]);
-
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -49,6 +40,21 @@ export const Banner = () => {
       setIndex(prevIndex => prevIndex + 1);
     }
   }
+  const downloadPDF = () => {
+    const link = document.createElement('a');
+    link.href = './pdf/Harshad fresh Resume.pdf';
+    link.download = 'Harshad Hindlekar.pdf';
+    link.click();
+  };
+
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => { clearInterval(ticker) };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [text]);
 
   return (
     <section className="banner" id="home">
@@ -60,8 +66,8 @@ export const Banner = () => {
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>{`Hi! I'm Harshad`} <br/><span className="txt-rotate" dataPeriod="1000" data-rotate={'['+toRotate+']'}><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  <button onClick={() => console.log('Download resume')}>See Resume <ArrowRightCircle size={25} /></button>
+                  <p>Passion for creating elegant solutions to complex problems.<br/> Software Engineer by profession....💻 BOSSMAKER by passion....🧘<br/> [ YOU CAN, IF YOU THINK 💬 🤔 YOU CAN. ]💡</p>
+                  <button onClick={downloadPDF}>See Resume <ArrowRightCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
           </Col>
