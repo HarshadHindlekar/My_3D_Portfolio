@@ -12,7 +12,6 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  console.log("index= "+index);
   const toRotate = ["Software Developer", "Web Developer", "Software Engineer", "UI/UX Designer", "Full Stack Web Developer"];
   const period = 2000;
 
@@ -45,6 +44,7 @@ export const Banner = () => {
       setLoopNum(loopNum + 1);
       setIndex(1);
       setDelta(500);
+      console.log("index= "+index);
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
@@ -59,7 +59,7 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{`Hi! I'm Harshad`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Developer", "Web Developer", "Software Engineer", "UI/UX Designer", "Full Stack Web Developer" ]'><span className="wrap">{text}</span></span></h1>
+                  <h1>{`Hi! I'm Harshad`} <br/><span className="txt-rotate" dataPeriod="1000" data-rotate={'['+toRotate+']'}><span className="wrap">{text}</span></span></h1>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                   <button onClick={() => console.log('Download resume')}>See Resume <ArrowRightCircle size={25} /></button>
                 </div>}

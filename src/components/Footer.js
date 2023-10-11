@@ -18,7 +18,6 @@ export const Footer = () => {
         </div>
         <p>Copyright 2023. All Rights Reserved</p>
       </div>
-
     </footer>
   )
 }
