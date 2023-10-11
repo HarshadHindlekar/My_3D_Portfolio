@@ -409,6 +409,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+.balls-canvas-cointainer {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.ball-canvas-size {
+  display: flex;
+  flex-direction: column;
+  height: 19vh;
+  padding: 9px;
+}
+
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
