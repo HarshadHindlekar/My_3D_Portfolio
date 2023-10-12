@@ -20,8 +20,7 @@ const Stars = (props) => {
           color='#f272c8'
           size={0.002}
           sizeAttenuation={true}
-          depthWrite={false}
-        />
+          depthWrite={false} />
       </Points>
     </group>
   );

@@ -9,8 +9,9 @@ export const Skills = () => {
         <div className="row">
           <div className="col-12">
             <div className="skill-bx wow zoomIn">
-              <h2>Skills</h2> 
-                <Tech />
+                <h2>Skills</h2>
+                <p>Here are some meteorite(SKILLS) samples I collected.</p>
+              <Tech />
             </div>
           </div>
         </div>
