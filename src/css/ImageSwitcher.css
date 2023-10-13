@@ -13,10 +13,6 @@
   opacity: 1;
 }
 
-img.my-image {
-  width: 60%;
-}
-
 .animate-charcter {
   background-image: linear-gradient(-225deg,
       #1a1a1a 0%,

@@ -3,9 +3,8 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo2.svg';
 import { SocialIcons, TabIcons } from "./Service";
 import { HashLink } from 'react-router-hash-link';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import '../css/Navbar.css'
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');

@@ -1,6 +1,7 @@
 import logo from "../assets/img/logo2.svg";
 import { SocialIcons } from "./Service";
 import ImageSwitcher from "./Footer-Comps/ImageSwitcher";
+import '../css/Footer.css'
 
 export const Footer = () => {
 
