@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .image-transition.fade-out {
@@ -15,4 +15,27 @@
 
 img.my-image {
   width: 60%;
+}
+
+.animate-charcter {
+  background-image: linear-gradient(-225deg,
+      #1a1a1a 0%,
+      #3a006d 29%,
+      #ff0055 67%,
+      #fafaf5 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }

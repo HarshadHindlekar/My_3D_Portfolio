@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import EarthCanvas from "./Contact-Comps/Earth";
+import '../css/Contact.css'
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -56,7 +57,7 @@ export const Contact = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Get In Touch</h2>
+                  <h2 className={ isVisible ? "text-focus-in" :""} >Get In Touch</h2>
                   <form onSubmit={handleSubmit}>
                     <Row>
                       <Col size={12} sm={6} className="px-1">

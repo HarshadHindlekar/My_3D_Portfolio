@@ -2,6 +2,7 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
+import '../css/Projects.css'
 import TrackVisibility from 'react-on-screen';
 import { projects } from "./Service";
 
@@ -11,10 +12,10 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
+            <TrackVisibility partialVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Projects</h2>
+                  <h2 className={isVisible ? 'tracking-in-contract-bck-top' : ''}>Projects</h2>
                   <p>Here are some Planets(PROJECTS) that i created 😊 </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
