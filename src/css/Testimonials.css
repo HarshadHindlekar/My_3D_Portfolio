@@ -1,0 +1,107 @@
+.testimonials {
+    width: 100%;
+    height: 100vh;
+    padding: 80px 0;
+    background-image: url(../assets/img/banner-bg2.jpg);
+    animation: zoom 60s infinite;
+    -webkit-animation: zoom 60s infinite;
+}
+
+@keyframes zoom {
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 105%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+
+.testimonial-box {
+    padding: 2% 2% 3% 2%;
+    border: 5px white solid;
+}
+
+.drop-text {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: -50px;
+    padding-top: 50px;
+    height: 15vh;
+}
+
+.drop-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: drop 1s forwards ease-in-out;
+}
+
+@keyframes drop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.people-box {
+    border-top: 3px solid #00C9A7;
+    border-bottom: 3px solid #096dd9;
+    background-image: linear-gradient(#00C9A7, #096dd9), linear-gradient(#00C9A7, #096dd9);
+    background-size: 3px 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    padding: 5%;
+    border-radius: 10%;
+    background-color: #190c32;
+}
+
+.tilt-box,
+.people-box {
+    width: 21vw;
+    height: 45vh;
+    justify-content: space-between;
+}
+
+.people-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+img.people-img {
+    width: 5vw;
+    height: 10vh;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+h4.people-name,
+p.people-paragraph,
+P.testimoni-paragraph {
+    margin: 0;
+}
+
+.people-paragraph,
+.people-position {
+    color: gray;
+}
+
+.people-name-box,
+.people-box {
+    display: flex;
+    flex-direction: column;
+}
+
+p.people-paragraph {
+    background-color: #1905238a;
+    border-radius: 10%;
+    padding: 2%;
+}
