@@ -88,9 +88,13 @@ select:focus {
 }
 
 p.success {
-  color: green;
+  color: rgb(27, 239, 27);
 }
 
 p.danger {
-  color: red;
+  color: rgb(248 6 6);
+}
+
+p.danger, p.success {
+  font-size: 20px;
 }

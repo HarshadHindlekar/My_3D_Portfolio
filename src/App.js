@@ -7,16 +7,18 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Testimonials } from './components/Testimonials';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {localStorage.setItem('attempts', '0');},[]);
   return (
     <div className="App">
       <NavBar />
       <Banner />
       <Skills />
       <Projects />
-      <Testimonials />
       <Contact />
+      <Testimonials />
       <Footer />
     </div>
   );

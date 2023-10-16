@@ -7,6 +7,11 @@
   width: 92%;
 }
 
+.header-box {
+  display: grid;
+  grid-template-columns: 50% auto;
+}
+
 .contact h2 {
   font-size: 45px;
   font-weight: 700;
@@ -121,4 +126,8 @@
     filter: blur(0px);
     opacity: 1;
   }
+}
+
+.invalid-input {
+  border: 1px solid red !important;
 }
