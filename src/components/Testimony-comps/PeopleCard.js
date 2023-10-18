@@ -6,10 +6,10 @@ export const PeopleCard = () => {
 
     return (
         <div className="people-container">
-            {testimonials.map((test) => {
+            {testimonials.map((test, key) => {
                 return (
                     <Tilt options={tiltDefaultOptions} className="tilt-box">
-                        <div className="people-box" key={test.name}>
+                        <div className="people-box" key={key}>
                             <div className="img-container"><img src={test.img} className="people-img" alt={test.name} /></div>
                             <p className="people-paragraph">{test.desc}</p>
                             <div className="people-name-box">

@@ -1,6 +1,6 @@
 import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon3 from "../assets/img/nav-icon2.svg";
 import navIcon2 from "../assets/img/nav-icon3.svg";
+import navIcon3 from "../assets/img/github-ico.png";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
@@ -30,9 +30,9 @@ export const SocialIcons = [
     altText: "instagram",
   },
   {
-    href: "https://www.facebook.com/harshad.hindlekar.9/",
+    href: "https://github.com/HarshadHindlekar",
     imgSrc: navIcon3,
-    altText: "facebook",
+    altText: "github",
   }
 ];
 
@@ -71,11 +71,11 @@ export const projects = [
 
 export const Technologies = [
   {
-    name: "HTML 5",
+    name: "HTML",
     icon: html,
   },
   {
-    name: "CSS 3",
+    name: "CSS",
     icon: css,
   },
   {

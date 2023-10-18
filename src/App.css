@@ -92,9 +92,12 @@ p.success {
 }
 
 p.danger {
-  color: rgb(248 6 6);
+  color: red;
 }
 
 p.danger, p.success {
   font-size: 20px;
+  border-radius: 10px;
+  margin: 0;
+  margin-top: -14px;
 }
