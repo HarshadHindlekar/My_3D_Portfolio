@@ -12,7 +12,8 @@ const ImageSwitcher = () => {
        <div className={`image-transition ${isVisible ? 'fade-in' : 'fade-out'}`}>
         <img src={imagePath2} alt='my-pic' className='my-image' />
         <h1 className='animate-charcter'> Thank for visit !</h1>
-      </div>}
+      </div>
+      }
        </TrackVisibility>
      
     </div>
