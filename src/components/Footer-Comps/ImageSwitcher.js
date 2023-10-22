@@ -14,8 +14,7 @@ const ImageSwitcher = () => {
         <h1 className='animate-charcter'> Thank for visit !</h1>
       </div>
       }
-       </TrackVisibility>
-     
+       </TrackVisibility>    
     </div>
   );
 };
