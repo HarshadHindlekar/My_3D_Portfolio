@@ -63,7 +63,7 @@ export const projects1 = [
     title: "Rotating solar System",
     description: "Build a simulation of the Earth 🌎, Moon 🌛, and some planets 🌕🌑🌚 orbiting around the Sun 🌞 using HTML and CSS.",
     imgUrl: solarSystem,
-    href: 'https://github.com/HarshadHindlekar/Solar-System',
+    href: 'https://harshadhindlekar.github.io/Solar-System/',
   },
   {
     title: "Business Startup",
