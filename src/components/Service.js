@@ -5,7 +5,8 @@ import navIcon3 from "../assets/img/github-ico.png";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
-import solarSystem from "../assets/img/project-img4.png";
+import solarSystem from "../assets/img/project-img6.png";
+import cssGridAnimation from "../assets/img/project-img5.png";
 
 import html from '../assets/tech/html.png';
 import css from '../assets/tech/css.png';
@@ -60,16 +61,16 @@ export const TabIcons = [
 
 export const projects1 = [
   {
+    title: "Grid Item Hower Effect",
+    description: "Some hover effects based on the grid 🥅 design Animation 🎞️",
+    imgUrl: cssGridAnimation,
+    href: 'https://harshadhindlekar.github.io/Grid-Item-Hover-Effect/',
+  },
+  {
     title: "Rotating solar System",
     description: "Build a simulation of the Earth 🌎, Moon 🌛, and some planets 🌕🌑🌚 orbiting around the Sun 🌞 using HTML and CSS.",
     imgUrl: solarSystem,
     href: 'https://harshadhindlekar.github.io/Solar-System/',
-  },
-  {
-    title: "Business Startup",
-    description: "Design & Development",
-    imgUrl: projImg2,
-    href: 'http',
   },
   {
     title: "Business Startup",
