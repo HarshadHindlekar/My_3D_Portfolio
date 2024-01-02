@@ -7,6 +7,7 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import solarSystem from "../assets/img/project-img6.png";
 import cssGridAnimation from "../assets/img/project-img5.png";
+import sundownStudio from "../assets/img/Sundown-Studio-Clone.jpg";
 
 import html from '../assets/tech/html.png';
 import css from '../assets/tech/css.png';
@@ -67,16 +68,16 @@ export const projects1 = [
     href: 'https://harshadhindlekar.github.io/Grid-Item-Hover-Effect/',
   },
   {
+    title: "Sundown Studio Clone",
+    description: "Builded a clone of a Sundown Studio to demonstrate my skills in Animated Web Applications",
+    imgUrl: sundownStudio,
+    href: 'https://harshadhindlekar.github.io/Sundown-Studio/',
+  },
+  {
     title: "Rotating solar System",
     description: "Build a simulation of the Earth 🌎, Moon 🌛, and some planets 🌕🌑🌚 orbiting around the Sun 🌞 using HTML and CSS.",
     imgUrl: solarSystem,
     href: 'https://harshadhindlekar.github.io/Solar-System/',
-  },
-  {
-    title: "Business Startup",
-    description: "Design & Development",
-    imgUrl: projImg3,
-    href: 'http',
   },
 ];
 
