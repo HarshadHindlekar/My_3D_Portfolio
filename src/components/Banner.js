@@ -44,7 +44,7 @@ export const Banner = () => {
   }
   const downloadPDF = () => {
     const link = document.createElement('a');
-    link.href = './pdf/Harshad fresh Resume.pdf';
+    link.href = './pdf/Harshad_Resume.pdf';
     link.download = 'Harshad Hindlekar.pdf';
     link.click();
   };
