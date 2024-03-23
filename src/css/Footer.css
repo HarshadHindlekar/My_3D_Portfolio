@@ -101,3 +101,25 @@
 img.my-image {
     width: 60%;
 }
+
+.resume-footer {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 60px;
+    letter-spacing: 0.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-svg-footer {
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.resume-svg-footer:hover {
+    margin-left: 20px;
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+}

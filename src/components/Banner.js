@@ -7,6 +7,7 @@ import TrackVisibility from 'react-on-screen';
 import StarsCanvas from "./Banner-Comps/Stars";
 import '../css/Banner.css';
 import '../css/Contact.css';
+import { OpenPDF } from "./Banner-Comps/OpenPdf";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -42,12 +43,6 @@ export const Banner = () => {
       setIndex(prevIndex => prevIndex + 1);
     }
   }
-  const downloadPDF = () => {
-    const link = document.createElement('a');
-    link.href = './pdf/Harshad_Resume.pdf';
-    link.download = 'Harshad Hindlekar.pdf';
-    link.click();
-  };
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -69,7 +64,7 @@ export const Banner = () => {
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
                   <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I'm a skilled software developer with experience in Java, Python and JavaScript, and expertise in frameworks like React, Spring Boot, Rest Api, MongoDB, PostgreSQL and Three.js. I'm a quick learner and collaborate closely with everyone to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!</p>
-                  <button onClick={downloadPDF}>See Resume <ArrowRightCircle size={25} /></button>
+                  <button onClick={OpenPDF}>See Resume <ArrowRightCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
           </Col>

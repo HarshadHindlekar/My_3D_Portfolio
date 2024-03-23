@@ -41,8 +41,8 @@ span.navbar-text {
 }
 
 .social-icon {
-  display: inline-block;
-  margin-left: 14px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .social-icon a {
