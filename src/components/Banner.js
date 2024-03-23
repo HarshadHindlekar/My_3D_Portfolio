@@ -9,7 +9,6 @@ import '../css/Banner.css';
 import '../css/Contact.css';
 import { OpenPDF } from "./Banner-Comps/OpenPdf";
 
-
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
