@@ -62,6 +62,12 @@ export const TabIcons = [
 
 export const projects1 = [
   {
+    title: "On-Scroll Text Animations",
+    description: "Some experiments with on-scroll 📜 typography 🌀 effects using SVG.🎞️",
+    imgUrl: 'https://tympanus.net/codrops/wp-content/uploads/2024/01/clippathtext.jpg',
+    href: 'https://harshadhindlekar.github.io/On-Scroll-Text-Animations/',
+  },
+  {
     title: "Grid Item Hower Effect",
     description: "Some hover effects based on the grid 🥅 design Animation 🎞️",
     imgUrl: cssGridAnimation,
@@ -73,20 +79,14 @@ export const projects1 = [
     imgUrl: sundownStudio,
     href: 'https://harshadhindlekar.github.io/Sundown-Studio/',
   },
+];
+
+export const projects = [
   {
     title: "Rotating solar System",
     description: "Build a simulation of the Earth 🌎, Moon 🌛, and some planets 🌕🌑🌚 orbiting around the Sun 🌞 using HTML and CSS.",
     imgUrl: solarSystem,
     href: 'https://harshadhindlekar.github.io/Solar-System/',
-  },
-];
-
-export const projects = [
-  {
-    title: "Business Startup",
-    description: "Design & Development",
-    imgUrl: projImg1,
-    href: 'http',
   },
   {
     title: "Business Startup",
@@ -132,7 +132,7 @@ export const Technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-   {
+  {
     name: 'PostgreSQL',
     icon: pgadmin,
   },
