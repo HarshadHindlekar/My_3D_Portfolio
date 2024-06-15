@@ -81,25 +81,16 @@ export const projects1 = [
 
 export const projects = [
   {
-    title: "Sundown Studio Clone",
-    description: "Builded a clone of a Sundown Studio to demonstrate my skills in Animated Web Applications",
-    imgUrl: sundownStudio,
-    href: 'https://harshadhindlekar.github.io/Sundown-Studio/',
-  },
-];
-
-export const projects = [
-  {
     title: "Rotating solar System",
     description: "Build a simulation of the Earth 🌎, Moon 🌛, and some planets 🌕🌑🌚 orbiting around the Sun 🌞 using HTML and CSS.",
     imgUrl: solarSystem,
     href: 'https://harshadhindlekar.github.io/Solar-System/',
   },
   {
-    title: "Business Startup",
-    description: "Design & Development",
-    imgUrl: projImg2,
-    href: 'http',
+    title: "Sundown Studio Clone",
+    description: "Builded a clone of a Sundown Studio to demonstrate my skills in Animated Web Applications",
+    imgUrl: sundownStudio,
+    href: 'https://harshadhindlekar.github.io/Sundown-Studio/',
   },
   {
     title: "Business Startup",
