@@ -86,11 +86,20 @@ export const projects = [
     imgUrl: sundownStudio,
     href: 'https://harshadhindlekar.github.io/Sundown-Studio/',
   },
+];
+
+export const projects = [
   {
     title: "Rotating solar System",
     description: "Build a simulation of the Earth 🌎, Moon 🌛, and some planets 🌕🌑🌚 orbiting around the Sun 🌞 using HTML and CSS.",
     imgUrl: solarSystem,
     href: 'https://harshadhindlekar.github.io/Solar-System/',
+  },
+  {
+    title: "Business Startup",
+    description: "Design & Development",
+    imgUrl: projImg2,
+    href: 'http',
   },
   {
     title: "Business Startup",
