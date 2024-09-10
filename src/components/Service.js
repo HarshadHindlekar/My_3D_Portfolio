@@ -55,6 +55,9 @@ export const TabIcons = [
   }, {
     key: 'projects',
     value: 'Projects'
+  }, {
+    key: 'testimonials',
+    value: 'Testimonials'
   }
 ];
 

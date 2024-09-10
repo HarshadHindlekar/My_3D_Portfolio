@@ -16,7 +16,7 @@ export const Footer = () => {
         <div className="social-icon">
           {SocialIcons.map((socialIcon) => <a href={socialIcon.href} key={socialIcon.altText}><img src={socialIcon.imgSrc} alt={socialIcon.altText} /></a>)}
         </div>
-        <p>Copyright 2023. All Rights Reserved</p>
+        <p>© {new Date().getFullYear()}. All Rights Reserved</p>
       </div>
     </footer>
   )

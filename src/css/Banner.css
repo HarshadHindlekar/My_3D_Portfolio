@@ -93,3 +93,19 @@ p.my-intro {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .banner {
+    height: 194vh;
+    padding: 80px 10px 10px 10px;
+  }
+
+  .banner p {
+    width: 100%;
+  }
+
+  .canvas-stars-cointainer {
+    height: 113vh;
+    margin-top: -1086px;
+  }
+} 
