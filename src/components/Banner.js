@@ -8,6 +8,7 @@ import StarsCanvas from "./Banner-Comps/Stars";
 import '../css/Banner.css';
 import '../css/Contact.css';
 import { OpenPDF } from "./Banner-Comps/OpenPdf";
+import { isMobile } from 'react-device-detect';
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -68,14 +69,14 @@ export const Banner = () => {
                 </div>}
             </TrackVisibility>
           </Col>
-          <Col xs={12} md={6} xl={5}>
+          {!isMobile && <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                   <img src={headerImg} alt="Header Img" />
                 </div>}
             </TrackVisibility>
-          </Col>
+          </Col>}
         </Row>
       </Container>
       <StarsCanvas />

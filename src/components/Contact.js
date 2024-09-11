@@ -5,6 +5,7 @@ import TrackVisibility from 'react-on-screen';
 import EarthCanvas from "./Contact-Comps/Earth";
 import '../css/Contact.css';
 import { handleSubmit } from "./Contact-Comps/Handler";
+import { isMobile } from 'react-device-detect';
 
 export const Contact = () => {
   const [initialValidationStatus, setInitialValidationStatus] = useState(
@@ -29,11 +30,11 @@ export const Contact = () => {
     <section className="contact" id="connect">
       <Container>
         <Row className="align-items-center">
-          <Col size={12} md={6}>
+          {!isMobile &&<Col size={12} md={6}>
             <TrackVisibility className="earth-container">
               <EarthCanvas />
             </TrackVisibility>
-          </Col>
+          </Col>}
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>

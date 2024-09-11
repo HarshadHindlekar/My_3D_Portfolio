@@ -7,6 +7,12 @@ nav.navbar {
   transition: 0.32s ease-in-out, height 2s;
 }
 
+#basic-navbar-nav {
+  backdrop-filter: blur(5px);
+  background-color: rgb(184 184 184 / 14%);
+  border-radius: 40px;
+}
+
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
@@ -38,6 +44,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 span.navbar-text {
   display: flex;
   align-items: center;
+  padding: 0 25px;
 }
 
 .social-icon {

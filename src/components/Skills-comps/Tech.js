@@ -9,7 +9,7 @@ const Tech = () => {
             {Technologies.map((technology) => (
                 <div className='ball-canvas-size' key={technology.name}>
                     {isMobile
-                        ? <div className="image=mobile-div"><img src={technology.icon}  className="image-mobile"/></div>
+                        ? <div className="image=mobile-div"><img src={technology.icon}  className="image-mobile" alt="mobile"/></div>
                         : <BallCanvas icon={technology.icon} />}
                     <span>{technology.name}</span>
                 </div>
