@@ -96,7 +96,7 @@ p.my-intro {
 
 @media (max-width: 768px) {
   .banner {
-    max-height: 139vh;
+    height: 60rem;
     padding: 80px 10px 10px 10px;
   }
 
