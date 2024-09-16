@@ -2,6 +2,7 @@ import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon3.svg";
 import navIcon3 from "../assets/img/github-ico.png";
 import projImg3 from "../assets/img/project-img3.png";
+import windows11 from '../assets/img/windows 11.png'
 import solarSystem from "../assets/img/project-img6.png";
 import cssGridAnimation from "../assets/img/project-img5.png";
 import sundownStudio from "../assets/img/Sundown-Studio-Clone.jpg";
@@ -63,17 +64,18 @@ export const TabIcons = [
 
 export const projects1 = [
   {
+    title: "🪟 Windows 11",
+    description: "Using Advance React framework and Tailwind css created a clone web app of Windows 11 🪟",
+    imgUrl: windows11,
+    href: 'https://harshadhindlekar.github.io/Windows-11/',
+  },
+  {
     title: "On-Scroll Text Animations",
     description: "Some experiments with on-scroll 📜 typography 🌀 effects using SVG.🎞️",
     imgUrl: 'https://tympanus.net/codrops/wp-content/uploads/2024/01/clippathtext.jpg',
     href: 'https://harshadhindlekar.github.io/On-Scroll-Text-Animations/',
   },
-  {
-    title: "Grid Item Hower Effect",
-    description: "Some hover effects based on the grid 🥅 design Animation 🎞️",
-    imgUrl: cssGridAnimation,
-    href: 'https://harshadhindlekar.github.io/Grid-Item-Hover-Effect/',
-  },
+  
   {
     title: "Harshad's Pokemon World",
     description: "In pokemon their is a poketab which helps trainers to identify trainers that tab i tried to build.",
@@ -90,16 +92,16 @@ export const projects = [
     href: 'https://harshadhindlekar.github.io/Solar-System/',
   },
   {
+    title: "Grid Item Hower Effect",
+    description: "Some hover effects based on the grid 🥅 design Animation 🎞️",
+    imgUrl: cssGridAnimation,
+    href: 'https://harshadhindlekar.github.io/Grid-Item-Hover-Effect/',
+  },
+  {
     title: "Sundown Studio Clone",
     description: "Builded a clone of a Sundown Studio to demonstrate my skills in Animated Web Applications",
     imgUrl: sundownStudio,
     href: 'https://harshadhindlekar.github.io/Sundown-Studio/',
-  },
-  {
-    title: "Business Startup",
-    description: "Design & Development",
-    imgUrl: projImg3,
-    href: 'http',
   },
 ];
 
