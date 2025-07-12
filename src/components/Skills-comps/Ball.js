@@ -40,14 +40,28 @@ const BallCanvas = ({ icon }) => {
         <Canvas
             frameloop='demand'
             dpr={[1, 2]}
-            gl={{ preserveDrawingBuffer: true }} >
+            gl={{ preserveDrawingBuffer: true }}
+            style={{
+                width: '100%',
+                height: '100%',
+                display: 'block',
+                position: 'relative',
+                overflow: 'hidden'
+            }}
+        >
             <Suspense fallback={<CanvasLoader />}>
-                <OrbitControls enableZoom={false} />
+                <OrbitControls 
+                    enableZoom={false}
+                    enablePan={false}
+                    enableRotate={false}
+                    autoRotate
+                    autoRotateSpeed={4}
+                />
                 <Ball imgUrl={icon} />
             </Suspense>
             <Preload all />
         </Canvas>
-    );
+    )
 };
 
 export default BallCanvas;

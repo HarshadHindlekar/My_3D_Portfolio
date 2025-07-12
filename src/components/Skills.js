@@ -12,9 +12,18 @@ export const Skills = () => {
             <TrackVisibility partialVisibility>
               {({ isVisible }) =>
                 <div className="skill-bx wow zoomIn">
-                  <h2 className={isVisible ? 'tracking-in-contract-bck' : ''}>Skills</h2>
-                  <p>Here are some meteorite(SKILLS) samples I collected.</p>
-                  <Tech />
+                  <h2 className={isVisible ? 'tracking-in-contract-bck' : ''}>
+                    Technical Proficiencies
+                    <div className="gradient-underline"></div>
+                  </h2>
+                  <p className="skills-intro">
+                    I've honed my skills across various technologies to build robust and scalable applications. 
+                    Explore the interactive 3D tech stack below to see the tools and technologies I work with.
+                  </p>
+                  
+                  <div className="tech-showcase">
+                    <Tech />
+                  </div>
                 </div>}
             </TrackVisibility>
           </div>
