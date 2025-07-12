@@ -10,6 +10,7 @@ const categories = {
   'Tools': ['git', 'Docker', 'Three.js', 'React 3 Fiber']
 };
 
+
 const Tech = () => {
     // Group technologies by category
     const techByCategory = {};
