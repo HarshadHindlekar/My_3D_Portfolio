@@ -1,5 +1,5 @@
 .contact {
-  background: linear-gradient(90.21deg, #08024e 21.09%, #ea8481 111.58%);
+  background: #0a192f;
   padding: 80px 0;
 }
 
@@ -22,9 +22,9 @@
 .contact form textarea {
   width: 100%;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(112, 245, 123, 0.5);
   border-radius: 20px;
-  color: #fff;
+  color: #64ffda;
   margin: 0 0 8px 0;
   padding: 18px 26px;
   font-weight: 500;
@@ -35,7 +35,7 @@
 
 .contact form input:focus,
 .contact form textarea:focus {
-  background: rgba(255, 255, 255, 1);
+  background: #64ffda;
   color: #121212;
 }
 
@@ -43,7 +43,7 @@
 .contact form textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
-  color: #fff;
+  color: #64ffda;
 }
 
 .contact form input:focus::placeholder,
@@ -55,7 +55,7 @@
 .contact form button {
   font-weight: 700;
   color: #000;
-  background-color: #fff;
+  background-color: #64ffda;
   padding: 14px 48px;
   font-size: 18px;
   margin-top: 5px;
@@ -98,6 +98,7 @@
 .text-focus-in {
   -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  color: #64ffda;
 }
 
 @-webkit-keyframes text-focus-in {
