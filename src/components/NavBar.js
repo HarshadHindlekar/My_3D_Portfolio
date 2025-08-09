@@ -31,7 +31,7 @@ export const NavBar = () => {
   return (
     <Router>
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container className="">
+        <Container className="d-flex align-items-center">
           <Navbar.Brand href="/">
             <img src={logo} alt="Logo" className={scrolled ? "logo-img" : ""} />
           </Navbar.Brand>

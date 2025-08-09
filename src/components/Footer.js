@@ -78,7 +78,7 @@ export const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>© {year} All Rights Reserved | Designed & Built with ❤️ by Your Name</p>
+        <p>© {year} All Rights Reserved | Designed & Built with ❤️ by Harshad</p>
       </div>
     </footer>
   );

@@ -333,7 +333,7 @@
   }
   
   .balls-canvas-cointainer {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }
 
@@ -343,7 +343,7 @@
   }
   
   .balls-canvas-cointainer {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 20px;
   }
   
@@ -370,7 +370,7 @@
   }
   
   .balls-canvas-cointainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
   
   .ball-canvas-size {
@@ -417,7 +417,7 @@
   }
   
   .balls-canvas-cointainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 15px;
     margin-top: 20px;
   }
@@ -477,7 +477,7 @@
   }
   
   .balls-canvas-cointainer {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 12px;
   }
   
