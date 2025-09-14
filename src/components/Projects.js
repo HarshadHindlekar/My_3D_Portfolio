@@ -3,7 +3,6 @@ import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import '../css/Projects.css'
-import TrackVisibility from 'react-on-screen';
 import { projects, projects1 } from "./Service";
 import { useState, useEffect } from 'react';
 

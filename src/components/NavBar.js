@@ -10,7 +10,6 @@ import { isMobile } from "react-device-detect";
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
-  const [mobile, setMobile] = useState(isMobile);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {

@@ -1,7 +1,6 @@
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon3.svg";
 import navIcon3 from "../assets/img/github-ico.png";
-import projImg3 from "../assets/img/project-img3.png";
 import windows11 from '../assets/img/windows 11.png'
 import solarSystem from "../assets/img/project-img6.png";
 import cssGridAnimation from "../assets/img/project-img5.png";
