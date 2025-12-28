@@ -59,6 +59,9 @@ export const TabIcons = [
   }, {
     key: 'testimonials',
     value: 'Testimonials'
+  }, {
+    key: 'connect',
+    value: 'Connect'
   }
 ];
 

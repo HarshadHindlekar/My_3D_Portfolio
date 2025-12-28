@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img1.svg";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import StarsCanvas from "./Banner-Comps/Stars";
 import '../css/Banner.css';
 import '../css/Contact.css';
-import { OpenPDF } from "./Banner-Comps/OpenPdf";
 import { isMobile } from 'react-device-detect';
 
 export const Banner = () => {
@@ -65,7 +63,6 @@ export const Banner = () => {
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
                   <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I'm a skilled software developer with experience in Java, Python and JavaScript, and expertise in frameworks like React, Spring Boot, Rest Api, MongoDB, PostgreSQL and Three.js. I'm a quick learner and collaborate closely with everyone to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!</p>
-                  <button onClick={OpenPDF}>See Resume <ArrowRightCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
           </Col>

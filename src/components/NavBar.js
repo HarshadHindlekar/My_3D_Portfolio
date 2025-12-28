@@ -6,6 +6,8 @@ import { HashLink } from 'react-router-hash-link';
 import { BrowserRouter as Router } from "react-router-dom";
 import '../css/Navbar.css'
 import { isMobile } from "react-device-detect";
+import { OpenPDF } from "./Banner-Comps/OpenPdf";
+
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -46,13 +48,12 @@ export const NavBar = () => {
             <Nav className={isMobile ? "" : "ms-auto"}>
               {TabIcons.map((tab) => <Nav.Link href={'#' + tab.key} className={activeLink === tab.key ? 'active navbar-link' : 'navbar-link'} key={tab.key} onClick={() => onUpdateActiveLink(tab.key)}>{tab.value}</Nav.Link>)}
             </Nav>
+            
             <span className={isMobile ? "flex flex-column navbar-text" : "navbar-text"}>
-              <div className="social-icon">
+               <div className="social-icon">
                 {SocialIcons.map((socialIcon) => <a href={socialIcon.href} key={socialIcon.altText}><img src={socialIcon.imgSrc} alt={socialIcon.altText} /></a>)}
               </div>
-              <HashLink to='#connect' onClick={() => setExpanded(false)}>
-                <button className="vvd"><span>Let's Connect</span></button>
-              </HashLink>
+              <button onClick={OpenPDF} style={{marginLeft: 0, padding: '20px 14px', borderWidth: 2, fontSize: 14}}><span>See Resume</span></button>
             </span>
           </Navbar.Collapse>
         </Container>
