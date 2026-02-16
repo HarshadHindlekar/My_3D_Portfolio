@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { testimonials } from "../Service";
 
 export const PeopleCard = ({ activeIndex, setActiveIndex }) => {
     const [direction, setDirection] = useState(1);
     const [isAnimating, setIsAnimating] = useState(false);
-    
+
+    const handleNext = useCallback(() => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setDirection(1);
+        setActiveIndex(prev => (prev + 1) % testimonials.length);
+        setTimeout(() => setIsAnimating(false), 500);
+    }, [isAnimating, setActiveIndex]);
+
     // Auto-rotate testimonials on mobile
     useEffect(() => {
         if (window.innerWidth <= 768) {
@@ -13,15 +21,7 @@ export const PeopleCard = ({ activeIndex, setActiveIndex }) => {
             }, 5000);
             return () => clearInterval(interval);
         }
-    }, [activeIndex]);
-
-    const handleNext = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setDirection(1);
-        setActiveIndex(prev => (prev + 1) % testimonials.length);
-        setTimeout(() => setIsAnimating(false), 500);
-    };
+    }, [handleNext]);
 
     const handlePrev = () => {
         if (isAnimating) return;

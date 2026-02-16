@@ -1,8 +1,7 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import 'animate.css';
 import '../css/Testimonials.css';
 import { isMobile } from 'react-device-detect';
-import TrackVisibility from 'react-on-screen';
 import { PeopleCard } from "./Testimony-comps/PeopleCard";
 import { useEffect, useState } from 'react';
 
