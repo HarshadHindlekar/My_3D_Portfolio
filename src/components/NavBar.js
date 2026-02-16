@@ -4,6 +4,7 @@ import logo from '../assets/img/logo2.svg';
 import { SocialIcons, TabIcons } from "./Service";
 import { HashLink } from 'react-router-hash-link';
 import { BrowserRouter as Router } from "react-router-dom";
+import { BoxArrowUpRight } from "react-bootstrap-icons";
 import '../css/Navbar.css'
 import { isMobile } from "react-device-detect";
 import { OpenPDF } from "./Banner-Comps/OpenPdf";
@@ -53,7 +54,7 @@ export const NavBar = () => {
                <div className="social-icon">
                 {SocialIcons.map((socialIcon) => <a href={socialIcon.href} key={socialIcon.altText}><img src={socialIcon.imgSrc} alt={socialIcon.altText} /></a>)}
               </div>
-              <button className="" onClick={OpenPDF} style={{ width: '180px', marginLeft: 0, padding: '20px 14px', borderWidth: 2, fontSize: 14, }}><span>See Resume</span></button>
+              <button className="" onClick={OpenPDF} style={{ width: '180px', marginLeft: 0, padding: '20px 14px', borderWidth: 2, fontSize: 14, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}><span>See Resume</span><BoxArrowUpRight size={16} /></button>
             </span>
           </Navbar.Collapse>
         </Container>
