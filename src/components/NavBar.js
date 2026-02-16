@@ -53,7 +53,7 @@ export const NavBar = () => {
                <div className="social-icon">
                 {SocialIcons.map((socialIcon) => <a href={socialIcon.href} key={socialIcon.altText}><img src={socialIcon.imgSrc} alt={socialIcon.altText} /></a>)}
               </div>
-              <button onClick={OpenPDF} style={{marginLeft: 0, padding: '20px 14px', borderWidth: 2, fontSize: 14, width: '150px' }}><span>See Resume</span></button>
+              <button className="" onClick={OpenPDF} style={{ width: '180px', marginLeft: 0, padding: '20px 14px', borderWidth: 2, fontSize: 14, }}><span>See Resume</span></button>
             </span>
           </Navbar.Collapse>
         </Container>
@@ -61,3 +61,4 @@ export const NavBar = () => {
     </Router>
   )
 }
+
