@@ -62,7 +62,13 @@ export const Banner = () => {
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
-                  <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I'm a skilled software developer with experience in Java, Python and JavaScript, and expertise in frameworks like React, Spring Boot, Rest Api, MongoDB, PostgreSQL and Three.js. I'm a quick learner and collaborate closely with everyone to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!</p>
+                  <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I'm a Senior Frontend Developer with 3+ years of experience building scalable, real-time web applications and analytics dashboards. I specialize in React, Vue 3, Nuxt, Next.js, and TypeScript, along with modern UI systems like Tailwind and responsive design.
+
+                    I’ve developed live tracking systems, 3D analytics dashboards, AI-powered platforms, and enterprise safety & logistics solutions used across 100+ facilities and thousands of users. I also work with REST/GraphQL APIs, cloud services (AWS & Azure), authentication/security (RBAC, 2FA), and performance optimization.
+
+                    I focus on creating fast, intuitive, and reliable products that solve real-world business problems while keeping the user experience simple and engaging.
+
+                    Let’s build something impactful together 🚀</p>
                 </div>}
             </TrackVisibility>
           </Col>
