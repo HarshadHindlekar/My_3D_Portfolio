@@ -4,8 +4,8 @@ import { Technologies } from "../Service";
 import { isMobile } from 'react-device-detect';
 
 const categories = {
-  'Frontend': ['React', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'MUI'],
-  'Backend': ['Node.js', 'Java', 'Spring Boot', 'Python', 'Django'],
+  'Frontend': ['React', 'Next.js', 'Vue.js', 'Nuxt 3', 'shadcn', 'Bootstrap', 'MUI'],
+  'Backend': ['Node.js', 'Spring Boot', 'FastAPI'],
   'Databases': ['MongoDB', 'PostgreSQL'],
   'Tools': ['git', 'Docker', 'Three.js', 'React 3 Fiber']
 };

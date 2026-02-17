@@ -7,15 +7,9 @@ import cssGridAnimation from "../assets/img/project-img5.png";
 import sundownStudio from "../assets/img/Sundown-Studio-Clone.jpg";
 import pokemon from '../assets/img/pokemon.png'
 
-import html from '../assets/tech/html.png';
-import css from '../assets/tech/css.png';
 import bootstrap from '../assets/tech/Bootstrap.png'
 import mui from '../assets/tech/MUI.png'
-import javascript from '../assets/tech/javascript.png';
-import java from '../assets/tech/java.png';
-import py from '../assets/tech/python.png';
 import reactjs from '../assets/tech/reactjs.png';
-import django from '../assets/tech/django.png'
 import spring from '../assets/tech/Spring_Boot.png'
 import mongodb from '../assets/tech/mongodb.png';
 import pgadmin from '../assets/tech/pgadmin.png'
@@ -25,6 +19,12 @@ import git from '../assets/tech/git.png';
 import people1 from '../assets/img/header-img1.svg'
 import people2 from '../assets/img/header-img2.svg'
 import people3 from '../assets/img/me-before1.png'
+
+const nextjs = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8_YuI-40uCn2rzzrmifB-AQfdFuX0xsGvA&s';
+const vuejs = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQybQ9296S3HQxCEmN2B7gK4a2H5hlUCBYKIA&s';
+const nuxt3 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSskf59fnpQb2_vrBZlhbnAw3VDOFt2zHmWGg&s';
+const shadcn = 'https://ui.shadcn.com/apple-touch-icon.png';
+const fastapi = 'https://avatars.githubusercontent.com/u/156354296?s=280&v=4';
 
 export const SocialIcons = [
   {
@@ -114,6 +114,22 @@ export const Technologies = [
     icon: reactjs,
   },
   {
+    name: "Next.js",
+    icon: nextjs,
+  },
+  {
+    name: "Vue.js",
+    icon: vuejs,
+  },
+  {
+    name: "Nuxt 3",
+    icon: nuxt3,
+  },
+  {
+    name: "shadcn/ui",
+    icon: shadcn,
+  },
+  {
     name: "React 3 Fiber",
     icon: threejs,
   },
@@ -122,16 +138,12 @@ export const Technologies = [
     icon: mui,
   },
   {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "Java",
-    icon: java,
-  },
-  {
     name: "Spring Boot",
     icon: spring,
+  },
+  {
+    name: "FastAPI",
+    icon: fastapi,
   },
   {
     name: "MongoDB",
@@ -142,28 +154,12 @@ export const Technologies = [
     icon: pgadmin,
   },
   {
-    name: "Python",
-    icon: py,
-  },
-  {
     name: "git",
     icon: git,
   },
   {
     name: "Bootstrap",
     icon: bootstrap,
-  },
-  {
-    name: "HTML",
-    icon: html,
-  },
-  {
-    name: "CSS",
-    icon: css,
-  },
-  {
-    name: "Django",
-    icon: django,
   },
 ];
 
