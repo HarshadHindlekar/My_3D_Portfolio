@@ -4,10 +4,9 @@ import { Technologies } from "../Service";
 import { isMobile } from 'react-device-detect';
 
 const categories = {
-  'Frontend': ['React', 'Next.js', 'Vue.js', 'Nuxt 3', 'shadcn', 'Bootstrap', 'MUI'],
-  'Backend': ['Node.js', 'Spring Boot', 'FastAPI'],
-  'Databases': ['MongoDB', 'PostgreSQL'],
-  'Tools': ['git', 'Docker', 'Three.js', 'React 3 Fiber']
+  'Frontend': ['React JS', 'Next.js', 'Vue.js', 'Nuxt 3', 'shadcn', 'Bootstrap', 'MUI'],
+  'Backend / Databases': ['Node.js', 'Spring Boot', 'FastAPI', 'MongoDB', 'PostgreSQL'],
+  'Tools / Cloud': ['git', 'React 3 Fiber', 'AWS Amplify', 'AWS S3', 'AWS EC2', 'AWS Route 53']
 };
 
 
@@ -39,12 +38,12 @@ const Tech = () => {
                     <div className='balls-canvas-cointainer'>
                         {techs.map((tech) => (
                             <div className='ball-canvas-size' key={tech.name}>
-                                {isMobile ? (
+                                {!isMobile && (category === 'Frontend' || category === 'Tools / Cloud') ? (
+                                    <BallCanvas icon={tech.icon} />
+                                ) : (
                                     <div className="tech-mobile">
                                         <img src={tech.icon} className="tech-icon" alt={tech.name} />
                                     </div>
-                                ) : (
-                                    <BallCanvas icon={tech.icon} />
                                 )}
                                 <span>{tech.name}</span>
                             </div>

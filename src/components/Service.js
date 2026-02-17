@@ -26,6 +26,14 @@ const nuxt3 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSskf59fnpQb
 const shadcn = 'https://ui.shadcn.com/apple-touch-icon.png';
 const fastapi = 'https://avatars.githubusercontent.com/u/156354296?s=280&v=4';
 
+// const docker = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="48" fill="%232496ed"/><path fill="%23fff" d="M76 120h24v-20H76zm28 0h24v-20h-24zm28 0h24v-20h-24zm-28 24h24v-20h-24zm28 0h24v-20h-24zm28-24h24v-20h-24z"/><path fill="%23fff" d="M196 132c-3 12-12 16-24 16H84c0 24 18 44 46 44 40 0 70-18 82-56 2-7-4-10-16-4z"/></svg>';
+const awsAmplify = 'https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Front-End-Web-Mobile/64/Arch_AWS-Amplify_64@5x.png';
+const awsS3 = 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/aws-s3-9fy4y5f02sp6fm0wxo9qj.png/aws-s3-toi4erj6v293ib57kdic73.png?_a=DATAiZiuZAA0';
+const awsEc2 = 'https://files.svgcdn.io/logos/aws-ec2.svg';
+const awsRoute53 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3qaCfwYujU-tlwcLRNAVGsURQYclHXnVgw&s';
+
+
+
 export const SocialIcons = [
   {
     href: "https://www.linkedin.com/in/harshad-hindlekar-b94a07236/",
@@ -116,18 +124,22 @@ export const Technologies = [
   {
     name: "Next.js",
     icon: nextjs,
+    
   },
   {
     name: "Vue.js",
     icon: vuejs,
+    
   },
   {
     name: "Nuxt 3",
     icon: nuxt3,
+    
   },
   {
     name: "shadcn/ui",
     icon: shadcn,
+    
   },
   {
     name: "React 3 Fiber",
@@ -144,6 +156,27 @@ export const Technologies = [
   {
     name: "FastAPI",
     icon: fastapi,
+   
+  },
+  {
+    name: "AWS Amplify",
+    icon: awsAmplify,
+    
+  },
+  {
+    name: "AWS S3",
+    icon: awsS3,
+    
+  },
+  {
+    name: "AWS EC2",
+    icon: awsEc2,
+    
+  },
+  {
+    name: "AWS Route 53",
+    icon: awsRoute53,
+    
   },
   {
     name: "MongoDB",
@@ -157,6 +190,10 @@ export const Technologies = [
     name: "git",
     icon: git,
   },
+  // {
+  //   name: "Docker",
+  //   icon: docker,
+  // },
   {
     name: "Bootstrap",
     icon: bootstrap,
