@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo2.svg';
 import { SocialIcons, TabIcons } from "./Service";
-import { HashLink } from 'react-router-hash-link';
 import { BrowserRouter as Router } from "react-router-dom";
 import { BoxArrowUpRight } from "react-bootstrap-icons";
 import '../css/Navbar.css'
@@ -13,7 +12,6 @@ import { OpenPDF } from "./Banner-Comps/OpenPdf";
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
-  const [mobile, setMobile] = useState(isMobile);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
