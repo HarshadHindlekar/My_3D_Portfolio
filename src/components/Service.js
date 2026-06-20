@@ -6,6 +6,7 @@ import solarSystem from "../assets/img/project-img6.png";
 import cssGridAnimation from "../assets/img/project-img5.png";
 import sundownStudio from "../assets/img/Sundown-Studio-Clone.jpg";
 import pokemon from '../assets/img/pokemon.png'
+import warJetsMultiplayer from '../assets/img/war-jets-multiplayer.svg'
 
 import bootstrap from '../assets/tech/Bootstrap.png'
 import mui from '../assets/tech/MUI.png'
@@ -87,6 +88,12 @@ export const projects1 = [
     description: "In pokemon their is a poketab which helps trainers to identify trainers that tab i tried to build.",
     imgUrl: pokemon,
     href: 'https://harshadhindlekar.github.io/Harshad-s-Pokemon-world/',
+  },
+  {
+    title: "WAR JETS - P2P Multiplayer",
+    description: "A neon arcade jet battle game with browser-to-browser multiplayer powered by WebRTC and PeerJS.",
+    imgUrl: warJetsMultiplayer,
+    href: 'https://harshadhindlekar.github.io/war-jets-multiplayer/',
   },
 ];
 
