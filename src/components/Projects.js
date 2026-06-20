@@ -10,6 +10,32 @@ export const Projects = () => {
   const [activeTab, setActiveTab] = useState('first');
   const [isVisible, setIsVisible] = useState(false);
 
+  const renderProjectSlider = (projectList, offset = 0) => {
+    return (
+      <div className="project-slider" aria-label="Auto scrolling project carousel">
+        <div className="project-slider-track">
+          {[0, 1].map((groupIndex) => (
+            <div
+              className="project-slider-group"
+              aria-hidden={groupIndex === 1}
+              key={`project-slider-group-${groupIndex}`}
+            >
+              {projectList.map((project, index) => (
+                <ProjectCard
+                  key={`${project.title}-${groupIndex}-${index}`}
+                  {...project}
+                  index={offset + index}
+                  isVisible={isVisible}
+                  variant="slider"
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   useEffect(() => {
     // Add scroll animation trigger
     const handleScroll = () => {
@@ -60,28 +86,10 @@ export const Projects = () => {
                 </Nav>
                 <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
                   <Tab.Pane eventKey="first">
-                    <Row className="g-4">
-                      {projects1.map((project, index) => (
-                        <ProjectCard
-                          key={index}
-                          {...project}
-                          index={index}
-                          isVisible={isVisible}
-                        />
-                      ))}
-                    </Row>
+                    {renderProjectSlider(projects1)}
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
-                    <Row className="g-4">
-                      {projects.map((project, index) => (
-                        <ProjectCard
-                          key={index}
-                          {...project}
-                          index={index + projects1.length}
-                          isVisible={isVisible}
-                        />
-                      ))}
-                    </Row>
+                    {renderProjectSlider(projects, projects1.length)}
                   </Tab.Pane>
                   <Tab.Pane eventKey="third">
                     <div className="coming-soon-container">

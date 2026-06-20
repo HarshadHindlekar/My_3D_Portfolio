@@ -1,7 +1,7 @@
 import { Col } from "react-bootstrap";
 import { useState, useEffect } from 'react';
 
-export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible }) => {
+export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible, variant = 'grid' }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -21,8 +21,13 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
     setIsImageLoaded(true);
   };
 
+  const Wrapper = variant === 'slider' ? 'div' : Col;
+  const wrapperProps = variant === 'slider'
+    ? { className: 'project-slide' }
+    : { xs: 12, sm: 6, lg: 4, className: 'mb-4' };
+
   return (
-    <Col xs={12} sm={6} lg={4} className="mb-4">
+    <Wrapper {...wrapperProps}>
       <div 
         className={`project-card ${isInView ? 'visible' : ''} ${isHovered ? 'hovered' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
@@ -66,6 +71,6 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
           </div>
         </a>
       </div>
-    </Col>
+    </Wrapper>
   );
 };
