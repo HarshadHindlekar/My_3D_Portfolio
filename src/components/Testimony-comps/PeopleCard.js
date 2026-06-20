@@ -4,6 +4,41 @@ import { testimonials } from "../Service";
 export const PeopleCard = ({ activeIndex, setActiveIndex }) => {
     const [direction, setDirection] = useState(1);
     const [isAnimating, setIsAnimating] = useState(false);
+    const activeTestimonial = testimonials[activeIndex];
+
+    const renderAuthor = (test) => {
+        const authorContent = (
+            <>
+                <div className="author-image">
+                    <img 
+                        src={test.img} 
+                        alt={test.name} 
+                        loading="lazy"
+                    />
+                </div>
+                <div className="author-info">
+                    <h4 className="author-name">{test.name}</h4>
+                    <p className="author-position">{test.position}</p>
+                </div>
+            </>
+        );
+
+        if (!test.profileUrl) {
+            return <div className="testimonial-author">{authorContent}</div>;
+        }
+
+        return (
+            <a
+                className="testimonial-author testimonial-author-link"
+                href={test.profileUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open ${test.name}'s LinkedIn profile`}
+            >
+                {authorContent}
+            </a>
+        );
+    };
 
     const handleNext = useCallback(() => {
         if (isAnimating) return;
@@ -68,20 +103,8 @@ export const PeopleCard = ({ activeIndex, setActiveIndex }) => {
                         <div className="quote-icon">
                             <i className="fas fa-quote-left"></i>
                         </div>
-                        <p className="testimonial-text">{testimonials[activeIndex].desc}</p>
-                        <div className="testimonial-author">
-                            <div className="author-image">
-                                <img 
-                                    src={testimonials[activeIndex].img} 
-                                    alt={testimonials[activeIndex].name} 
-                                    loading="lazy"
-                                />
-                            </div>
-                            <div className="author-info">
-                                <h4 className="author-name">{testimonials[activeIndex].name}</h4>
-                                <p className="author-position">{testimonials[activeIndex].position}</p>
-                            </div>
-                        </div>
+                        <p className="testimonial-text">{activeTestimonial.desc}</p>
+                        {renderAuthor(activeTestimonial)}
                     </div>
                 </div>
                 
@@ -119,15 +142,7 @@ export const PeopleCard = ({ activeIndex, setActiveIndex }) => {
                                 <i className="fas fa-quote-left"></i>
                             </div>
                             <p className="testimonial-text">{test.desc}</p>
-                            <div className="testimonial-author">
-                                <div className="author-image">
-                                    <img src={test.img} alt={test.name} loading="lazy" />
-                                </div>
-                                <div className="author-info">
-                                    <h4 className="author-name">{test.name}</h4>
-                                    <p className="author-position">{test.position}</p>
-                                </div>
-                            </div>
+                            {renderAuthor(test)}
                         </div>
                     </div>
                 ))}

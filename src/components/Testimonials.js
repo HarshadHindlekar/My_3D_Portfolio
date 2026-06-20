@@ -4,6 +4,7 @@ import '../css/Testimonials.css';
 import { isMobile } from 'react-device-detect';
 import { PeopleCard } from "./Testimony-comps/PeopleCard";
 import { useEffect, useState } from 'react';
+import { testimonials } from './Service';
 
 export const Testimonials = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +25,7 @@ export const Testimonials = () => {
         
         // Auto-rotate testimonials
         const interval = setInterval(() => {
-            setActiveIndex(prev => (prev + 1) % 3);
+            setActiveIndex(prev => (prev + 1) % testimonials.length);
         }, 8000);
         
         return () => {
@@ -57,7 +58,7 @@ export const Testimonials = () => {
                 
                 {!isMobile && (
                     <div className="testimonial-dots">
-                        {[0, 1, 2].map((index) => (
+                        {testimonials.map((_, index) => (
                             <button
                                 key={index}
                                 className={`dot ${activeIndex === index ? 'active' : ''}`}
