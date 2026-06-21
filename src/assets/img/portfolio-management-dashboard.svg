@@ -1,93 +1,119 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
   <title id="title">Portfolio Management Dashboard thumbnail</title>
-  <desc id="desc">Investment portfolio dashboard with sidebar navigation, trailing returns table, and green equity curve chart.</desc>
+  <desc id="desc">Clean capitalmind-style portfolio dashboard with returns table and equity curve chart.</desc>
   <defs>
+    <linearGradient id="pageBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2f7"/>
+    </linearGradient>
     <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#22c55e"/>
-      <stop offset="100%" stop-color="#0ea85a"/>
+      <stop offset="100%" stop-color="#10a35a"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#0f172a" flood-opacity=".14"/>
+    <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity=".16"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity=".12"/>
     </filter>
   </defs>
 
-  <rect width="900" height="560" fill="#f6f6f7"/>
-  <rect x="0" y="0" width="152" height="560" fill="#ffffff"/>
-  <line x1="152" y1="0" x2="152" y2="560" stroke="#e5e7eb"/>
-  <line x1="0" y1="88" x2="152" y2="88" stroke="#e5e7eb"/>
+  <rect width="900" height="560" fill="url(#pageBg)"/>
 
   <g font-family="Arial, Helvetica, sans-serif">
-    <circle cx="34" cy="36" r="18" fill="#10b981"/>
-    <text x="34" y="42" fill="#ffffff" font-size="17" font-weight="900" text-anchor="middle">C</text>
-    <text x="62" y="33" fill="#111827" font-size="18" font-weight="900">capitalmind</text>
-    <text x="62" y="54" fill="#00a66a" font-size="13">premium</text>
+    <rect x="0" y="0" width="180" height="560" fill="#ffffff"/>
+    <line x1="180" y1="0" x2="180" y2="560" stroke="#e5e7eb"/>
+    <line x1="0" y1="96" x2="180" y2="96" stroke="#e5e7eb"/>
 
-    <text x="28" y="114" fill="#25314a" font-size="16">Home</text>
-    <rect x="0" y="136" width="152" height="43" fill="#f0f0f1"/>
-    <text x="28" y="163" fill="#111827" font-size="16">Portfolios</text>
-    <text x="28" y="210" fill="#25314a" font-size="16">Experimentals</text>
-    <text x="28" y="256" fill="#25314a" font-size="16">Slack Archives</text>
-    <text x="28" y="302" fill="#25314a" font-size="16">Refer a friend</text>
-    <text x="28" y="348" fill="#25314a" font-size="16">Account</text>
+    <circle cx="42" cy="42" r="20" fill="#0bbf72"/>
+    <text x="42" y="49" fill="#ffffff" font-size="18" font-weight="900" text-anchor="middle">C</text>
+    <text x="76" y="39" fill="#111827" font-size="21" font-weight="900">capitalmind</text>
+    <text x="76" y="62" fill="#059669" font-size="14">premium</text>
 
-    <line x1="0" y1="498" x2="152" y2="498" stroke="#e5e7eb"/>
-    <circle cx="34" cy="526" r="17" fill="#10b981"/>
-    <text x="34" y="532" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle">RN</text>
-    <text x="62" y="522" fill="#111827" font-size="13">RN</text>
-    <text x="62" y="540" fill="#64748b" font-size="12">CMP1Y</text>
+    <text x="32" y="132" fill="#334155" font-size="17">Home</text>
+    <rect x="0" y="154" width="180" height="48" fill="#f2f4f7"/>
+    <rect x="0" y="154" width="4" height="48" fill="#0bbf72"/>
+    <text x="32" y="184" fill="#0f172a" font-size="17" font-weight="700">Portfolios</text>
+    <text x="32" y="234" fill="#334155" font-size="17">Experimentals</text>
+    <text x="32" y="284" fill="#334155" font-size="17">Slack Archives</text>
+    <text x="32" y="334" fill="#334155" font-size="17">Refer a friend</text>
+    <text x="32" y="384" fill="#334155" font-size="17">Account</text>
 
-    <text x="210" y="70" fill="#202124" font-size="32" font-weight="900">Portfolios</text>
+    <line x1="0" y1="500" x2="180" y2="500" stroke="#e5e7eb"/>
+    <circle cx="42" cy="530" r="19" fill="#0bbf72"/>
+    <text x="42" y="536" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle">RN</text>
+    <text x="76" y="525" fill="#111827" font-size="14" font-weight="700">RN</text>
+    <text x="76" y="544" fill="#64748b" font-size="12">valid till Apr 19</text>
 
-    <rect x="210" y="112" width="640" height="128" rx="10" fill="#ffffff" stroke="#dfe3e8" filter="url(#shadow)"/>
-    <text x="230" y="145" fill="#1f2937" font-size="18">Trailing Returns</text>
-    <text x="230" y="185" fill="#667085" font-size="13" font-weight="900">NAME</text>
-    <text x="302" y="185" fill="#667085" font-size="13" font-weight="900">YTD</text>
-    <text x="366" y="185" fill="#667085" font-size="13" font-weight="900">1D</text>
-    <text x="432" y="185" fill="#667085" font-size="13" font-weight="900">1W</text>
-    <text x="500" y="185" fill="#667085" font-size="13" font-weight="900">1M</text>
-    <text x="568" y="185" fill="#667085" font-size="13" font-weight="900">3M</text>
-    <text x="640" y="185" fill="#667085" font-size="13" font-weight="900">1Y</text>
-    <text x="716" y="185" fill="#667085" font-size="13" font-weight="900">SI</text>
-    <line x1="230" y1="200" x2="832" y2="200" stroke="#d7dce2"/>
-    <text x="230" y="226" fill="#111827" font-size="17">Focused</text>
-    <text x="302" y="226" fill="#111827" font-size="17">14.4%</text>
-    <text x="366" y="226" fill="#111827" font-size="17">0.9%</text>
-    <text x="432" y="226" fill="#111827" font-size="17">2.2%</text>
-    <text x="500" y="226" fill="#111827" font-size="17">8.1%</text>
-    <text x="568" y="226" fill="#111827" font-size="17">11.7%</text>
-    <text x="640" y="226" fill="#111827" font-size="17">-</text>
-    <text x="716" y="226" fill="#111827" font-size="17">17.4%</text>
-    <line x1="230" y1="236" x2="832" y2="236" stroke="#111827"/>
-    <text x="230" y="264" fill="#111827" font-size="17">NIFTY50</text>
-    <text x="302" y="264" fill="#111827" font-size="17">3.1%</text>
-    <text x="366" y="264" fill="#111827" font-size="17">0.1%</text>
-    <text x="432" y="264" fill="#111827" font-size="17">1.1%</text>
+    <text x="236" y="75" fill="#1f2937" font-size="35" font-weight="900">Portfolios</text>
 
-    <rect x="210" y="268" width="640" height="250" rx="10" fill="#ffffff" stroke="#dfe3e8" filter="url(#shadow)"/>
-    <text x="230" y="305" fill="#111827" font-size="18" font-weight="900">Equity curve</text>
-    <text x="230" y="330" fill="#586174" font-size="13">Live since 2023-12-18  •  As of 2024-04-23</text>
-    <rect x="648" y="292" width="76" height="32" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
-    <text x="665" y="313" fill="#243047" font-size="12">18-12-2023</text>
-    <rect x="736" y="292" width="76" height="32" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
-    <text x="753" y="313" fill="#243047" font-size="12">23-04-2024</text>
+    <rect x="236" y="112" width="606" height="132" rx="12" fill="#ffffff" stroke="#e2e8f0" filter="url(#cardShadow)"/>
+    <text x="260" y="150" fill="#1f2937" font-size="20" font-weight="700">Trailing Returns</text>
+    <circle cx="809" cy="143" r="19" fill="#ffffff" stroke="#e2e8f0"/>
+    <path d="M809 133v17m-6-6 6 6 6-6" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 
+    <rect x="260" y="170" width="552" height="30" fill="#fafafa"/>
+    <g fill="#64748b" font-size="13" font-weight="900">
+      <text x="260" y="190">NAME</text>
+      <text x="344" y="190">YTD</text>
+      <text x="414" y="190">1D</text>
+      <text x="486" y="190">1W</text>
+      <text x="558" y="190">1M</text>
+      <text x="632" y="190">3M</text>
+      <text x="704" y="190">SI</text>
+      <text x="766" y="190">DD</text>
+    </g>
+    <line x1="260" y1="202" x2="812" y2="202" stroke="#d1d5db"/>
+    <g fill="#111827" font-size="17">
+      <text x="260" y="228">Focused</text>
+      <text x="344" y="228">14.4%</text>
+      <text x="414" y="228">0.9%</text>
+      <text x="486" y="228">2.2%</text>
+      <text x="558" y="228">8.1%</text>
+      <text x="632" y="228">11.7%</text>
+      <text x="704" y="228">17.4%</text>
+      <text x="766" y="228">-0.3%</text>
+    </g>
+    <line x1="260" y1="236" x2="812" y2="236" stroke="#111827"/>
+
+    <rect x="236" y="274" width="606" height="236" rx="12" fill="#ffffff" stroke="#e2e8f0" filter="url(#cardShadow)"/>
+    <text x="260" y="313" fill="#111827" font-size="20" font-weight="900">Equity curve</text>
+    <text x="260" y="340" fill="#64748b" font-size="14">Live since 2023-12-18  •  As of 2024-04-23</text>
+    <rect x="556" y="300" width="82" height="30" rx="15" fill="#f3f4f6"/>
+    <text x="574" y="320" fill="#111827" font-size="12">Reset range</text>
+
+    <g>
+      <text x="668" y="291" fill="#475569" font-size="12" font-weight="700">FROM DATE</text>
+      <rect x="668" y="302" width="82" height="38" rx="7" fill="#ffffff" stroke="#e2e8f0" filter="url(#softShadow)"/>
+      <text x="681" y="325" fill="#1f2937" font-size="12">18-12-2023</text>
+      <text x="768" y="291" fill="#475569" font-size="12" font-weight="700">TO DATE</text>
+      <rect x="768" y="302" width="62" height="38" rx="7" fill="#ffffff" stroke="#e2e8f0" filter="url(#softShadow)"/>
+      <text x="782" y="325" fill="#1f2937" font-size="12">23-04</text>
+    </g>
+
+    <rect x="292" y="365" width="502" height="122" fill="#ffffff"/>
     <g stroke="#e8edf2" stroke-width="2">
-      <line x1="260" y1="474" x2="820" y2="474"/>
-      <line x1="260" y1="430" x2="820" y2="430"/>
-      <line x1="260" y1="386" x2="820" y2="386"/>
-      <line x1="260" y1="342" x2="820" y2="342"/>
+      <line x1="292" y1="486" x2="794" y2="486"/>
+      <line x1="292" y1="445" x2="794" y2="445"/>
+      <line x1="292" y1="404" x2="794" y2="404"/>
+      <line x1="292" y1="365" x2="794" y2="365"/>
     </g>
     <g fill="#94a3b8" font-size="13">
-      <text x="242" y="478">100</text>
-      <text x="242" y="434">105</text>
-      <text x="242" y="390">110</text>
-      <text x="242" y="346">115</text>
+      <text x="264" y="490">100</text>
+      <text x="264" y="449">105</text>
+      <text x="264" y="408">110</text>
+      <text x="264" y="369">115</text>
     </g>
-    <path d="M260 470 C285 458 294 460 318 448 S355 431 378 436 S405 419 428 398 S465 374 488 383 S514 338 536 366 S558 433 580 380 S612 360 632 394 S660 438 682 406 S715 401 736 385 S755 340 780 333 S802 372 820 353" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M260 478 C290 466 322 456 350 448 S382 455 410 426 S452 395 480 405 S518 360 548 392 S586 405 616 394 S650 450 682 420 S724 418 750 392 S792 398 820 381" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M292 484 C315 468 342 476 362 456 C378 440 398 449 414 428 C432 405 454 398 474 392 C492 387 505 354 526 395 C543 430 560 386 582 382 C602 378 623 416 641 374 C660 334 681 386 701 410 C724 438 742 395 760 374 C775 357 783 366 794 352" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M292 490 C316 479 342 476 366 464 C386 454 406 468 424 446 C449 416 472 418 494 408 C514 399 532 428 552 410 C574 390 600 397 620 408 C644 421 662 434 684 416 C711 394 742 414 762 399 C780 386 787 389 794 381" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 
-    <rect x="672" y="470" width="138" height="32" rx="16" fill="#ecfdf5"/>
-    <circle cx="692" cy="486" r="7" fill="url(#green)"/>
-    <text x="708" y="491" fill="#166534" font-size="13" font-weight="900">Portfolio growth</text>
+    <rect x="626" y="456" width="150" height="34" rx="17" fill="#ecfdf5" stroke="#bbf7d0"/>
+    <circle cx="648" cy="473" r="8" fill="url(#green)"/>
+    <text x="664" y="478" fill="#166534" font-size="13" font-weight="900">Equity growth</text>
+
+    <rect x="550" y="126" width="90" height="22" rx="11" fill="#ecfdf5"/>
+    <text x="568" y="142" fill="#15803d" font-size="12" font-weight="900">+14.4% YTD</text>
+    <rect x="650" y="126" width="94" height="22" rx="11" fill="#eff6ff"/>
+    <text x="668" y="142" fill="#1d4ed8" font-size="12" font-weight="900">17.4% SI</text>
   </g>
 </svg>
