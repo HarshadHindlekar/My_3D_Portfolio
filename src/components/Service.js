@@ -10,6 +10,7 @@ import warJetsMultiplayer from '../assets/img/war-jets-multiplayer.svg'
 import apsSecurityDashboard from '../assets/img/aps-security-dashboard.svg'
 import incoisFuturex from '../assets/img/incois-futurex.svg'
 import portfolioManagementDashboard from '../assets/img/portfolio-management-dashboard.svg'
+import nikeCloneVue from '../assets/img/nike-clone-vue.svg'
 
 import bootstrap from '../assets/tech/Bootstrap.png'
 import mui from '../assets/tech/MUI.png'
@@ -115,6 +116,12 @@ export const projects1 = [
     description: "A Next.js investment dashboard for portfolio analytics, trailing returns, equity curves, and drawdown insights.",
     imgUrl: portfolioManagementDashboard,
     href: 'https://harshadhindlekar.github.io/portfolio-management/',
+  },
+  {
+    title: "Nike Clone Vue",
+    description: "A responsive Nike shoe store landing page built with Vue.js and Tailwind CSS, featuring a bold product hero and carousel.",
+    imgUrl: nikeCloneVue,
+    href: 'https://harshadhindlekar.github.io/Nike-clone-vue/',
   },
 ];
 
