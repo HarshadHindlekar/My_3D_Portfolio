@@ -1,11 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
   <title id="title">INCOIS Marine Fisheries Platform thumbnail</title>
-  <desc id="desc">Dark marine fisheries dashboard with Indian coastline map, PFZ zones, alerts, and ocean observation panels.</desc>
+  <desc id="desc">Marine fisheries dashboard with a recognizable India map, coastal PFZ points, and INCOIS map controls.</desc>
   <defs>
-    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="45%" stop-color="#152238"/>
-      <stop offset="100%" stop-color="#263944"/>
+    <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071426"/>
+      <stop offset="48%" stop-color="#111c2e"/>
+      <stop offset="100%" stop-color="#263943"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102039"/>
+      <stop offset="100%" stop-color="#1d2b40"/>
     </linearGradient>
     <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#38bdf8"/>
@@ -22,9 +26,12 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <filter id="mapShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#020617" flood-opacity=".45"/>
+    </filter>
   </defs>
 
-  <rect width="900" height="560" fill="url(#sea)"/>
+  <rect width="900" height="560" fill="url(#ocean)"/>
   <rect x="0" y="0" width="900" height="68" fill="#101827"/>
   <rect x="0" y="68" width="190" height="492" fill="#0f172a"/>
   <line x1="190" y1="68" x2="190" y2="560" stroke="#243247"/>
@@ -67,39 +74,59 @@
   </g>
 
   <g opacity=".18" stroke="#8aa0b7" stroke-width="1">
-    <path d="M248 118h588M248 176h588M248 234h588M248 292h588M248 350h588M248 408h588M248 466h588"/>
-    <path d="M275 90v430M355 90v430M435 90v430M515 90v430M595 90v430M675 90v430M755 90v430M835 90v430"/>
+    <path d="M220 112h642M220 170h642M220 228h642M220 286h642M220 344h642M220 402h642M220 460h642"/>
+    <path d="M250 88v430M330 88v430M410 88v430M490 88v430M570 88v430M650 88v430M730 88v430M810 88v430"/>
   </g>
 
-  <g transform="translate(448 150)">
-    <path d="M120 16c-28 18-42 54-45 86-5 49-22 76-48 116-27 43-27 85 9 115 29 24 65 22 91 7 22-13 34-35 38-61 6-42-15-68-21-100-9-51 31-78 34-123 1-21-15-38-58-40Z" fill="#0b0f12" stroke="#2c3a43" stroke-width="2"/>
-    <path d="M62 70c-28 16-51 37-76 61-21 20-43 27-70 20-19-5-36-2-48 12 28 23 63 30 105 21 31-7 55-27 75-50 17-20 28-41 31-62Z" fill="#0b0f12" stroke="#2c3a43" stroke-width="2"/>
-    <path d="M129 274c28 14 67 19 113 16 42-3 75 5 102 27-33 12-76 17-128 13-38-3-71-15-98-35Z" fill="#0b0f12" stroke="#2c3a43" stroke-width="2"/>
-    <text x="102" y="118" fill="#cdd7e5" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="900">INDIA</text>
-    <text x="20" y="332" fill="#cdd7e5" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">KERALA</text>
-    <text x="145" y="346" fill="#cdd7e5" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">TAMIL NADU</text>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#aab6c5" font-size="13" font-weight="700" opacity=".82">
+    <text x="355" y="122">PAKISTAN</text>
+    <text x="526" y="115">NEPAL</text>
+    <text x="626" y="132">BHUTAN</text>
+    <text x="680" y="208">BANGLADESH</text>
+    <text x="380" y="352">ARABIAN SEA</text>
+    <text x="690" y="374">BAY OF BENGAL</text>
+    <text x="548" y="497">SRI LANKA</text>
+  </g>
+
+  <g filter="url(#mapShadow)">
+    <path d="M490 92c19 0 39 6 51 20 11 13 15 29 27 39 15 13 37 9 51 23 14 14 14 36 2 50-14 16-34 12-51 20 9 22 32 28 57 33 28 6 52 20 61 46-26 10-54 8-78-2-22-9-39-22-60-17-20 5-21 26-8 40 17 19 46 21 76 27 33 7 58 19 74 43-43 17-86 16-127 1-22-8-43-13-60-2-19 13-18 39-27 62-8 21-23 38-41 56-14-24-20-50-22-77-2-25-11-46-26-66-19-26-31-55-38-87-6-25-17-44-34-61-16-16-35-28-54-34-22-7-44-6-66-13 10-23 31-33 56-32 21 1 42 10 62 4 18-5 30-22 43-36 22-23 51-34 84-37Z" fill="#070b10" stroke="#263746" stroke-width="2"/>
+    <path d="M434 170c-20 13-36 26-54 35-23 11-50 12-75 6" fill="none" stroke="#2f4555" stroke-width="2" opacity=".7"/>
+    <path d="M506 298c-20 14-48 18-78 11" fill="none" stroke="#2f4555" stroke-width="2" opacity=".7"/>
+    <path d="M545 398c-27 12-56 10-86 0" fill="none" stroke="#2f4555" stroke-width="2" opacity=".7"/>
+    <path d="M584 450c-27 11-52 11-74 2" fill="none" stroke="#2f4555" stroke-width="2" opacity=".7"/>
+
+    <path d="M528 502c18 8 29 25 24 46-18-10-31-24-36-42Z" fill="#070b10" stroke="#263746" stroke-width="2"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#d6dee8" font-size="15" font-weight="900">
+    <text x="493" y="236">INDIA</text>
+    <text x="421" y="397">KERALA</text>
+    <text x="532" y="430">TAMIL NADU</text>
+    <text x="367" y="194">GUJARAT</text>
+    <text x="555" y="332">ODISHA</text>
   </g>
 
   <g filter="url(#glow)">
-    <circle cx="366" cy="238" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
-    <circle cx="680" cy="304" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
-    <circle cx="632" cy="394" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
-    <circle cx="484" cy="422" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
-    <circle cx="402" cy="222" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="355" cy="203" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="420" cy="390" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="461" cy="437" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="566" cy="360" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="628" cy="300" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="672" cy="236" r="8" fill="#0ea5e9" stroke="#ffffff" stroke-width="3"/>
   </g>
 
   <g font-family="Arial, Helvetica, sans-serif">
-    <rect x="210" y="88" width="118" height="86" rx="14" fill="#1f2d42" stroke="#3a4b64"/>
+    <rect x="210" y="88" width="126" height="86" rx="14" fill="url(#panel)" stroke="#3a4b64"/>
     <text x="229" y="119" fill="#ffffff" font-size="17" font-weight="900">Layers</text>
     <text x="229" y="150" fill="#dce6f2" font-size="13" font-weight="800">PFZ Zones</text>
-    <rect x="286" y="136" width="34" height="18" rx="9" fill="#0b74de"/>
+    <rect x="292" y="136" width="34" height="18" rx="9" fill="#0b74de"/>
 
-    <rect x="210" y="190" width="118" height="100" rx="14" fill="#1f2d42" stroke="#3a4b64"/>
+    <rect x="210" y="190" width="126" height="100" rx="14" fill="url(#panel)" stroke="#3a4b64"/>
     <text x="229" y="222" fill="#ffffff" font-size="17" font-weight="900">3D View</text>
     <text x="229" y="255" fill="#dce6f2" font-size="13" font-weight="800">Enable 3D</text>
     <circle cx="277" cy="274" r="8" fill="#0b74de"/>
 
-    <rect x="760" y="90" width="112" height="96" rx="14" fill="#1f2d42" stroke="#3a4b64"/>
+    <rect x="758" y="90" width="114" height="112" rx="14" fill="url(#panel)" stroke="#3a4b64"/>
     <text x="778" y="119" fill="#aebbd0" font-size="13" font-weight="900">Quick Nav</text>
     <text x="778" y="150" fill="#ffffff" font-size="14" font-weight="900">GUJ</text>
     <text x="828" y="150" fill="#ffffff" font-size="14" font-weight="900">MAH</text>
