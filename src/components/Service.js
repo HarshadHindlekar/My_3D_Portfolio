@@ -8,6 +8,7 @@ import sundownStudio from "../assets/img/Sundown-Studio-Clone.jpg";
 import pokemon from '../assets/img/pokemon.png'
 import warJetsMultiplayer from '../assets/img/war-jets-multiplayer.svg'
 import apsSecurityDashboard from '../assets/img/aps-security-dashboard.svg'
+import incoisFuturex from '../assets/img/incois-futurex.svg'
 
 import bootstrap from '../assets/tech/Bootstrap.png'
 import mui from '../assets/tech/MUI.png'
@@ -101,6 +102,12 @@ export const projects1 = [
     description: "An expert-level cybersecurity pentest dashboard with live scan progress, finding logs, and security reporting.",
     imgUrl: apsSecurityDashboard,
     href: 'https://harshadhindlekar.github.io/expert-level-security/',
+  },
+  {
+    title: "INCOIS Marine Fisheries Platform",
+    description: "A modern marine fisheries platform with PFZ advisories, interactive maps, ocean observations, and weather alerts.",
+    imgUrl: incoisFuturex,
+    href: 'https://harshadhindlekar.github.io/incois-futurex/',
   },
 ];
 
