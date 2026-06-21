@@ -11,7 +11,8 @@ export const Skills = () => {
           <div className="col-12">
             <TrackVisibility partialVisibility>
               {({ isVisible }) =>
-                <div className="skill-bx wow zoomIn">
+                <div className={`skill-bx wow zoomIn ${isVisible ? 'is-visible' : ''}`}>
+                  <div className="skill-radar" aria-hidden="true"></div>
                   <h2 className={isVisible ? 'tracking-in-contract-bck' : ''}>
                     Technical Proficiencies
                     <div className="gradient-underline"></div>

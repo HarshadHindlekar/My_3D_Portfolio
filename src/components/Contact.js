@@ -32,13 +32,17 @@ export const Contact = () => {
         <Row className="align-items-center">
           {!isMobile &&<Col size={12} md={6}>
             <TrackVisibility className="earth-container">
+              <div className="contact-orbit-shell" aria-hidden="true">
+                <span></span>
+                <span></span>
+              </div>
               <EarthCanvas />
             </TrackVisibility>
           </Col>}
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                <div className={`contact-form-panel ${isVisible ? "animate__animated animate__fadeIn" : ""}`}>
                   <h2 className={isVisible ? "text-focus-in" : ""}>Get In Touch</h2>
                   <form className="form-cointainer">
                     <Row>

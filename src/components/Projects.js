@@ -54,6 +54,7 @@ export const Projects = () => {
 
   return (
     <section className={`project ${isVisible ? 'visible' : ''}`} id="projects">
+      <div className="project-orbit-line" aria-hidden="true"></div>
       <Container>
         <Row>
           <Col size={12}>

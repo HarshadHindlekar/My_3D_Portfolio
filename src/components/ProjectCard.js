@@ -1,8 +1,8 @@
 import { Col } from "react-bootstrap";
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible, variant = 'grid' }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -21,6 +21,25 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
     setIsImageLoaded(true);
   };
 
+  const handlePointerMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    event.currentTarget.style.setProperty('--card-rotate-x', `${y * -8}deg`);
+    event.currentTarget.style.setProperty('--card-rotate-y', `${x * 10}deg`);
+    event.currentTarget.style.setProperty('--card-glow-x', `${(x + 0.5) * 100}%`);
+    event.currentTarget.style.setProperty('--card-glow-y', `${(y + 0.5) * 100}%`);
+  };
+
+  const handlePointerLeave = () => {
+    if (!cardRef.current) return;
+    cardRef.current.style.removeProperty('--card-rotate-x');
+    cardRef.current.style.removeProperty('--card-rotate-y');
+    cardRef.current.style.removeProperty('--card-glow-x');
+    cardRef.current.style.removeProperty('--card-glow-y');
+  };
+
   const Wrapper = variant === 'slider' ? 'div' : Col;
   const wrapperProps = variant === 'slider'
     ? { className: 'project-slide' }
@@ -29,9 +48,10 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
   return (
     <Wrapper {...wrapperProps}>
       <div 
-        className={`project-card ${isInView ? 'visible' : ''} ${isHovered ? 'hovered' : ''}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        ref={cardRef}
+        className={`project-card ${isInView ? 'visible' : ''}`}
+        onMouseMove={handlePointerMove}
+        onMouseLeave={handlePointerLeave}
       >
         <a 
           href={href} 
