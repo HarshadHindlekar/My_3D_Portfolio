@@ -9,6 +9,7 @@ import pokemon from '../assets/img/pokemon.png'
 import warJetsMultiplayer from '../assets/img/war-jets-multiplayer.svg'
 import apsSecurityDashboard from '../assets/img/aps-security-dashboard.svg'
 import incoisFuturex from '../assets/img/incois-futurex.svg'
+import portfolioManagementDashboard from '../assets/img/portfolio-management-dashboard.svg'
 
 import bootstrap from '../assets/tech/Bootstrap.png'
 import mui from '../assets/tech/MUI.png'
@@ -108,6 +109,12 @@ export const projects1 = [
     description: "A modern marine fisheries platform with PFZ advisories, interactive maps, ocean observations, and weather alerts.",
     imgUrl: incoisFuturex,
     href: 'https://harshadhindlekar.github.io/incois-futurex/',
+  },
+  {
+    title: "Portfolio Management Dashboard",
+    description: "A Next.js investment dashboard for portfolio analytics, trailing returns, equity curves, and drawdown insights.",
+    imgUrl: portfolioManagementDashboard,
+    href: 'https://harshadhindlekar.github.io/portfolio-management/',
   },
 ];
 
