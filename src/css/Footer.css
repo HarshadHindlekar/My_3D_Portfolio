@@ -33,12 +33,17 @@
 }
 
 .footer-section-visual {
-  width: min(100%, 720px);
-  margin-bottom: -74px;
-  opacity: 0.48;
+  position: absolute;
+  z-index: 0;
+  top: 24px;
+  right: clamp(12px, 5vw, 72px);
+  width: min(44vw, 440px);
+  opacity: 0.22;
 }
 
 .footer-main {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(220px, 0.42fr) minmax(320px, 0.58fr);
   align-items: center;
@@ -125,6 +130,8 @@
 }
 
 .footer-social {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,6 +219,14 @@
   .footer-logo {
     justify-items: center;
     text-align: center;
+  }
+
+  .footer-section-visual {
+    top: 18px;
+    right: 50%;
+    width: min(78vw, 420px);
+    transform: translateX(50%);
+    opacity: 0.16;
   }
 }
 
