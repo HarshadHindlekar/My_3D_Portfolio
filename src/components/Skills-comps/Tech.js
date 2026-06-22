@@ -32,12 +32,16 @@ const Tech = () => {
 
     return (
         <div className="tech-categories-container">
-            {Object.entries(techByCategory).map(([category, techs]) => (
-                <div key={category} className="tech-category">
+            {Object.entries(techByCategory).map(([category, techs], categoryIndex) => (
+                <div key={category} className="tech-category" style={{ '--category-index': categoryIndex }}>
                     <h3>{category}</h3>
                     <div className='balls-canvas-cointainer'>
-                        {techs.map((tech) => (
-                            <div className='ball-canvas-size' key={tech.name}>
+                        {techs.map((tech, techIndex) => (
+                            <div
+                                className='ball-canvas-size'
+                                key={tech.name}
+                                style={{ '--tech-index': techIndex }}
+                            >
                                 {!isMobile && (category === 'Frontend' || category === 'Tools / Cloud') ? (
                                     <BallCanvas icon={tech.icon} />
                                 ) : (
