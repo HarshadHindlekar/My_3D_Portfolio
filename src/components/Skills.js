@@ -2,6 +2,7 @@ import Tech from "./Skills-comps/Tech";
 import '../css/Skills.css';
 import TrackVisibility from "react-on-screen";
 import { MissionSection } from "./MissionSection";
+import { MissionVisual } from "./MissionVisual";
 
 export const Skills = () => {
   return (
@@ -18,6 +19,7 @@ export const Skills = () => {
               <a className="mission-btn mission-btn--ghost" href="#projects">View Launchpad</a>
             </div>
             <div className={`systems-map ${isVisible ? 'is-visible' : ''}`}>
+              <MissionVisual variant="systems" className="systems-visual" alt="Astronaut operating a mission-control engineering console" />
               <Tech />
             </div>
           </div>}

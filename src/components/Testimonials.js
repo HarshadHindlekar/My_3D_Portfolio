@@ -5,6 +5,7 @@ import { PeopleCard } from "./Testimony-comps/PeopleCard";
 import { useEffect, useState } from 'react';
 import { testimonials } from './Service';
 import { MissionSection } from "./MissionSection";
+import { MissionVisual } from "./MissionVisual";
 
 export const Testimonials = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -43,6 +44,7 @@ export const Testimonials = () => {
             <Container fluid className="signals-container">
                 <div className="signals-layout">
                     <div className={`testimonial-header ${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
+                        <MissionVisual variant="signals" className="signals-section-visual" alt="Astronaut receiving transmission signals in orbit" />
                         <h2>Signals From The Crew</h2>
                         <p>Kind words from teammates and collaborators across missions.</p>
                         <a className="mission-btn mission-btn--ghost" href="#connect">Read More Signals</a>

@@ -48,9 +48,16 @@
   gap: 18px;
 }
 
+.systems-visual {
+  width: min(100%, 660px);
+  aspect-ratio: 5 / 3;
+  margin: 0 0 24px auto;
+  opacity: 0.9;
+}
+
 .tech-category {
   position: relative;
-  min-height: 480px;
+  min-height: 320px;
 }
 
 .tech-category h3 {
@@ -123,6 +130,10 @@
 
   .systems-map {
     min-height: auto;
+  }
+
+  .systems-visual {
+    margin-inline: 0;
   }
 }
 

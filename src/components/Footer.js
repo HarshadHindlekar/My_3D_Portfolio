@@ -5,6 +5,7 @@ import '../css/Footer.css';
 import { OpenPDF } from "./Banner-Comps/OpenPdf";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { useEffect, useState } from 'react';
+import { MissionVisual } from "./MissionVisual";
 
 export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -28,6 +29,7 @@ export const Footer = () => {
   return (
     <footer className={`footer ${isVisible ? 'visible' : ''}`}>
       <div className="footer-content">
+        <MissionVisual variant="contact" className="footer-section-visual" alt="Astronaut beside a communication beacon above Earth" />
         <div className="footer-main">
           <div className="footer-photo-wrap">
             <img

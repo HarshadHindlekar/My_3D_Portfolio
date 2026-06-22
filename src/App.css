@@ -375,3 +375,40 @@ textarea:focus-visible {
 img {
   max-width: 100%;
 }
+
+.mission-visual {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(99, 245, 229, 0.22);
+  border-radius: 8px;
+  background: rgba(5, 18, 28, 0.48);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.mission-visual img {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.mission-visual--systems img {
+  left: 0;
+  top: 0;
+}
+
+.mission-visual--projects img {
+  left: -100%;
+  top: 0;
+}
+
+.mission-visual--signals img {
+  left: 0;
+  top: -100%;
+}
+
+.mission-visual--contact img {
+  left: -100%;
+  top: -100%;
+}

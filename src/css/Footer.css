@@ -32,6 +32,12 @@
   text-align: center;
 }
 
+.footer-section-visual {
+  width: min(100%, 820px);
+  aspect-ratio: 16 / 6;
+  opacity: 0.58;
+}
+
 .footer-main {
   display: grid;
   grid-template-columns: minmax(220px, 0.42fr) minmax(320px, 0.58fr);

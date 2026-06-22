@@ -5,6 +5,7 @@ import '../css/Projects.css'
 import { projects, projects1 } from "./Service";
 import { useMemo, useState, useEffect } from 'react';
 import { MissionSection } from "./MissionSection";
+import { MissionVisual } from "./MissionVisual";
 
 const priorityTitles = [
   'APS Security Dashboard',
@@ -56,6 +57,7 @@ export const Projects = () => {
       <Container fluid className="project-mission-container">
         <div className="project-mission-layout">
           <div className={`project-header ${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
+            <MissionVisual variant="projects" className="project-section-visual" alt="Astronaut launching glowing project modules in orbit" />
             <h2>Projects That Ship Impact</h2>
             <p>From dashboards to immersive browser experiences, here are missions I have launched.</p>
             <a className="mission-btn mission-btn--ghost" href="#connect">Open Comm Channel</a>
