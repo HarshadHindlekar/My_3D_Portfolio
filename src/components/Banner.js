@@ -3,10 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/me.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import StarsCanvas from "./Banner-Comps/Stars";
 import '../css/Banner.css';
 import '../css/Contact.css';
 import { isMobile } from 'react-device-detect';
+import { MissionSection } from './MissionSection';
+import { missionStats } from './MissionData';
 
 export const Banner = () => {
   const bannerRef = useRef(null);
@@ -15,7 +16,7 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = ["Front End Developer II", "Software Engineer II", "Full Stack Web Developer"];
+  const toRotate = ["Software Engineer", "Frontend Specialist", "Full Stack Developer"];
   const period = 2000;
 
   const tick = () => {
@@ -81,45 +82,53 @@ export const Banner = () => {
   }, []);
 
   return (
-    <section
-      className="banner"
-      id="home"
-      ref={bannerRef}
-      style={{ '--banner-bg': `url(${process.env.PUBLIC_URL}/banner-bg4.jpg)` }}
-    >
-      <div className="motion-grid" aria-hidden="true"></div>
-      <Container>
-        <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
-                  <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I'm a Senior Frontend Developer with 3+ years of experience building scalable, real-time web applications and analytics dashboards. I specialize in React, Vue 3, Nuxt, Next.js, and TypeScript, along with modern UI systems like Tailwind and responsive design.
-
-                    I’ve developed live tracking systems, 3D analytics dashboards, AI-powered platforms, and enterprise safety & logistics solutions used across 100+ facilities and thousands of users. I also work with REST/GraphQL APIs, cloud services (AWS & Azure), authentication/security (RBAC, 2FA), and performance optimization.
-
-                    I focus on creating fast, intuitive, and reliable products that solve real-world business problems while keeping the user experience simple and engaging.
-
-                    Let’s build something impactful together 🚀</p>
-                </div>}
-            </TrackVisibility>
-          </Col>
-          {!isMobile && <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={`hero-visual ${isVisible ? "animate__animated animate__zoomIn" : ""}`} ref={visualRef}>
-                  <span className="orbit-ring orbit-ring-one" aria-hidden="true"></span>
-                  <span className="orbit-ring orbit-ring-two" aria-hidden="true"></span>
-                  <span className="orbit-dot orbit-dot-one" aria-hidden="true"></span>
-                  <span className="orbit-dot orbit-dot-two" aria-hidden="true"></span>
-                  <img src={headerImg} alt="Harshad Hindlekar" />
-                </div>}
-            </TrackVisibility>
-          </Col>}
-        </Row>
-      </Container>
-      <StarsCanvas />
-    </section>
+    <MissionSection id="home" number="01" label="Launch" eyebrow="Launch" className="banner">
+      <div className="mission-hero" ref={bannerRef}>
+        <Container fluid>
+          <Row className="align-items-center mission-hero__row">
+            <Col xs={12} lg={7} className="mission-hero__content">
+              <TrackVisibility>
+                {({ isVisible }) =>
+                  <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                    <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
+                    <div className="mission-code" aria-label="Developer mission details">
+                      <code>const developer = {'{'}</code>
+                      <code>  code: true,</code>
+                      <code>  ship: 'curiosity',</code>
+                      <code>  mission: 'build impact'</code>
+                      <code>{'}'}</code>
+                    </div>
+                    <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I build real-time web apps, analytics dashboards, and scalable platforms using React, Vue, Next.js, TypeScript, and modern backends. I turn complex product problems into fast, reliable, and meaningful user experiences.</p>
+                    <div className="mission-hero__actions">
+                      <a className="mission-btn mission-btn--primary" href="#skills">Explore Mission</a>
+                      <a className="mission-btn mission-btn--ghost" href="#projects">See My Work</a>
+                    </div>
+                    <div className="mission-stats">
+                      {missionStats.map((stat) => (
+                        <div className="mission-stat" key={stat.label}>
+                          <strong aria-label={stat.ariaLabel}>{stat.value}</strong>
+                          <span>{stat.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>}
+              </TrackVisibility>
+            </Col>
+            {!isMobile && <Col xs={12} lg={5} className="mission-hero__visual">
+              <TrackVisibility>
+                {({ isVisible }) =>
+                  <div className={`hero-visual ${isVisible ? "animate__animated animate__zoomIn" : ""}`} ref={visualRef}>
+                    <span className="orbit-ring orbit-ring-one" aria-hidden="true"></span>
+                    <span className="orbit-ring orbit-ring-two" aria-hidden="true"></span>
+                    <span className="orbit-dot orbit-dot-one" aria-hidden="true"></span>
+                    <span className="orbit-dot orbit-dot-two" aria-hidden="true"></span>
+                    <img src={headerImg} alt="Harshad Hindlekar" />
+                  </div>}
+              </TrackVisibility>
+            </Col>}
+          </Row>
+        </Container>
+      </div>
+    </MissionSection>
   )
 }

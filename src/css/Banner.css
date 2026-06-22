@@ -1,104 +1,146 @@
 .banner {
   --pointer-x: 0px;
   --pointer-y: 0px;
-  min-height: 100vh;
-  margin-top: 0;
-  padding: 210px 0 120px;
-  position: relative;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  isolation: isolate;
-  background:
-    linear-gradient(115deg, rgba(1, 9, 18, 0.3), rgba(4, 20, 36, 0.72)),
-    var(--banner-bg) top center / cover no-repeat;
 }
 
-.banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -3;
-  background:
-    radial-gradient(ellipse at 70% 18%, rgba(100, 255, 218, 0.24), transparent 34%),
-    radial-gradient(ellipse at 22% 82%, rgba(94, 96, 206, 0.2), transparent 32%),
-    linear-gradient(180deg, rgba(1, 7, 14, 0.08), rgba(1, 7, 14, 0.8));
-}
-
-.banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.08) 42%, transparent 58%);
-  transform: translateX(-120%);
-  animation: hero-light-sweep 9s ease-in-out infinite;
-}
-
-.motion-grid {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.28;
+.mission-hero {
+  width: 100%;
   transform: translate3d(var(--pointer-x), var(--pointer-y), 0);
   transition: transform 220ms ease-out;
-  background-image:
-    linear-gradient(rgba(100, 255, 218, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(95, 215, 255, 0.12) 1px, transparent 1px);
-  background-size: 86px 86px;
-  mask-image: linear-gradient(180deg, transparent, #000 12%, #000 72%, transparent);
 }
 
-.banner .container {
-  position: relative;
-  z-index: 2;
+.mission-hero .container-fluid {
+  padding: 0;
 }
 
-.banner h1 {
-  max-width: 920px;
-  font-size: clamp(48px, 6vw, 76px);
+.mission-hero__row {
+  row-gap: 42px;
+}
+
+.mission-hero h1 {
+  max-width: 760px;
+  color: var(--mission-text);
+  font-size: clamp(48px, 7vw, 92px);
   font-weight: 700;
-  letter-spacing: 0;
   line-height: 0.98;
-  margin-bottom: 22px;
-  display: block;
+  letter-spacing: 0;
   text-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
 .txt-rotate {
   display: inline-block;
   min-height: 1.1em;
-  color: #64ffda;
-  filter: drop-shadow(0 0 20px rgba(100, 255, 218, 0.35));
+  color: var(--mission-accent);
+  filter: drop-shadow(0 0 20px rgba(99, 245, 229, 0.35));
 }
 
 .txt-rotate > .wrap {
-  border-right: 0.08em solid rgba(100, 255, 218, 0.85);
+  border-right: 0.08em solid rgba(99, 245, 229, 0.85);
   padding-right: 4px;
 }
 
-.banner p {
-  color: #e7ecff;
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 1.65;
-  width: 96%;
+.mission-code {
+  display: grid;
+  gap: 4px;
+  margin: 28px 0 18px;
+  color: #8bded7;
+  font-size: 14px;
 }
 
-p.my-intro {
-  max-width: 850px;
-  padding: 22px 24px;
+.mission-code code {
+  color: inherit;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
+
+.my-intro {
+  max-width: 640px;
+  color: var(--mission-muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.mission-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.mission-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(16px) saturate(130%);
-  background: linear-gradient(135deg, rgba(7, 19, 35, 0.72), rgba(12, 34, 52, 0.48));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mission-btn--primary {
+  color: var(--mission-bg);
+  background: var(--mission-accent);
+  box-shadow: 0 0 22px rgba(99, 245, 229, 0.35);
+}
+
+.mission-btn--primary:hover {
+  color: var(--mission-bg);
+  background: var(--mission-accent-strong);
+}
+
+.mission-btn--ghost {
+  color: var(--mission-text);
+  border: 1px solid var(--mission-border-strong);
+  background: rgba(5, 18, 28, 0.48);
+}
+
+.mission-btn--ghost:hover {
+  color: var(--mission-accent);
+  border-color: var(--mission-accent);
+}
+
+.mission-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 700px;
+  margin-top: 48px;
+}
+
+.mission-stat {
+  padding-left: 18px;
+  border-left: 1px solid rgba(99, 245, 229, 0.22);
+}
+
+.mission-stat strong {
+  display: block;
+  color: var(--mission-accent);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.mission-stat span {
+  display: block;
+  margin-top: 8px;
+  color: var(--mission-muted);
+  font-size: 12px;
+}
+
+.mission-hero__visual {
+  position: relative;
+  min-height: 560px;
 }
 
 .hero-visual {
   --visual-rotate-x: 0deg;
   --visual-rotate-y: 0deg;
-  min-height: 460px;
-  position: relative;
+  position: sticky;
+  top: 120px;
+  min-height: 520px;
   display: grid;
   place-items: center;
   perspective: 1100px;
@@ -108,17 +150,14 @@ p.my-intro {
 }
 
 .hero-visual img {
-  width: min(88%, 500px);
+  position: relative;
+  z-index: 2;
+  width: min(88%, 520px);
   height: auto;
   object-fit: contain;
   object-position: center;
-  position: relative;
-  z-index: 2;
-  border-radius: 0;
-  border: 0;
   animation: updown 4.5s ease-in-out infinite;
-  box-shadow: none;
-  filter: saturate(1.05) contrast(1.04);
+  filter: saturate(1.05) contrast(1.04) drop-shadow(0 24px 62px rgba(0, 0, 0, 0.55));
   transform: translateZ(42px);
 }
 
@@ -126,10 +165,10 @@ p.my-intro {
   position: absolute;
   width: 78%;
   aspect-ratio: 1;
-  border: 1px solid rgba(100, 255, 218, 0.32);
+  border: 1px solid rgba(99, 245, 229, 0.32);
   border-radius: 50%;
   transform: rotateX(68deg) rotateZ(18deg);
-  box-shadow: 0 0 34px rgba(100, 255, 218, 0.14);
+  box-shadow: 0 0 34px rgba(99, 245, 229, 0.14);
 }
 
 .orbit-ring-two {
@@ -148,8 +187,8 @@ p.my-intro {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #64ffda;
-  box-shadow: 0 0 18px #64ffda;
+  background: var(--mission-accent);
+  box-shadow: 0 0 18px var(--mission-accent);
 }
 
 .orbit-dot-one {
@@ -164,14 +203,6 @@ p.my-intro {
   background: #7aa2ff;
   box-shadow: 0 0 18px #7aa2ff;
   animation: pulse-dot 2.8s ease-in-out infinite;
-}
-
-.canvas-stars-cointainer {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.75;
 }
 
 @keyframes updown {
@@ -202,46 +233,30 @@ p.my-intro {
   }
 }
 
-@keyframes hero-light-sweep {
-  0%, 45% {
-    transform: translateX(-120%);
+@media (max-width: 991px) {
+  .mission-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  70%, 100% {
-    transform: translateX(120%);
+  .mission-hero h1 {
+    font-size: clamp(42px, 14vw, 64px);
   }
 }
 
-@media (max-width: 768px) {
-  .banner {
-    min-height: 100vh;
-    padding: 130px 10px 80px;
+@media (max-width: 480px) {
+  .mission-stats {
+    grid-template-columns: 1fr;
   }
-
-  .banner h1 {
-    font-size: 46px;
-  }
-
-  .banner p {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  p.my-intro {
-    padding: 18px;
-  }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .banner::after,
   .hero-visual img,
   .orbit-ring,
   .orbit-dot {
     animation: none;
   }
 
-  .motion-grid,
+  .mission-hero,
   .hero-visual {
     transform: none;
   }
