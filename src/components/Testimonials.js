@@ -1,33 +1,31 @@
 import { Container } from "react-bootstrap";
 import 'animate.css';
 import '../css/Testimonials.css';
-import { isMobile } from 'react-device-detect';
 import { PeopleCard } from "./Testimony-comps/PeopleCard";
 import { useEffect, useState } from 'react';
 import { testimonials } from './Service';
+import { MissionSection } from "./MissionSection";
 
 export const Testimonials = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
-    
+
     useEffect(() => {
         const handleScroll = () => {
             const element = document.getElementById('testimonials');
             if (element) {
                 const rect = element.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight * 0.8;
-                setIsVisible(isVisible);
+                setIsVisible(rect.top < window.innerHeight * 0.8);
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Initial check
-        
-        // Auto-rotate testimonials
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+
         const interval = setInterval(() => {
             setActiveIndex(prev => (prev + 1) % testimonials.length);
         }, 8000);
-        
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
             clearInterval(interval);
@@ -35,40 +33,23 @@ export const Testimonials = () => {
     }, []);
 
     return (
-        <section 
-            id="testimonials" 
+        <MissionSection
+            id="testimonials"
+            number="04"
+            label="Signals"
+            eyebrow="Signals"
             className={`testimonials ${isVisible ? 'visible' : ''}`}
         >
-            <div className="testimonials-overlay"></div>
-            <Container>
-                <div className={`testimonial-header ${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
-                    <p className="section-subtitle">What Others Say</p>
-                    <h2 className="section-title">
-                        Testimonials
-                        <span className="underline"></span>
-                    </h2>
-                    {isMobile && (
-                        <p className="scroll-hint">
-                            <i className="fas fa-arrow-right"></i> Swipe to see more
-                        </p>
-                    )}
-                </div>
-                
-                <PeopleCard activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-                
-                {!isMobile && (
-                    <div className="testimonial-dots">
-                        {testimonials.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`dot ${activeIndex === index ? 'active' : ''}`}
-                                onClick={() => setActiveIndex(index)}
-                                aria-label={`View testimonial ${index + 1}`}
-                            />
-                        ))}
+            <Container fluid className="signals-container">
+                <div className="signals-layout">
+                    <div className={`testimonial-header ${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
+                        <h2>Signals From The Crew</h2>
+                        <p>Kind words from teammates and collaborators across missions.</p>
+                        <a className="mission-btn mission-btn--ghost" href="#connect">Read More Signals</a>
                     </div>
-                )}
+                    <PeopleCard activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                </div>
             </Container>
-        </section>
+        </MissionSection>
     );
 };
