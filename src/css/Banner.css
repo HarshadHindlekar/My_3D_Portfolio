@@ -138,15 +138,25 @@
 .hero-visual {
   --visual-rotate-x: 0deg;
   --visual-rotate-y: 0deg;
+  --hero-scroll-x: 0px;
+  --hero-scroll-y: 0px;
+  --hero-scroll-rotate: 0deg;
+  --hero-scroll-opacity: 1;
   position: sticky;
   top: 120px;
   min-height: 520px;
   display: grid;
   place-items: center;
   perspective: 1100px;
-  transform: rotateX(var(--visual-rotate-x)) rotateY(var(--visual-rotate-y));
+  opacity: var(--hero-scroll-opacity);
+  transform:
+    translate3d(var(--hero-scroll-x), var(--hero-scroll-y), 0)
+    rotate(var(--hero-scroll-rotate))
+    rotateX(var(--visual-rotate-x))
+    rotateY(var(--visual-rotate-y));
   transform-style: preserve-3d;
-  transition: transform 180ms ease-out;
+  transition: transform 180ms ease-out, opacity 180ms linear;
+  will-change: transform, opacity;
 }
 
 .hero-visual img {
@@ -266,6 +276,7 @@
 
   .mission-hero,
   .hero-visual {
+    opacity: 1;
     transform: none;
   }
 }

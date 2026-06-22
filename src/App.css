@@ -398,9 +398,22 @@ img {
 }
 
 .mission-visual {
+  --mission-visual-x: 0px;
+  --mission-visual-y: 0px;
+  --mission-visual-rotate: 0deg;
+  --mission-visual-scale: 1;
+  --mission-visual-opacity: 1;
   position: relative;
   display: block;
+  opacity: var(--mission-visual-opacity);
   pointer-events: none;
+  transform:
+    translate3d(var(--mission-visual-x), var(--mission-visual-y), 0)
+    rotate(var(--mission-visual-rotate))
+    scale(var(--mission-visual-scale));
+  transform-origin: 50% 58%;
+  transition: opacity 180ms linear;
+  will-change: transform, opacity;
 }
 
 .mission-visual img {
@@ -410,4 +423,11 @@ img {
   max-width: 100%;
   object-fit: cover;
   filter: drop-shadow(0 28px 58px rgba(0, 0, 0, 0.48));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-visual {
+    opacity: 1;
+    transform: none;
+  }
 }

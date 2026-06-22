@@ -53,6 +53,7 @@ export const Banner = () => {
     const banner = bannerRef.current;
     const visual = visualRef.current;
     if (!banner || !visual) return undefined;
+    let frame = 0;
 
     const handlePointerMove = (event) => {
       const rect = banner.getBoundingClientRect();
@@ -72,12 +73,37 @@ export const Banner = () => {
       visual.style.setProperty('--visual-rotate-y', '0deg');
     };
 
+    const updateScrollMotion = () => {
+      frame = 0;
+      const rect = banner.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const progress = Math.min(1, Math.max(0, (viewportHeight - rect.top) / (viewportHeight + rect.height)));
+      const travel = progress - 0.2;
+
+      visual.style.setProperty('--hero-scroll-x', `${travel * -58}px`);
+      visual.style.setProperty('--hero-scroll-y', `${progress * 68}px`);
+      visual.style.setProperty('--hero-scroll-rotate', `${travel * -4}deg`);
+      visual.style.setProperty('--hero-scroll-opacity', `${Math.max(0.42, 1 - progress * 0.56)}`);
+    };
+
+    const requestScrollMotion = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(updateScrollMotion);
+      }
+    };
+
     banner.addEventListener('pointermove', handlePointerMove);
     banner.addEventListener('pointerleave', resetPointer);
+    window.addEventListener('scroll', requestScrollMotion, { passive: true });
+    window.addEventListener('resize', requestScrollMotion);
+    updateScrollMotion();
 
     return () => {
+      if (frame) window.cancelAnimationFrame(frame);
       banner.removeEventListener('pointermove', handlePointerMove);
       banner.removeEventListener('pointerleave', resetPointer);
+      window.removeEventListener('scroll', requestScrollMotion);
+      window.removeEventListener('resize', requestScrollMotion);
     };
   }, []);
 
