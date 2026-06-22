@@ -1,80 +1,87 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import '../css/Projects.css'
 import { projects, projects1 } from "./Service";
-import { useState, useEffect } from 'react';
+import { useMemo, useState, useEffect } from 'react';
+import { MissionSection } from "./MissionSection";
+
+const priorityTitles = [
+  'APS Security Dashboard',
+  'INCOIS Marine Fisheries Platform',
+  'Portfolio Management Dashboard',
+  'WAR JETS - P2P Multiplayer',
+  'Nike Clone Vue',
+  'Windows 11 Web Experience',
+];
 
 export const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const allProjects = [...projects1, ...projects];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const allProjects = useMemo(() => {
+    const merged = [...projects1, ...projects];
+    return merged.sort((a, b) => {
+      const aIndex = priorityTitles.indexOf(a.title);
+      const bIndex = priorityTitles.indexOf(b.title);
+      return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+    });
+  }, []);
 
-  const renderProjectSlider = (projectList) => {
-    return (
-      <div className="project-slider" aria-label="Auto scrolling project carousel">
-        <div className="project-slider-track">
-          {[0, 1].map((groupIndex) => (
-            <div
-              className="project-slider-group"
-              aria-hidden={groupIndex === 1}
-              key={`project-slider-group-${groupIndex}`}
-            >
-              {projectList.map((project, index) => (
-                <ProjectCard
-                  key={`${project.title}-${groupIndex}-${index}`}
-                  {...project}
-                  index={index}
-                  isVisible={isVisible}
-                  variant="slider"
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
+  const visibleProjects = [...allProjects, ...allProjects].slice(activeIndex, activeIndex + 3);
+
+  const goPrev = () => {
+    setActiveIndex((prev) => (prev - 1 + allProjects.length) % allProjects.length);
+  };
+
+  const goNext = () => {
+    setActiveIndex((prev) => (prev + 1) % allProjects.length);
   };
 
   useEffect(() => {
-    // Add scroll animation trigger
     const handleScroll = () => {
       const element = document.getElementById('projects');
       if (element) {
         const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.8;
-        setIsVisible(isVisible);
+        setIsVisible(rect.top < window.innerHeight * 0.8);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <section className={`project ${isVisible ? 'visible' : ''}`} id="projects">
-      <div className="project-orbit-line" aria-hidden="true"></div>
-      <Container>
-        <Row>
-          <Col size={12}>
-            <div className={`project-header ${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
-              <h2 className={isVisible ? 'tracking-in-contract-bck-top' : ''}>
-                My <span className="highlight">Projects</span>
-              </h2>
-              <p className="section-subtitle">Here are some of my featured projects. Click to explore more details!</p>
-              <div id="slideInUp" className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
-                {renderProjectSlider(allProjects)}
-              </div>
+    <MissionSection id="projects" number="03" label="Launchpad" eyebrow="Launchpad" className={`project ${isVisible ? 'visible' : ''}`}>
+      <Container fluid className="project-mission-container">
+        <div className="project-mission-layout">
+          <div className={`project-header ${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
+            <h2>Projects That Ship Impact</h2>
+            <p>From dashboards to immersive browser experiences, here are missions I have launched.</p>
+            <a className="mission-btn mission-btn--ghost" href="#connect">Open Comm Channel</a>
+          </div>
+          <div className="project-carousel" aria-label="Featured projects">
+            <button className="project-nav project-nav--prev" onClick={goPrev} aria-label="Previous project">{'<'}</button>
+            <div className="project-carousel__track">
+              {visibleProjects.map((project, index) => (
+                <ProjectCard
+                  key={`${project.title}-${activeIndex}-${index}`}
+                  {...project}
+                  index={index}
+                  isVisible={isVisible}
+                  variant="mission"
+                />
+              ))}
             </div>
-          </Col>
-        </Row>
+            <button className="project-nav project-nav--next" onClick={goNext} aria-label="Next project">{'>'}</button>
+            <div className="project-dots" aria-hidden="true">
+              {allProjects.slice(0, Math.min(allProjects.length, 6)).map((project, index) => (
+                <span key={project.title} className={index === activeIndex % 6 ? 'is-active' : ''} />
+              ))}
+            </div>
+          </div>
+        </div>
       </Container>
-      <div className="background-shapes">
-        <div className="shape-1"></div>
-        <div className="shape-2"></div>
-      </div>
-      <img className="background-image-right" src={colorSharp2} alt='background' loading="lazy" />
-    </section>
+    </MissionSection>
   )
 }

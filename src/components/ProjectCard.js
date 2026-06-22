@@ -40,10 +40,17 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
     cardRef.current.style.removeProperty('--card-glow-y');
   };
 
-  const Wrapper = variant === 'slider' ? 'div' : Col;
-  const wrapperProps = variant === 'slider'
-    ? { className: 'project-slide' }
-    : { xs: 12, sm: 6, lg: 4, className: 'mb-4' };
+  const Wrapper = variant === 'grid' ? Col : 'div';
+  const wrapperProps = variant === 'grid'
+    ? { xs: 12, sm: 6, lg: 4, className: 'mb-4' }
+    : { className: variant === 'mission' ? 'project-mission-slide' : 'project-slide' };
+  const contextLabel = title.includes('Dashboard')
+    ? 'Analytics'
+    : title.includes('Platform')
+      ? 'Platform'
+      : title.includes('WAR JETS')
+        ? 'Multiplayer'
+        : 'Web Experience';
 
   return (
     <Wrapper {...wrapperProps}>
@@ -82,6 +89,7 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
             <div className="project-badge">
               <i className="fas fa-external-link-alt"></i>
             </div>
+            <span className="project-context">{contextLabel}</span>
             <h3 className="project-title">{title}</h3>
             <p className="project-description">{description}</p>
             <div className="project-footer">
