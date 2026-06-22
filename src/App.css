@@ -363,3 +363,15 @@ p.danger, p.success {
     transition-duration: 0.001ms !important;
   }
 }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--mission-accent);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+}
