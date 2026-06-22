@@ -30,9 +30,9 @@
 }
 
 .signals-section-visual {
-  width: min(100%, 360px);
-  aspect-ratio: 4 / 3;
-  margin-bottom: 28px;
+  width: min(100%, 380px);
+  margin: 0 0 -10px -20px;
+  opacity: 0.88;
 }
 
 .signals-panel {

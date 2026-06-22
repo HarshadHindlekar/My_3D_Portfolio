@@ -43,16 +43,20 @@
 
 .tech-categories-container {
   position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  padding-top: 250px;
 }
 
 .systems-visual {
-  width: min(100%, 660px);
-  aspect-ratio: 5 / 3;
-  margin: 0 0 24px auto;
-  opacity: 0.9;
+  position: absolute;
+  z-index: 0;
+  top: -86px;
+  right: -46px;
+  width: min(82vw, 820px);
+  opacity: 0.74;
 }
 
 .tech-category {
@@ -133,7 +137,16 @@
   }
 
   .systems-visual {
-    margin-inline: 0;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(100%, 680px);
+    margin: 0 auto -44px;
+    opacity: 0.84;
+  }
+
+  .tech-categories-container {
+    padding-top: 0;
   }
 }
 

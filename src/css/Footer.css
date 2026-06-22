@@ -33,9 +33,9 @@
 }
 
 .footer-section-visual {
-  width: min(100%, 820px);
-  aspect-ratio: 16 / 6;
-  opacity: 0.58;
+  width: min(100%, 720px);
+  margin-bottom: -74px;
+  opacity: 0.48;
 }
 
 .footer-main {
