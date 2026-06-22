@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo2.svg';
-import { SocialIcons, TabIcons } from "./Service";
+import { SocialIcons } from "./Service";
+import { missionChapters } from "./MissionData";
 import { BrowserRouter as Router } from "react-router-dom";
 import { BoxArrowUpRight } from "react-bootstrap-icons";
 import '../css/Navbar.css'
@@ -28,8 +29,8 @@ export const NavBar = () => {
   }, [])
 
   useEffect(() => {
-    const sections = TabIcons
-      .map((tab) => document.getElementById(tab.key))
+    const sections = missionChapters
+      .map((chapter) => document.getElementById(chapter.id))
       .filter(Boolean);
 
     const observer = new IntersectionObserver(
@@ -70,7 +71,16 @@ export const NavBar = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="portfolio-navbar-nav" className="nav-shell">
             <Nav className="main-nav">
-              {TabIcons.map((tab) => <Nav.Link href={'#' + tab.key} className={activeLink === tab.key ? 'active navbar-link' : 'navbar-link'} key={tab.key} onClick={() => onUpdateActiveLink(tab.key)}>{tab.value}</Nav.Link>)}
+              {missionChapters.map((chapter) => (
+                <Nav.Link
+                  href={'#' + chapter.id}
+                  className={activeLink === chapter.id ? 'active navbar-link' : 'navbar-link'}
+                  key={chapter.id}
+                  onClick={() => onUpdateActiveLink(chapter.id)}
+                >
+                  {chapter.navLabel}
+                </Nav.Link>
+              ))}
             </Nav>
             
             <span className="navbar-text">

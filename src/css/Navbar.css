@@ -4,13 +4,15 @@
   position: fixed;
   top: 0;
   z-index: 9999;
-  background: linear-gradient(180deg, rgba(3, 8, 14, 0.84), rgba(3, 8, 14, 0));
+  background: linear-gradient(180deg, rgba(2, 7, 13, 0.82), rgba(2, 7, 13, 0.2));
+  backdrop-filter: blur(14px);
   transition: padding 0.28s ease, background 0.28s ease, backdrop-filter 0.28s ease;
 }
 
 .portfolio-navbar.scrolled {
   padding: 12px 0;
-  background: rgba(3, 8, 14, 0.82);
+  background: rgba(2, 7, 13, 0.86);
+  border-bottom: 1px solid rgba(99, 245, 229, 0.18);
   backdrop-filter: blur(18px);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
@@ -119,8 +121,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  color: rgba(232, 238, 255, 0.7) !important;
-  font-size: 17px;
+  color: var(--mission-muted) !important;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0;
   white-space: nowrap;
@@ -155,7 +157,7 @@
 }
 
 .portfolio-navbar .navbar-link:hover {
-  color: #ffffff !important;
+  color: var(--mission-accent) !important;
   transform: translateY(-2px);
 }
 
@@ -166,11 +168,13 @@
 }
 
 .portfolio-navbar .navbar-link.active {
-  color: #ffffff !important;
-  text-shadow: 0 0 18px rgba(100, 255, 218, 0.24);
+  color: var(--mission-accent) !important;
+  text-shadow: 0 0 18px rgba(99, 245, 229, 0.24);
 }
 
 .portfolio-navbar .navbar-link.active::after {
+  background: var(--mission-accent);
+  box-shadow: 0 0 12px rgba(99, 245, 229, 0.7);
   opacity: 1;
   transform: scaleX(1);
 }
@@ -249,10 +253,10 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.84);
-  border-radius: 18px;
-  color: #ffffff;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(100, 255, 218, 0.05));
+  border: 1px solid var(--mission-border-strong);
+  border-radius: 8px;
+  color: var(--mission-text);
+  background: rgba(5, 18, 28, 0.6);
   font-size: 14px;
   font-weight: 800;
   overflow: hidden;
@@ -270,14 +274,14 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #ffffff, #cffff6);
+  background: var(--mission-accent);
   transform: translateX(-102%);
   transition: transform 0.24s ease;
 }
 
 .resume-button:hover {
-  color: #07131f;
-  border-color: #ffffff;
+  color: var(--mission-bg);
+  border-color: var(--mission-accent);
   transform: translateY(-3px);
   box-shadow: 0 18px 36px rgba(255, 255, 255, 0.13);
 }
