@@ -1,4 +1,5 @@
 import logo from "../assets/img/logo2.svg";
+import footerPhoto from "../assets/img/me-after.svg";
 import { SocialIcons } from "./Service";
 import '../css/Footer.css';
 import { OpenPDF } from "./Banner-Comps/OpenPdf";
@@ -27,22 +28,33 @@ export const Footer = () => {
   return (
     <footer className={`footer ${isVisible ? 'visible' : ''}`}>
       <div className="footer-content">
-        <div className="footer-logo">
-          <img
-            src={logo}
-            alt="Logo"
-            aria-label="Logo"
-            loading="lazy"
-            className="footer-logo-img"
-          />
-          <h3>Let's Build Something Amazing</h3>
-          <button
-            onClick={OpenPDF}
-            className="resume-footer"
-            aria-label="View Resume"
-          >
-            View Resume <ArrowRightCircle size={20} className="resume-svg-footer" />
-          </button>
+        <div className="footer-main">
+          <div className="footer-photo-wrap">
+            <img
+              src={footerPhoto}
+              alt="Harshad Hindlekar"
+              loading="lazy"
+              className="footer-photo"
+            />
+          </div>
+
+          <div className="footer-logo">
+            <img
+              src={logo}
+              alt="Logo"
+              aria-label="Logo"
+              loading="lazy"
+              className="footer-logo-img"
+            />
+            <h3>Let's Build Something Amazing</h3>
+            <button
+              onClick={OpenPDF}
+              className="resume-footer"
+              aria-label="View Resume"
+            >
+              View Resume <ArrowRightCircle size={20} className="resume-svg-footer" />
+            </button>
+          </div>
         </div>
 
         <div className="footer-social social-icon">
