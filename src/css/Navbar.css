@@ -373,35 +373,45 @@
 
 @media (max-width: 991px) {
   .portfolio-navbar {
-    padding: 14px 0;
+    padding: 10px 0;
   }
 
   .portfolio-navbar .nav-container {
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 58px 1fr;
+    gap: 12px;
+    padding-inline: 14px;
   }
 
   .brand-mark,
   .portfolio-navbar.scrolled .brand-mark {
-    width: 72px;
-    height: 72px;
-    border-radius: 18px;
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
   }
 
   .brand-mark img,
   .portfolio-navbar.scrolled .brand-mark img {
-    width: 54px;
-    height: 54px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .portfolio-navbar .navbar-toggler {
+    padding: 9px 11px;
+    border-radius: 12px;
   }
 
   .portfolio-navbar .nav-shell {
     grid-column: 1 / -1;
-    margin-top: 14px;
+    margin-top: 10px;
     min-height: auto;
-    padding: 18px;
+    max-height: calc(100vh - 96px);
+    padding: 14px 16px;
     flex-direction: column;
     align-items: stretch;
-    border-radius: 18px;
+    gap: 10px;
+    border-radius: 16px;
+    overflow-y: auto;
   }
 
   .portfolio-navbar .nav-shell.collapse:not(.show) {
@@ -417,24 +427,46 @@
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+    gap: 2px;
   }
 
   .portfolio-navbar .navbar-link {
+    min-height: 40px;
+    padding: 0 12px !important;
     justify-content: flex-start;
+    font-size: 14px;
   }
 
   .navbar-text {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   .social-icon {
     justify-content: center;
   }
 
+  .social-icon a {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
   .resume-button {
     width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .portfolio-navbar .nav-container {
+    padding-inline: 12px;
+  }
+
+  .portfolio-navbar .nav-shell {
+    max-height: calc(100vh - 88px);
   }
 }
 

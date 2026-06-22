@@ -327,7 +327,8 @@ p.danger, p.success {
 
   .mission-section {
     min-height: auto;
-    padding: 96px 20px;
+    padding: 96px 20px 64px;
+    scroll-margin-top: 108px;
   }
 
   .mission-rail {
@@ -350,6 +351,18 @@ p.danger, p.success {
     height: 100%;
     background: var(--mission-accent);
     box-shadow: 0 0 16px rgba(99, 245, 229, 0.72);
+  }
+}
+
+@media (max-width: 420px) {
+  .mission-section {
+    padding: 88px 18px 56px;
+    scroll-margin-top: 98px;
+  }
+
+  .mission-section__eyebrow {
+    margin-bottom: 12px;
+    font-size: 12px;
   }
 }
 

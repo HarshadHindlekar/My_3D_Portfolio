@@ -10,7 +10,15 @@ export const MissionLayout = ({ children }) => {
   useEffect(() => {
     const getHeaderOffset = () => {
       const nav = document.querySelector('.portfolio-navbar');
-      return (nav?.getBoundingClientRect().height || 0) + 24;
+      if (!nav) return 0;
+
+      if (window.matchMedia('(max-width: 991px)').matches) {
+        const brand = nav.querySelector('.brand-mark');
+        const brandHeight = brand?.getBoundingClientRect().height || 64;
+        return brandHeight + 44;
+      }
+
+      return nav.getBoundingClientRect().height + 24;
     };
 
     const scrollToHash = (hash, behavior = 'smooth') => {
@@ -41,6 +49,12 @@ export const MissionLayout = ({ children }) => {
 
       event.preventDefault();
       window.history.pushState(null, '', hash);
+
+      if (window.matchMedia('(max-width: 991px)').matches) {
+        window.setTimeout(() => scrollToHash(hash), 260);
+        return;
+      }
+
       scrollToHash(hash);
     };
 
