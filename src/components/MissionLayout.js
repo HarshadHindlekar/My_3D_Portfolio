@@ -8,6 +8,67 @@ export const MissionLayout = ({ children }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    const getHeaderOffset = () => {
+      const nav = document.querySelector('.portfolio-navbar');
+      return (nav?.getBoundingClientRect().height || 0) + 24;
+    };
+
+    const scrollToHash = (hash, behavior = 'smooth') => {
+      const id = hash.replace('#', '');
+      if (!id) return false;
+
+      const target = document.getElementById(id);
+      if (!target) return false;
+
+      const top = target.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior,
+      });
+      setActiveChapter(id);
+      return true;
+    };
+
+    const handleAnchorClick = (event) => {
+      const anchor = event.target.closest('a[href^="#"]');
+      if (!anchor) return;
+
+      const hash = anchor.getAttribute('href');
+      if (!hash || hash === '#') return;
+
+      const targetExists = document.getElementById(hash.replace('#', ''));
+      if (!targetExists) return;
+
+      event.preventDefault();
+      window.history.pushState(null, '', hash);
+      scrollToHash(hash);
+    };
+
+    const scheduleHashScroll = (hash, behavior = 'smooth') => {
+      [0, 180, 520, 1000].forEach((delay) => {
+        window.setTimeout(() => scrollToHash(hash, behavior), delay);
+      });
+    };
+
+    const handleHashChange = () => {
+      scheduleHashScroll(window.location.hash);
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    window.addEventListener('hashchange', handleHashChange);
+
+    if (window.location.hash) {
+      window.history.scrollRestoration = 'manual';
+      scheduleHashScroll(window.location.hash, 'auto');
+    }
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
+  useEffect(() => {
     const sections = missionChapters
       .map((chapter) => document.getElementById(chapter.id))
       .filter(Boolean);

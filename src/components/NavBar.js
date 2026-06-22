@@ -29,6 +29,20 @@ export const NavBar = () => {
   }, [])
 
   useEffect(() => {
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (missionChapters.some((chapter) => chapter.id === hash)) {
+        setActiveLink(hash);
+      }
+    };
+
+    syncFromHash();
+    window.addEventListener('hashchange', syncFromHash);
+
+    return () => window.removeEventListener('hashchange', syncFromHash);
+  }, []);
+
+  useEffect(() => {
     const sections = missionChapters
       .map((chapter) => document.getElementById(chapter.id))
       .filter(Boolean);
