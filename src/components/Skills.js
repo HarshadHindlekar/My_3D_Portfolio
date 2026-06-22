@@ -1,35 +1,29 @@
-import colorSharp from "../assets/img/color-sharp.png"
 import Tech from "./Skills-comps/Tech";
 import '../css/Skills.css';
 import TrackVisibility from "react-on-screen";
+import { MissionSection } from "./MissionSection";
+import { MissionVisual } from "./MissionVisual";
 
 export const Skills = () => {
   return (
-    <section className="skill" id="skills">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <TrackVisibility partialVisibility>
-              {({ isVisible }) =>
-                <div className="skill-bx wow zoomIn">
-                  <h2 className={isVisible ? 'tracking-in-contract-bck' : ''}>
-                    Technical Proficiencies
-                    <div className="gradient-underline"></div>
-                  </h2>
-                  <p className="skills-intro">
-                    I've honed my skills across various technologies to build robust and scalable applications. 
-                    Explore the interactive 3D tech stack below to see the tools and technologies I work with.
-                  </p>
-                  
-                  <div className="tech-showcase">
-                    <Tech />
-                  </div>
-                </div>}
-            </TrackVisibility>
-          </div>
-        </div>
-      </div>
-      <img className="background-image-left" src={colorSharp} alt="colorSharp" />
-    </section>
+    <MissionSection id="skills" number="02" label="Systems" eyebrow="Systems" className="skill">
+      <TrackVisibility partialVisibility>
+        {({ isVisible }) =>
+          <div className="mission-chapter-grid mission-chapter-grid--systems">
+            <div className={`systems-copy ${isVisible ? 'is-visible' : ''}`}>
+              <h2>Engineering the Core Systems</h2>
+              <p>
+                The tools and technologies that power my mission control: frontend interfaces,
+                backend services, cloud deployment, and data systems.
+              </p>
+              <a className="mission-btn mission-btn--ghost" href="#projects">View Launchpad</a>
+            </div>
+            <div className={`systems-map ${isVisible ? 'is-visible' : ''}`}>
+              <MissionVisual variant="systems" className="systems-visual" alt="Astronaut operating a mission-control engineering console" />
+              <Tech />
+            </div>
+          </div>}
+      </TrackVisibility>
+    </MissionSection>
   )
 }

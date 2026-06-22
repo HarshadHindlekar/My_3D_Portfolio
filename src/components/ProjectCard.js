@@ -1,8 +1,8 @@
 import { Col } from "react-bootstrap";
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible, variant = 'grid' }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -21,17 +21,44 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
     setIsImageLoaded(true);
   };
 
-  const Wrapper = variant === 'slider' ? 'div' : Col;
-  const wrapperProps = variant === 'slider'
-    ? { className: 'project-slide' }
-    : { xs: 12, sm: 6, lg: 4, className: 'mb-4' };
+  const handlePointerMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    event.currentTarget.style.setProperty('--card-rotate-x', `${y * -8}deg`);
+    event.currentTarget.style.setProperty('--card-rotate-y', `${x * 10}deg`);
+    event.currentTarget.style.setProperty('--card-glow-x', `${(x + 0.5) * 100}%`);
+    event.currentTarget.style.setProperty('--card-glow-y', `${(y + 0.5) * 100}%`);
+  };
+
+  const handlePointerLeave = () => {
+    if (!cardRef.current) return;
+    cardRef.current.style.removeProperty('--card-rotate-x');
+    cardRef.current.style.removeProperty('--card-rotate-y');
+    cardRef.current.style.removeProperty('--card-glow-x');
+    cardRef.current.style.removeProperty('--card-glow-y');
+  };
+
+  const Wrapper = variant === 'grid' ? Col : 'div';
+  const wrapperProps = variant === 'grid'
+    ? { xs: 12, sm: 6, lg: 4, className: 'mb-4' }
+    : { className: variant === 'mission' ? 'project-mission-slide' : 'project-slide' };
+  const contextLabel = title.includes('Dashboard')
+    ? 'Analytics'
+    : title.includes('Platform')
+      ? 'Platform'
+      : title.includes('WAR JETS')
+        ? 'Multiplayer'
+        : 'Web Experience';
 
   return (
     <Wrapper {...wrapperProps}>
       <div 
-        className={`project-card ${isInView ? 'visible' : ''} ${isHovered ? 'hovered' : ''}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        ref={cardRef}
+        className={`project-card ${isInView ? 'visible' : ''}`}
+        onMouseMove={handlePointerMove}
+        onMouseLeave={handlePointerLeave}
       >
         <a 
           href={href} 
@@ -62,6 +89,7 @@ export const ProjectCard = ({ title, description, imgUrl, href, index, isVisible
             <div className="project-badge">
               <i className="fas fa-external-link-alt"></i>
             </div>
+            <span className="project-context">{contextLabel}</span>
             <h3 className="project-title">{title}</h3>
             <p className="project-description">{description}</p>
             <div className="project-footer">

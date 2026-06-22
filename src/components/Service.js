@@ -75,21 +75,21 @@ export const TabIcons = [
 
 export const projects1 = [
   {
-    title: "🪟 Windows 11",
-    description: "Using Advance React framework and Tailwind css created a clone web app of Windows 11 🪟",
+    title: "Windows 11 Web Experience",
+    description: "A polished Windows 11-inspired web app built with React and Tailwind CSS.",
     imgUrl: windows11,
     href: 'https://harshadhindlekar.github.io/Windows-11/',
   },
   {
     title: "On-Scroll Text Animations",
-    description: "Some experiments with on-scroll 📜 typography 🌀 effects using SVG.🎞️",
+    description: "Experimental scroll-driven typography and SVG reveal effects.",
     imgUrl: 'https://tympanus.net/codrops/wp-content/uploads/2024/01/clippathtext.jpg',
     href: 'https://harshadhindlekar.github.io/On-Scroll-Text-Animations/',
   },
   
   {
     title: "Harshad's Pokemon World",
-    description: "In pokemon their is a poketab which helps trainers to identify trainers that tab i tried to build.",
+    description: "A playful Pokemon-inspired Poketab interface for browsing trainer and creature details.",
     imgUrl: pokemon,
     href: 'https://harshadhindlekar.github.io/Harshad-s-Pokemon-world/',
   },
@@ -127,20 +127,20 @@ export const projects1 = [
 
 export const projects = [
   {
-    title: "Rotating solar System",
-    description: "Build a simulation of the Earth 🌎, Moon 🌛, and some planets 🌕🌑🌚 orbiting around the Sun 🌞 using HTML and CSS.",
+    title: "Rotating Solar System",
+    description: "A CSS-powered orbital simulation of planets moving around the sun.",
     imgUrl: solarSystem,
     href: 'https://harshadhindlekar.github.io/Solar-System/',
   },
   {
-    title: "Grid Item Hower Effect",
-    description: "Some hover effects based on the grid 🥅 design Animation 🎞️",
+    title: "Grid Item Hover Effect",
+    description: "A grid interaction experiment with animated hover states and media reveals.",
     imgUrl: cssGridAnimation,
     href: 'https://harshadhindlekar.github.io/Grid-Item-Hover-Effect/',
   },
   {
     title: "Sundown Studio Clone",
-    description: "Builded a clone of a Sundown Studio to demonstrate my skills in Animated Web Applications",
+    description: "A Sundown Studio-inspired clone built to demonstrate animated web application craft.",
     imgUrl: sundownStudio,
     href: 'https://harshadhindlekar.github.io/Sundown-Studio/',
   },

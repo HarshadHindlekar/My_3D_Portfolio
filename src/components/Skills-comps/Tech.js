@@ -1,7 +1,5 @@
 import React from "react";
-import BallCanvas from "./Ball";
 import { Technologies } from "../Service";
-import { isMobile } from 'react-device-detect';
 
 const categories = {
   'Frontend': ['React JS', 'Next.js', 'Vue.js', 'Nuxt 3', 'shadcn', 'Bootstrap', 'MUI'],
@@ -32,19 +30,19 @@ const Tech = () => {
 
     return (
         <div className="tech-categories-container">
-            {Object.entries(techByCategory).map(([category, techs]) => (
-                <div key={category} className="tech-category">
+            {Object.entries(techByCategory).map(([category, techs], categoryIndex) => (
+                <div key={category} className="tech-category" style={{ '--category-index': categoryIndex }}>
                     <h3>{category}</h3>
                     <div className='balls-canvas-cointainer'>
-                        {techs.map((tech) => (
-                            <div className='ball-canvas-size' key={tech.name}>
-                                {!isMobile && (category === 'Frontend' || category === 'Tools / Cloud') ? (
-                                    <BallCanvas icon={tech.icon} />
-                                ) : (
-                                    <div className="tech-mobile">
-                                        <img src={tech.icon} className="tech-icon" alt={tech.name} />
-                                    </div>
-                                )}
+                        {techs.map((tech, techIndex) => (
+                            <div
+                                className='ball-canvas-size'
+                                key={tech.name}
+                                style={{ '--tech-index': techIndex }}
+                            >
+                                <div className="tech-mobile">
+                                    <img src={tech.icon} className="tech-icon" alt={tech.name} />
+                                </div>
                                 <span>{tech.name}</span>
                             </div>
                         ))}

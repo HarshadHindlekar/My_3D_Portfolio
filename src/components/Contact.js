@@ -6,6 +6,7 @@ import EarthCanvas from "./Contact-Comps/Earth";
 import '../css/Contact.css';
 import { handleSubmit } from "./Contact-Comps/Handler";
 import { isMobile } from 'react-device-detect';
+import { MissionSection } from "./MissionSection";
 
 export const Contact = () => {
   const [initialValidationStatus, setInitialValidationStatus] = useState(
@@ -27,19 +28,34 @@ export const Contact = () => {
   };
 
   return (
-    <section className="contact" id="connect">
+    <MissionSection id="connect" number="05" label="Contact" eyebrow="Contact" className="contact">
       <Container>
         <Row className="align-items-center">
           {!isMobile &&<Col size={12} md={6}>
-            <TrackVisibility className="earth-container">
+            <div className="earth-container">
+              <div className="contact-orbit-shell" aria-hidden="true">
+                <span></span>
+                <span></span>
+              </div>
               <EarthCanvas />
-            </TrackVisibility>
+            </div>
           </Col>}
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2 className={isVisible ? "text-focus-in" : ""}>Get In Touch</h2>
+                <div className={`contact-form-panel ${isVisible ? "animate__animated animate__fadeIn" : ""}`}>
+                  <div className="contact-mission-copy">
+                    <h2 className={isVisible ? "text-focus-in" : ""}>Let's Build What's Next. Together.</h2>
+                    <p>Ready to collaborate or launch your next idea? Let's establish contact.</p>
+                    <div className="mission-status-card">
+                      <strong>Status: Connected</strong>
+                      <span>Thanks for following the mission. Let's create impact together.</span>
+                    </div>
+                    <div className="contact-methods">
+                      <a href="mailto:harshadhindlekar24@gmail.com">harshadhindlekar24@gmail.com</a>
+                      <span>India</span>
+                    </div>
+                  </div>
                   <form className="form-cointainer">
                     <Row>
                       <Col size={12} sm={6} className="px-1">
@@ -69,6 +85,6 @@ export const Contact = () => {
           </Col>
         </Row>
       </Container>
-    </section>
+    </MissionSection>
   )
 }
