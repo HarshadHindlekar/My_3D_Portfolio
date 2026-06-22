@@ -60,7 +60,7 @@ export const Projects = () => {
             <MissionVisual variant="projects" className="project-section-visual" alt="Astronaut launching glowing project modules in orbit" />
             <h2>Projects That Ship Impact</h2>
             <p>From dashboards to immersive browser experiences, here are missions I have launched.</p>
-            <a className="mission-btn mission-btn--ghost" href="#connect">Open Comm Channel</a>
+            <a className="mission-btn mission-btn--ghost" href="#testimonials">Open Comm Channel</a>
           </div>
           <div className="project-carousel" aria-label="Featured projects">
             <button className="project-nav project-nav--prev" onClick={goPrev} aria-label="Previous project">{'<'}</button>
