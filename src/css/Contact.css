@@ -9,15 +9,26 @@
 
 .earth-container {
   position: relative;
-  min-height: 560px;
+  width: min(100%, 720px);
+  height: clamp(560px, 62vh, 720px);
+  margin-inline: auto;
+}
+
+.earth-canvas {
+  position: relative !important;
+  z-index: 1;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .contact-orbit-shell {
   position: absolute;
   inset: 12%;
+  z-index: 0;
   border: 1px dashed rgba(99, 245, 229, 0.22);
   border-radius: 50%;
   transform: rotate(-20deg);
+  pointer-events: none;
 }
 
 .contact-form-panel {

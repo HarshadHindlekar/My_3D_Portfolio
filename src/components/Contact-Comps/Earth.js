@@ -15,7 +15,7 @@ const Earth = () => {
 
   return (
     <group ref={groupRef}>
-      <primitive object={earth.scene} scale={2.65} position-y={-0.25} rotation-y={0} />
+      <primitive object={earth.scene} scale={3.45} position-y={-0.15} rotation-y={0} />
     </group>
   );
 };
@@ -23,6 +23,7 @@ const Earth = () => {
 const EarthCanvas = () => {
   return (
     <Canvas
+      className="earth-canvas"
       shadows
       frameloop='always'
       dpr={[1, 2]}
@@ -31,7 +32,7 @@ const EarthCanvas = () => {
         fov: 45,
         near: 0.1,
         far: 200,
-        position: [-4.8, 2.4, 6],
+        position: [-4.2, 1.9, 6.15],
       }} >
       <Suspense fallback={<CanvasLoader />}>
         <ambientLight intensity={0.28} />
