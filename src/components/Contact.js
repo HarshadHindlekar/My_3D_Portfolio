@@ -32,13 +32,13 @@ export const Contact = () => {
       <Container>
         <Row className="align-items-center">
           {!isMobile &&<Col size={12} md={6}>
-            <TrackVisibility className="earth-container">
+            <div className="earth-container">
               <div className="contact-orbit-shell" aria-hidden="true">
                 <span></span>
                 <span></span>
               </div>
               <EarthCanvas />
-            </TrackVisibility>
+            </div>
           </Col>}
           <Col size={12} md={6}>
             <TrackVisibility>

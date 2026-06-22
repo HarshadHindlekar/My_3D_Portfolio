@@ -1,7 +1,5 @@
 import React from "react";
-import BallCanvas from "./Ball";
 import { Technologies } from "../Service";
-import { isMobile } from 'react-device-detect';
 
 const categories = {
   'Frontend': ['React JS', 'Next.js', 'Vue.js', 'Nuxt 3', 'shadcn', 'Bootstrap', 'MUI'],
@@ -42,13 +40,9 @@ const Tech = () => {
                                 key={tech.name}
                                 style={{ '--tech-index': techIndex }}
                             >
-                                {!isMobile && (category === 'Frontend' || category === 'Tools / Cloud') ? (
-                                    <BallCanvas icon={tech.icon} />
-                                ) : (
-                                    <div className="tech-mobile">
-                                        <img src={tech.icon} className="tech-icon" alt={tech.name} />
-                                    </div>
-                                )}
+                                <div className="tech-mobile">
+                                    <img src={tech.icon} className="tech-icon" alt={tech.name} />
+                                </div>
                                 <span>{tech.name}</span>
                             </div>
                         ))}

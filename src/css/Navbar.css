@@ -404,6 +404,15 @@
     border-radius: 18px;
   }
 
+  .portfolio-navbar .nav-shell.collapse:not(.show) {
+    display: none !important;
+  }
+
+  .portfolio-navbar .nav-shell.collapse.show,
+  .portfolio-navbar .nav-shell.collapsing {
+    display: flex !important;
+  }
+
   .main-nav {
     width: 100%;
     flex-direction: column;
