@@ -239,13 +239,21 @@
   }
 
   .mission-hero h1 {
-    font-size: clamp(42px, 14vw, 64px);
+    font-size: clamp(38px, 12vw, 56px);
+  }
+
+  .mission-code {
+    margin-top: 22px;
   }
 }
 
 @media (max-width: 480px) {
   .mission-stats {
     grid-template-columns: 1fr;
+  }
+
+  .my-intro {
+    font-size: 16px;
   }
 }
 
