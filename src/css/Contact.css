@@ -9,8 +9,8 @@
 
 .earth-container {
   position: relative;
-  width: min(100%, 720px);
-  height: clamp(560px, 62vh, 720px);
+  width: min(100%, 640px);
+  height: clamp(500px, 56vh, 640px);
   margin-inline: auto;
 }
 
@@ -35,28 +35,28 @@
   border: 1px solid rgba(99, 245, 229, 0.28);
   border-radius: 8px;
   background: rgba(5, 18, 28, 0.76);
-  padding: clamp(24px, 4vw, 42px);
+  padding: clamp(20px, 3vw, 34px);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
 }
 
 .contact-mission-copy h2 {
   color: var(--mission-text);
-  font-size: clamp(34px, 4vw, 56px);
-  line-height: 1.08;
+  font-size: clamp(30px, 3.2vw, 46px);
+  line-height: 1.12;
 }
 
 .contact-mission-copy p {
-  margin: 16px 0 22px;
+  margin: 12px 0 18px;
   color: var(--mission-muted);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .mission-status-card {
   display: grid;
   gap: 8px;
-  margin-bottom: 22px;
-  padding: 18px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
   border: 1px solid var(--mission-border-strong);
   border-radius: 8px;
   background: rgba(99, 245, 229, 0.07);
@@ -64,21 +64,21 @@
 
 .mission-status-card strong {
   color: var(--mission-accent);
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
 .mission-status-card span,
 .contact-methods {
   color: var(--mission-muted);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
 .contact-methods {
   display: grid;
   gap: 6px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .contact-methods a {
@@ -87,18 +87,19 @@
 }
 
 .form-cointainer .row {
-  row-gap: 12px;
+  row-gap: 10px;
 }
 
 .form-cointainer input,
 .form-cointainer textarea {
   width: 100%;
-  margin-bottom: 12px;
-  padding: 14px 16px;
+  margin-bottom: 10px;
+  padding: 12px 14px;
   border: 1px solid rgba(99, 245, 229, 0.2);
   border-radius: 8px;
   color: var(--mission-text);
   background: rgba(2, 7, 13, 0.72);
+  font-size: 13px;
 }
 
 .form-cointainer input::placeholder,
@@ -111,11 +112,12 @@
 }
 
 .form-cointainer button {
-  min-height: 48px;
-  padding: 0 24px;
+  min-height: 42px;
+  padding: 0 20px;
   border-radius: 8px;
   color: var(--mission-bg);
   background: var(--mission-accent);
+  font-size: 12px;
   font-weight: 700;
 }
 

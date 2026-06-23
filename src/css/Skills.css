@@ -3,33 +3,40 @@
   align-items: center;
 }
 
+.skill > div {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
+
 .mission-chapter-grid--systems {
   display: grid;
-  grid-template-columns: minmax(250px, 0.38fr) minmax(0, 1fr);
+  grid-template-columns: minmax(260px, 0.28fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(36px, 6vw, 92px);
+  gap: clamp(28px, 4vw, 58px);
   width: 100%;
 }
 
 .systems-copy h2 {
-  max-width: 440px;
+  max-width: 330px;
   color: var(--mission-text);
-  font-size: clamp(34px, 4vw, 56px);
-  line-height: 1.06;
+  font-size: clamp(30px, 3.2vw, 46px);
+  line-height: 1.12;
 }
 
 .systems-copy p {
-  max-width: 420px;
-  margin: 18px 0 28px;
+  max-width: 320px;
+  margin: 14px 0 24px;
   color: var(--mission-muted);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .systems-map {
   position: relative;
+  width: 100%;
   min-height: 560px;
-  padding: 24px;
+  padding: 18px 0;
 }
 
 .systems-map::before {
@@ -46,28 +53,28 @@
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  padding-top: 250px;
+  gap: clamp(14px, 1.5vw, 22px);
+  padding-top: 96px;
 }
 
 .systems-visual {
   position: absolute;
   z-index: 0;
-  top: -86px;
-  right: -46px;
-  width: min(82vw, 820px);
-  opacity: 0.74;
+  top: -84px;
+  right: -18px;
+  width: min(70vw, 760px);
+  opacity: 0.56;
 }
 
 .tech-category {
   position: relative;
-  min-height: 320px;
+  min-height: auto;
 }
 
 .tech-category h3 {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   color: var(--mission-accent);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -75,29 +82,21 @@
 
 .balls-canvas-cointainer {
   display: grid;
-  grid-template-columns: repeat(2, minmax(96px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1vw, 16px);
 }
 
 .ball-canvas-size {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 132px;
-  padding: 12px;
-  border: 1px solid rgba(99, 245, 229, 0.18);
-  border-radius: 8px;
-  background: rgba(5, 18, 28, 0.5);
-  box-shadow: inset 0 0 24px rgba(99, 245, 229, 0.04);
+  gap: 8px;
+  min-height: 98px;
+  padding: 8px 6px;
 }
 
 .ball-canvas-size::before {
-  content: '';
-  position: absolute;
-  inset: -8px;
-  border-top: 1px dashed rgba(99, 245, 229, 0.22);
-  transform: rotate(calc(var(--tech-index) * 8deg));
-  pointer-events: none;
+  display: none;
 }
 
 .ball-canvas-size span {
@@ -111,20 +110,31 @@
 .ball-canvas-size > div,
 .tech-mobile,
 .ball-canvas-size canvas {
-  width: 74px !important;
-  height: 74px !important;
+  width: 58px !important;
+  height: 58px !important;
 }
 
 .tech-mobile {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  border: 1px solid rgba(99, 245, 229, 0.2);
+  background: rgba(3, 15, 24, 0.78);
+  box-shadow: inset 0 0 18px rgba(99, 245, 229, 0.08), 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 
 .tech-icon {
-  width: 56px;
-  height: 56px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(99, 245, 229, 0.22));
+}
+
+.tech-icon[alt="React 3 Fiber"],
+.tech-icon[alt="Next.js"],
+.tech-icon[alt="shadcn/ui"] {
+  filter: invert(1) brightness(1.28) drop-shadow(0 0 8px rgba(99, 245, 229, 0.24));
 }
 
 @media (max-width: 1199px) {
@@ -134,6 +144,7 @@
 
   .systems-map {
     min-height: auto;
+    margin-top: 28px;
   }
 
   .systems-visual {
@@ -147,6 +158,7 @@
 
   .tech-categories-container {
     padding-top: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

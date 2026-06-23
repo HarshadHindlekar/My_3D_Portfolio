@@ -143,7 +143,7 @@ p.danger, p.success {
 .mission-section {
   position: relative;
   min-height: 100vh;
-  padding: 156px clamp(24px, 5vw, 76px) 112px;
+  padding: 132px clamp(22px, 4vw, 64px) 82px;
   border-bottom: 1px solid rgba(99, 245, 229, 0.12);
 }
 
@@ -152,12 +152,12 @@ p.danger, p.success {
 }
 
 .mission-section__eyebrow {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   color: var(--mission-accent);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -441,12 +441,12 @@ p.danger, p.success {
 }
 
 .mission-rail__number {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
 }
 
 .mission-rail__label {
-  font-size: 10px;
+  font-size: 9px;
   text-transform: uppercase;
 }
 
