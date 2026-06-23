@@ -147,6 +147,16 @@ p.danger, p.success {
   border-bottom: 1px solid rgba(99, 245, 229, 0.12);
 }
 
+.mission-section.testimonials {
+  display: block;
+  padding-top: 0;
+}
+
+.mission-section.contact {
+  align-items: flex-start;
+  padding-top: 28px;
+}
+
 .mission-section__meta {
   display: none;
 }

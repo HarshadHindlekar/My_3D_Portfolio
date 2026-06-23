@@ -1,11 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { testimonials } from "../Service";
 
-const getExcerpt = (text) => {
-    if (text.length <= 250) return text;
-    return `${text.slice(0, 247).trim()}...`;
-};
-
 export const PeopleCard = ({ activeIndex, setActiveIndex }) => {
     const [isAnimating, setIsAnimating] = useState(false);
     const activeTestimonial = testimonials[activeIndex];
@@ -62,7 +57,7 @@ export const PeopleCard = ({ activeIndex, setActiveIndex }) => {
         <div className="signals-panel">
             <div className="signals-panel__quote" key={activeIndex}>
                 <div className="quote-icon" aria-hidden="true">"</div>
-                <p className="testimonial-text">{getExcerpt(activeTestimonial.desc)}</p>
+                <p className="testimonial-text">{activeTestimonial.desc}</p>
                 {renderAuthor(activeTestimonial)}
                 <div className="signals-wave" aria-hidden="true">
                     {Array.from({ length: 24 }).map((_, index) => (
