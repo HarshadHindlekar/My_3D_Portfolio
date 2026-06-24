@@ -211,7 +211,32 @@
   }
 }
 
+@media (max-width: 991px) {
+  .project {
+    padding-top: 52px;
+  }
+
+  .project-mission-layout {
+    gap: 18px;
+  }
+
+  .project-header {
+    text-align: left;
+  }
+
+  .project-section-visual {
+    display: block;
+    width: min(46%, 180px);
+    margin: -14px 0 -8px;
+    opacity: 0.72;
+  }
+}
+
 @media (max-width: 767px) {
+  .project {
+    padding-top: 42px;
+  }
+
   .project-carousel {
     padding-inline: 0;
   }
@@ -227,6 +252,17 @@
   .project-nav {
     top: auto;
     bottom: -8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .project {
+    padding-top: 32px;
+  }
+
+  .project-section-visual {
+    width: min(44%, 150px);
+    margin: -18px 0 -10px;
   }
 }
 

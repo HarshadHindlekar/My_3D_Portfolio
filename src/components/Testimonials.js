@@ -48,7 +48,14 @@ export const Testimonials = () => {
                         <MissionVisual variant="signals" className="signals-section-visual" alt="Astronaut receiving transmission signals in orbit" />
                         <h2>Signals From The Crew</h2>
                         <p>Kind words from teammates and collaborators across missions.</p>
-                        <a className="mission-btn mission-btn--ghost" href="#connect">Read More Signals</a>
+                        <a
+                            className="mission-btn mission-btn--ghost"
+                            href="https://www.linkedin.com/in/harshad-hindlekar/details/recommendations/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Read More Signals
+                        </a>
                     </div>
                 </div>
             </Container>

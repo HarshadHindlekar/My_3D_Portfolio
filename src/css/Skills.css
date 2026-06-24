@@ -147,20 +147,21 @@
 @media (max-width: 1199px) {
   .mission-chapter-grid--systems {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .systems-map {
     min-height: auto;
-    margin-top: 28px;
+    margin-top: 0;
   }
 
   .systems-visual {
     position: relative;
     top: auto;
     right: auto;
-    width: min(100%, 680px);
-    margin: 0 auto -44px;
-    opacity: 0.84;
+    width: min(58%, 320px);
+    margin: -10px auto -18px;
+    opacity: 0.76;
   }
 
   .tech-categories-container {
@@ -169,9 +170,42 @@
   }
 }
 
+@media (max-width: 991px) {
+  .skill {
+    padding-top: 64px;
+  }
+
+  .systems-copy h2 {
+    max-width: 360px;
+  }
+
+  .systems-copy p {
+    max-width: 360px;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 767px) {
+  .skill {
+    padding-top: 48px;
+  }
+
+  .mission-chapter-grid--systems {
+    gap: 16px;
+  }
+
+  .systems-visual {
+    width: min(52%, 220px);
+    margin: -16px auto -14px;
+  }
+
+  .systems-map::before {
+    inset: 4% 14%;
+  }
+
   .tech-categories-container {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .tech-category {
@@ -180,5 +214,20 @@
 
   .balls-canvas-cointainer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .skill {
+    padding-top: 36px;
+  }
+
+  .systems-visual {
+    width: min(48%, 180px);
+    margin: -18px auto -12px;
+  }
+
+  .ball-canvas-size {
+    min-height: 86px;
   }
 }
