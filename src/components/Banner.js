@@ -9,6 +9,57 @@ import { isMobile } from 'react-device-detect';
 import { MissionSection } from './MissionSection';
 import { missionStats } from './MissionData';
 
+const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+
+const MissionStatValue = ({ stat, isVisible }) => {
+  const [displayValue, setDisplayValue] = useState(0);
+  const hasAnimated = useRef(false);
+  const numericValue = Number.parseInt(stat.value, 10);
+  const isInfinite = stat.value === '∞';
+  const suffix = stat.value.replace(String(numericValue), '');
+
+  useEffect(() => {
+    if (!isVisible || hasAnimated.current || isInfinite || Number.isNaN(numericValue)) return undefined;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setDisplayValue(numericValue);
+      hasAnimated.current = true;
+      return undefined;
+    }
+
+    hasAnimated.current = true;
+    let frameId;
+    const startedAt = performance.now();
+    const duration = 1400;
+
+    const animate = (timestamp) => {
+      const elapsed = timestamp - startedAt;
+      const progress = Math.min(elapsed / duration, 1);
+      setDisplayValue(Math.round(easeOutCubic(progress) * numericValue));
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(animate);
+    return () => window.cancelAnimationFrame(frameId);
+  }, [isInfinite, isVisible, numericValue]);
+
+  if (isInfinite) {
+    return (
+      <span className="mission-infinity" aria-label={stat.ariaLabel || stat.value}>
+        <svg viewBox="0 0 64 32" role="img" aria-hidden="true" focusable="false">
+          <path d="M16 16 C16 7 26 7 32 16 C38 25 48 25 48 16 C48 7 38 7 32 16 C26 25 16 25 16 16" />
+        </svg>
+      </span>
+    );
+  }
+
+  return `${displayValue}${suffix}`;
+};
+
 export const Banner = () => {
   const bannerRef = useRef(null);
   const visualRef = useRef(null);
@@ -117,25 +168,35 @@ export const Banner = () => {
                 {({ isVisible }) =>
                   <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                     <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
-                    <div className="mission-code" aria-label="Developer mission details">
-                      <code>const developer = {'{'}</code>
-                      <code>  code: true,</code>
-                      <code>  ship: 'curiosity',</code>
-                      <code>  mission: 'build impact'</code>
-                      <code>{'}'}</code>
-                    </div>
                     <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I build real-time web apps, analytics dashboards, and scalable platforms using React, Vue, Next.js, TypeScript, and modern backends. I turn complex product problems into fast, reliable, and meaningful user experiences.</p>
                     <div className="mission-hero__actions">
                       <a className="mission-btn mission-btn--primary" href="#skills">Explore Mission</a>
                       <a className="mission-btn mission-btn--ghost" href="#projects">See My Work</a>
                     </div>
-                    <div className="mission-stats">
-                      {missionStats.map((stat) => (
-                        <div className="mission-stat" key={stat.label}>
-                          <strong aria-label={stat.ariaLabel}>{stat.value}</strong>
-                          <span>{stat.label}</span>
+                    <div className="mission-metrics">
+                      <div className="mission-stats">
+                        {missionStats.map((stat) => (
+                          <div className="mission-stat" key={stat.label}>
+                            <strong aria-label={stat.ariaLabel}>
+                              <MissionStatValue stat={stat} isVisible={isVisible} />
+                            </strong>
+                            <span>{stat.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mission-code" aria-label="Developer mission details">
+                        <div className="mission-code__bar">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <strong>developer.json</strong>
                         </div>
-                      ))}
+                        <code>{'{'}</code>
+                        <code>  "code": true,</code>
+                        <code>  "ship": "curiosity",</code>
+                        <code>  "mission": "build impact"</code>
+                        <code>{'}'}</code>
+                      </div>
                     </div>
                   </div>}
               </TrackVisibility>
