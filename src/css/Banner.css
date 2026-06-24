@@ -321,19 +321,17 @@
 
 @media (max-width: 991px) {
   .mission-metrics {
-    grid-template-columns: max-content max-content;
-    align-items: center;
-    gap: 18px;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 14px;
     max-width: none;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .mission-stats {
-    min-width: 500px;
-    grid-template-columns: repeat(4, minmax(90px, 1fr));
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .mission-hero h1 {
@@ -341,8 +339,8 @@
   }
 
   .mission-code {
-    width: 250px;
-    min-width: 250px;
+    width: 100%;
+    min-width: 0;
     margin-top: 0;
   }
 }
@@ -367,8 +365,8 @@
 
 @media (max-width: 480px) {
   .mission-stats {
-    min-width: 420px;
-    grid-template-columns: repeat(4, minmax(76px, 1fr));
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .mission-stat {
@@ -385,8 +383,8 @@
   }
 
   .mission-code {
-    width: 230px;
-    min-width: 230px;
+    width: 100%;
+    min-width: 0;
     padding: 10px 12px 12px;
   }
 
