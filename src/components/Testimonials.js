@@ -36,10 +36,7 @@ export const Testimonials = () => {
     return (
         <MissionSection
             id="testimonials"
-            number="04"
-            label="Signals"
-            eyebrow="Signals"
-            className={`testimonials ${isVisible ? 'visible' : ''}`}
+            className="testimonials"
         >
             <Container fluid className="signals-container">
                 <div className="signals-layout">

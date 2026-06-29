@@ -605,13 +605,12 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import logo from '../assets/img/logo2.svg';
 import { SocialIcons } from './Service';
 import { missionChapters } from './MissionData';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { BoxArrowUpRight } from 'react-bootstrap-icons';
 import '../css/Navbar.css';
 import { OpenPDF } from './Banner-Comps/OpenPdf';
 ```
 
-Replace all `TabIcons` references with `missionChapters`. In the observer setup:
+Use `missionChapters` as the single navigation source. In the observer setup:
 
 ```javascript
 const sections = missionChapters

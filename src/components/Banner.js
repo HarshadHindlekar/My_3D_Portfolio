@@ -4,7 +4,6 @@ import headerImg from "../assets/img/me.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import '../css/Banner.css';
-import '../css/Contact.css';
 import { isMobile } from 'react-device-detect';
 import { MissionSection } from './MissionSection';
 import { missionStats } from './MissionData';
@@ -159,7 +158,7 @@ export const Banner = () => {
   }, []);
 
   return (
-    <MissionSection id="home" number="01" label="Launch" eyebrow="Launch" className="banner">
+    <MissionSection id="home" className="banner">
       <div className="mission-hero" ref={bannerRef}>
         <Container fluid>
           <Row className="align-items-center mission-hero__row">
@@ -168,7 +167,7 @@ export const Banner = () => {
                 {({ isVisible }) =>
                   <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                     <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
-                    <p className={`my-intro ${isVisible ? "text-focus-in" : ""}`}>I build real-time web apps, analytics dashboards, and scalable platforms using React, Vue, Next.js, TypeScript, and modern backends. I turn complex product problems into fast, reliable, and meaningful user experiences.</p>
+                    <p className="my-intro">I build real-time web apps, analytics dashboards, and scalable platforms using React, Vue, Next.js, TypeScript, and modern backends. I turn complex product problems into fast, reliable, and meaningful user experiences.</p>
                     <div className="mission-hero__actions">
                       <a className="mission-btn mission-btn--primary" href="#skills">Explore Mission</a>
                       <a className="mission-btn mission-btn--ghost" href="#projects">See My Work</a>

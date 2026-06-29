@@ -28,7 +28,7 @@ export const Contact = () => {
   };
 
   return (
-    <MissionSection id="connect" number="05" label="Contact" eyebrow="Contact" className="contact">
+    <MissionSection id="connect" className="contact">
       <Container>
         <Row className="align-items-center">
           {!isMobile &&<Col size={12} md={6}>
@@ -45,7 +45,7 @@ export const Contact = () => {
               {({ isVisible }) =>
                 <div className={`contact-form-panel ${isVisible ? "animate__animated animate__fadeIn" : ""}`}>
                   <div className="contact-mission-copy">
-                    <h2 className={isVisible ? "text-focus-in" : ""}>Let's Build What's Next. Together.</h2>
+                    <h2>Let's Build What's Next. Together.</h2>
                     <p>Ready to collaborate or launch your next idea? Let's establish contact.</p>
                     <div className="mission-status-card">
                       <strong>Status: Connected</strong>

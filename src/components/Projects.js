@@ -53,7 +53,7 @@ export const Projects = () => {
   }, []);
 
   return (
-    <MissionSection id="projects" number="03" label="Launchpad" eyebrow="Launchpad" className={`project ${isVisible ? 'visible' : ''}`}>
+    <MissionSection id="projects" className="project">
       <Container fluid className="project-mission-container">
         <div className="project-mission-layout">
           <div className={`project-header ${isVisible ? 'animate__animated animate__fadeIn' : ''}`}>
@@ -69,9 +69,6 @@ export const Projects = () => {
                 <ProjectCard
                   key={`${project.title}-${activeIndex}-${index}`}
                   {...project}
-                  index={index}
-                  isVisible={isVisible}
-                  variant="mission"
                 />
               ))}
             </div>

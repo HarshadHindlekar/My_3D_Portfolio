@@ -9,25 +9,17 @@ import { MissionVisual } from "./MissionVisual";
 
 export const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setYear(new Date().getFullYear());
     }, 60000);
 
-    const timer2 = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-
-    return () => {
-      clearInterval(timer);
-      clearTimeout(timer2);
-    };
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <footer className={`footer ${isVisible ? 'visible' : ''}`}>
+    <footer className="footer">
       <div className="footer-content">
         <MissionVisual variant="contact" className="footer-section-visual" alt="Astronaut beside a communication beacon above Earth" />
         <div className="footer-main">

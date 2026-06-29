@@ -109,7 +109,7 @@ Content:
 Visual treatment:
 
 - Arrange technologies as connected system nodes rather than stacked category blocks.
-- Keep R3F `BallCanvas` for desktop where it performs well.
+- Use static tech icons so the skills section stays lightweight on desktop and mobile.
 - Use static icons on mobile and for categories where R3F would crowd the layout.
 - Add dotted connection lines and mission-node styling around tech items.
 

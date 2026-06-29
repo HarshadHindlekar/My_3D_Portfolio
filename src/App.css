@@ -157,26 +157,6 @@ p.danger, p.success {
   padding-top: 28px;
 }
 
-.mission-section__meta {
-  display: none;
-}
-
-.mission-section__eyebrow {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
-  color: var(--mission-accent);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.mission-section__eyebrow span {
-  color: var(--mission-text);
-}
-
 .mission-background {
   position: fixed;
   inset: 0;
@@ -520,10 +500,6 @@ p.danger, p.success {
     scroll-margin-top: 98px;
   }
 
-  .mission-section__eyebrow {
-    margin-bottom: 12px;
-    font-size: 12px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

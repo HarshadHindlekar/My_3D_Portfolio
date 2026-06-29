@@ -27,7 +27,6 @@ const nuxt3 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSskf59fnpQb
 const shadcn = 'https://ui.shadcn.com/apple-touch-icon.png';
 const fastapi = 'https://avatars.githubusercontent.com/u/156354296?s=280&v=4';
 
-// const docker = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="48" fill="%232496ed"/><path fill="%23fff" d="M76 120h24v-20H76zm28 0h24v-20h-24zm28 0h24v-20h-24zm-28 24h24v-20h-24zm28 0h24v-20h-24zm28-24h24v-20h-24z"/><path fill="%23fff" d="M196 132c-3 12-12 16-24 16H84c0 24 18 44 46 44 40 0 70-18 82-56 2-7-4-10-16-4z"/></svg>';
 const awsAmplify = 'https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Front-End-Web-Mobile/64/Arch_AWS-Amplify_64@5x.png';
 const awsS3 = 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/aws-s3-9fy4y5f02sp6fm0wxo9qj.png/aws-s3-toi4erj6v293ib57kdic73.png?_a=DATAiZiuZAA0';
 const awsEc2 = 'https://files.svgcdn.io/logos/aws-ec2.svg';
@@ -50,26 +49,6 @@ export const SocialIcons = [
     href: "https://github.com/HarshadHindlekar",
     imgSrc: navIcon3,
     altText: "github",
-  }
-];
-
-export const TabIcons = [
-  {
-    key: 'home',
-    value: 'Home'
-  },
-  {
-    key: 'skills',
-    value: 'Skills'
-  }, {
-    key: 'projects',
-    value: 'Projects'
-  }, {
-    key: 'testimonials',
-    value: 'Testimonials'
-  }, {
-    key: 'connect',
-    value: 'Connect'
   }
 ];
 
@@ -282,15 +261,3 @@ export const testimonials = [
     profileUrl: 'https://www.linkedin.com/in/asmi-sinha-9b690a247/'
   }
 ];
-
-export const tiltDefaultOptions = {
-  reverse: false,  // reverse the tilt direction
-  max: 35,     // max tilt rotation (degrees)
-  perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
-  scale: 1.1,    // 2 = 200%, 1.5 = 150%, etc..
-  speed: 1000,   // Speed of the enter/exit transition
-  transition: true,   // Set a transition on enter/exit.
-  axis: null,   // What axis should be disabled. Can be X or Y.
-  reset: true,    // If the tilt effect has to be reset on exit.
-  easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
-}

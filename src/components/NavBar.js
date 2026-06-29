@@ -3,7 +3,6 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo2.svg';
 import { SocialIcons } from "./Service";
 import { missionChapters } from "./MissionData";
-import { BrowserRouter as Router } from "react-router-dom";
 import { BoxArrowUpRight } from "react-bootstrap-icons";
 import '../css/Navbar.css'
 import { OpenPDF } from "./Banner-Comps/OpenPdf";
@@ -74,39 +73,37 @@ export const NavBar = () => {
   };
 
   return (
-    <Router>
-      <Navbar expand="lg" className={`portfolio-navbar ${scrolled ? "scrolled" : ""}`} expanded={expanded} onToggle={(expanded) => setExpanded(expanded)}>
-        <Container className="nav-container">
-          <Navbar.Brand href="/" className="brand-mark">
-            <img src={logo} alt="Logo" className={scrolled ? "logo-img" : ""} />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="portfolio-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="portfolio-navbar-nav" className="nav-shell">
-            <Nav className="main-nav">
-              {missionChapters.map((chapter) => (
-                <Nav.Link
-                  href={'#' + chapter.id}
-                  className={activeLink === chapter.id ? 'active navbar-link' : 'navbar-link'}
-                  key={chapter.id}
-                  onClick={() => onUpdateActiveLink(chapter.id)}
-                >
-                  {chapter.navLabel}
-                </Nav.Link>
-              ))}
-            </Nav>
-            
-            <span className="navbar-text">
-               <div className="social-icon">
-                {SocialIcons.map((socialIcon) => <a href={socialIcon.href} key={socialIcon.altText}><img src={socialIcon.imgSrc} alt={socialIcon.altText} /></a>)}
-              </div>
-              <button className="resume-button" onClick={OpenPDF}><span>See Resume</span><BoxArrowUpRight size={16} /></button>
-            </span>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </Router>
+    <Navbar expand="lg" className={`portfolio-navbar ${scrolled ? "scrolled" : ""}`} expanded={expanded} onToggle={(expanded) => setExpanded(expanded)}>
+      <Container className="nav-container">
+        <Navbar.Brand href="/" className="brand-mark">
+          <img src={logo} alt="Logo" className={scrolled ? "logo-img" : ""} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="portfolio-navbar-nav">
+          <span className="navbar-toggler-icon"></span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="portfolio-navbar-nav" className="nav-shell">
+          <Nav className="main-nav">
+            {missionChapters.map((chapter) => (
+              <Nav.Link
+                href={'#' + chapter.id}
+                className={activeLink === chapter.id ? 'active navbar-link' : 'navbar-link'}
+                key={chapter.id}
+                onClick={() => onUpdateActiveLink(chapter.id)}
+              >
+                {chapter.navLabel}
+              </Nav.Link>
+            ))}
+          </Nav>
+          
+          <span className="navbar-text">
+             <div className="social-icon">
+              {SocialIcons.map((socialIcon) => <a href={socialIcon.href} key={socialIcon.altText}><img src={socialIcon.imgSrc} alt={socialIcon.altText} /></a>)}
+            </div>
+            <button className="resume-button" onClick={OpenPDF}><span>See Resume</span><BoxArrowUpRight size={16} /></button>
+          </span>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }
 
