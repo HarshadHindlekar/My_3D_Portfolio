@@ -1,9 +1,14 @@
-import StarsCanvas from './Banner-Comps/Stars';
+import { lazy, Suspense } from 'react';
+import { StarfieldLoader } from './LoadingShell';
+
+const StarsCanvas = lazy(() => import('./Banner-Comps/Stars'));
 
 export const MissionBackground = () => {
   return (
     <div className="mission-background" aria-hidden="true">
-      <StarsCanvas />
+      <Suspense fallback={<StarfieldLoader />}>
+        <StarsCanvas />
+      </Suspense>
       <div className="mission-background__grid" />
       <div className="mission-background__asteroids">
         {Array.from({ length: 9 }, (_, index) => (

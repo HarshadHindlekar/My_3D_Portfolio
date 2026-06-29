@@ -129,11 +129,34 @@
   border-color: rgba(255, 111, 111, 0.8) !important;
 }
 
-.canvas-loader {
+.canvas-loader-wrap {
   display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
+  justify-items: center;
+  gap: 12px;
+}
+
+.canvas-loader {
+  display: block;
+  width: 58px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(99, 245, 229, 0.4);
+  border-top-color: var(--mission-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 24px rgba(99, 245, 229, 0.18);
+  animation: canvas-loader-spin 900ms linear infinite;
+}
+
+.canvas-loader-wrap p {
+  margin: 0;
+  color: var(--mission-text);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+@keyframes canvas-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 991px) {

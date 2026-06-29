@@ -6,22 +6,10 @@ const CanvasLoader = () => {
     <Html
       as='div'
       center
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }} >
-      <span className='canvas-loader'></span>
-      <p
-        style={{
-          fontSize: 14,
-          color: "#F1F1F1",
-          fontWeight: 800,
-          marginTop: 40,
-        }} >
-        {progress.toFixed(2)}%
-      </p>
+      className="canvas-loader-wrap"
+    >
+      <span className='canvas-loader' aria-hidden="true"></span>
+      <p>{Math.round(progress)}%</p>
     </Html>
   );
 };

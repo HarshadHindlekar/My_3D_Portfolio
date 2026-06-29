@@ -320,6 +320,15 @@
 }
 
 @media (max-width: 991px) {
+  .banner {
+    overflow-x: clip;
+  }
+
+  .mission-hero {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .mission-metrics {
     grid-template-columns: 1fr;
     align-items: stretch;
@@ -335,13 +344,32 @@
   }
 
   .mission-hero h1 {
-    font-size: clamp(38px, 12vw, 56px);
+    max-width: 100%;
+    font-size: clamp(30px, 8vw, 36px);
+    overflow-wrap: break-word;
+  }
+
+  .txt-rotate {
+    display: block;
+  }
+
+  .mission-hero__content,
+  .my-intro {
+    max-width: 100%;
+    min-width: 0;
   }
 
   .mission-code {
     width: 100%;
     min-width: 0;
     margin-top: 0;
+  }
+
+  .mission-code code,
+  .mission-code__bar strong {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
 

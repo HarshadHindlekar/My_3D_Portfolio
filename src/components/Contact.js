@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import EarthCanvas from "./Contact-Comps/Earth";
 import '../css/Contact.css';
 import { handleSubmit } from "./Contact-Comps/Handler";
 import { isMobile } from 'react-device-detect';
 import { MissionSection } from "./MissionSection";
+import { EarthLoader } from "./LoadingShell";
+
+const EarthCanvas = lazy(() => import("./Contact-Comps/Earth"));
 
 export const Contact = () => {
   const [initialValidationStatus, setInitialValidationStatus] = useState(
@@ -37,7 +39,9 @@ export const Contact = () => {
                 <span></span>
                 <span></span>
               </div>
-              <EarthCanvas />
+              <Suspense fallback={<EarthLoader />}>
+                <EarthCanvas />
+              </Suspense>
             </div>
           </Col>}
           <Col size={12} md={6}>
