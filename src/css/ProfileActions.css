@@ -1,0 +1,206 @@
+.profile-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-actions__social {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.profile-actions__social a {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(100, 255, 218, 0.22);
+  border-radius: 14px;
+  background: rgba(100, 255, 218, 0.09);
+  box-shadow: inset 0 0 16px rgba(100, 255, 218, 0.04);
+  overflow: hidden;
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.profile-actions__social a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #64ffda, #8aa8ff);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+.profile-actions__social a:hover,
+.profile-actions__social a:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(100, 255, 218, 0.58);
+  box-shadow: 0 16px 34px rgba(100, 255, 218, 0.15);
+}
+
+.profile-actions__social a:hover::before,
+.profile-actions__social a:focus-visible::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-actions__social a img {
+  width: 42%;
+  position: relative;
+  z-index: 1;
+  transition: filter 0.24s ease, transform 0.24s ease;
+}
+
+.profile-actions__social a:hover img,
+.profile-actions__social a:focus-visible img {
+  filter: brightness(0) saturate(100%) invert(7%) sepia(25%) saturate(827%) hue-rotate(170deg) brightness(93%) contrast(94%);
+  transform: scale(1.08);
+}
+
+.profile-actions__resume {
+  min-width: 160px;
+  min-height: 48px;
+  padding: 0 22px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--mission-border-strong);
+  border-radius: 8px;
+  color: var(--mission-text);
+  background: rgba(5, 18, 28, 0.6);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.03);
+  transition: color 0.24s ease, border-color 0.24s ease, transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.profile-actions__resume span,
+.profile-actions__resume svg {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-actions__resume::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--mission-accent);
+  transform: translateX(-102%);
+  transition: transform 0.24s ease;
+}
+
+.profile-actions__resume:hover,
+.profile-actions__resume:focus-visible {
+  color: var(--mission-bg);
+  border-color: var(--mission-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(255, 255, 255, 0.13);
+}
+
+.profile-actions__resume:hover::before,
+.profile-actions__resume:focus-visible::before {
+  transform: translateX(0);
+}
+
+.profile-actions--footer {
+  justify-content: center;
+}
+
+.profile-actions--footer .profile-actions__social a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.profile-actions--footer .profile-actions__resume {
+  min-width: 152px;
+  font-size: 15px;
+}
+
+@media (max-width: 1280px) {
+  .profile-actions__resume {
+    min-width: 150px;
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .profile-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profile-actions__social {
+    gap: 8px;
+  }
+
+  .profile-actions__social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .profile-actions__resume {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+
+  .profile-actions--footer {
+    width: auto;
+  }
+
+  .profile-actions--footer .profile-actions__social a {
+    width: 46px;
+    height: 46px;
+  }
+
+  .profile-actions--footer .profile-actions__resume {
+    width: auto;
+    min-width: 152px;
+    min-height: 48px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 520px) {
+  .profile-actions--footer {
+    gap: 9px;
+  }
+
+  .profile-actions--footer .profile-actions__social {
+    gap: 6px;
+  }
+
+  .profile-actions--footer .profile-actions__social a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile-actions--footer .profile-actions__resume {
+    min-width: 132px;
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-actions__social a,
+  .profile-actions__social a::before,
+  .profile-actions__social a img,
+  .profile-actions__resume,
+  .profile-actions__resume::before {
+    transition: none;
+  }
+}

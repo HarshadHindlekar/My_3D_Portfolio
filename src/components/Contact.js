@@ -49,11 +49,11 @@ export const Contact = () => {
               {({ isVisible }) =>
                 <div className={`contact-form-panel ${isVisible ? "animate__animated animate__fadeIn" : ""}`}>
                   <div className="contact-mission-copy">
-                    <h2>Let's Build What's Next. Together.</h2>
-                    <p>Ready to collaborate or launch your next idea? Let's establish contact.</p>
+                    <h2>Recruiters, Teams, Let's Connect.</h2>
+                    <p>Open to frontend and full stack software engineering roles where React, Next.js, TypeScript, cloud, and product thinking matter.</p>
                     <div className="mission-status-card">
-                      <strong>Status: Connected</strong>
-                      <span>Thanks for following the mission. Let's create impact together.</span>
+                      <strong>Status: Open to Opportunities</strong>
+                      <span>Available for recruiter conversations, engineering roles, and product-focused collaboration.</span>
                     </div>
                     <div className="contact-methods">
                       <a href="mailto:harshadhindlekar24@gmail.com">harshadhindlekar24@gmail.com</a>

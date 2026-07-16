@@ -10,8 +10,9 @@ export const Skills = () => {
         <div className="systems-copy">
           <h2>Engineering the Core Systems</h2>
           <p>
-            The tools and technologies that power my mission control: frontend interfaces,
-            backend services, cloud deployment, and data systems.
+            Recruiter-relevant technologies I use to ship production web products:
+            React, Next.js, TypeScript, Vue.js, Spring Boot, FastAPI, AWS, databases,
+            and interactive 3D interfaces.
           </p>
           <a className="mission-btn mission-btn--ghost" href="#projects">View Launchpad</a>
         </div>

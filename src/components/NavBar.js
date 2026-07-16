@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo2.svg';
-import { SocialIcons } from "./Service";
 import { missionChapters } from "./MissionData";
-import { BoxArrowUpRight } from "react-bootstrap-icons";
+import { ProfileActions } from './ProfileActions';
 import '../css/Navbar.css'
-import { OpenPDF } from "./Banner-Comps/OpenPdf";
 
 
 export const NavBar = () => {
@@ -95,12 +93,7 @@ export const NavBar = () => {
             ))}
           </Nav>
           
-          <span className="navbar-text">
-             <div className="social-icon">
-              {SocialIcons.map((socialIcon) => <a href={socialIcon.href} key={socialIcon.altText}><img src={socialIcon.imgSrc} alt={socialIcon.altText} /></a>)}
-            </div>
-            <button className="resume-button" onClick={OpenPDF}><span>See Resume</span><BoxArrowUpRight size={16} /></button>
-          </span>
+          <ProfileActions />
         </Navbar.Collapse>
       </Container>
     </Navbar>

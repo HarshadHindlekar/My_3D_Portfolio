@@ -1,11 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Harshad",
+  "name": "Harshad Hindlekar Portfolio",
+  "description": "Frontend and full stack developer portfolio featuring React, Next.js, TypeScript, Vue.js, AWS, backend projects, testimonials, and resume.",
   "icons": [
     {
       "src": "logo-icon.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/jpg"
     },
     {
       "src": "logo-icon.jpg",
@@ -18,8 +19,12 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait-primary",
+  "theme_color": "#02070d",
+  "background_color": "#02070d",
+  "categories": ["portfolio", "productivity", "business"],
+  "lang": "en-IN"
 }

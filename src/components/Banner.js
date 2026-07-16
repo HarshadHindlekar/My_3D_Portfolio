@@ -66,7 +66,7 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = ["Software Engineer", "Frontend Specialist", "Full Stack Developer"];
+  const toRotate = ["Software Engineer", "React Developer", "Full Stack Developer"];
   const period = 2000;
 
   const tick = () => {
@@ -167,9 +167,9 @@ export const Banner = () => {
                 {({ isVisible }) =>
                   <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                     <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
-                    <p className="my-intro">I build real-time web apps, analytics dashboards, and scalable platforms using React, Vue, Next.js, TypeScript, and modern backends. I turn complex product problems into fast, reliable, and meaningful user experiences.</p>
+                    <p className="my-intro">I am a frontend and full stack developer in India building real-time web apps, analytics dashboards, and scalable platforms with React, Next.js, TypeScript, Vue.js, Spring Boot, FastAPI, and AWS. I turn complex product problems into fast, reliable user experiences and I am open to software engineering opportunities.</p>
                     <div className="mission-hero__actions">
-                      <a className="mission-btn mission-btn--primary" href="#skills">Explore Mission</a>
+                      <a className="mission-btn mission-btn--primary" href="#skills">Explore Skills</a>
                       <a className="mission-btn mission-btn--ghost" href="#projects">See My Work</a>
                     </div>
                     <div className="mission-metrics">
