@@ -65,18 +65,83 @@
   transform: scale(1.08);
 }
 
+.ask-ai-control--hero {
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: auto;
+  min-width: max-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+.ask-ai-control--hero .ask-ai-control__label {
+  display: inline-flex;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.ask-ai-control--hero .ask-ai-control__label svg {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 5px rgba(99, 245, 229, 0.95)) drop-shadow(0 0 12px rgba(99, 245, 229, 0.55));
+  animation: ask-ai-sparkle-pulse 1.7s ease-in-out infinite;
+}
+
+.footer-bottom .ask-ai-control__label svg {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 5px rgba(99, 245, 229, 0.95)) drop-shadow(0 0 12px rgba(99, 245, 229, 0.55));
+  animation: ask-ai-sparkle-pulse 1.7s ease-in-out infinite;
+}
+
+.ask-ai-control--hero .ask-ai-control__buttons {
+  gap: 7px;
+}
+
+.ask-ai-control--hero .ask-ai-control__button {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.ask-ai-control--hero .ask-ai-control__button img {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes ask-ai-sparkle-pulse {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: scale(0.92) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(12deg);
+  }
+}
+
 .ask-ai-dialog-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 2000;
+  z-index: 10000;
   display: grid;
   place-items: center;
   padding: 24px;
   background: rgba(1, 7, 12, 0.78);
   backdrop-filter: blur(8px);
+  pointer-events: auto;
 }
 
 .ask-ai-dialog {
+  position: relative;
+  pointer-events: auto;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 14px 16px;
@@ -233,5 +298,49 @@
 
   .ask-ai-dialog__button {
     width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .ask-ai-control--hero .ask-ai-control__label {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 991px) {
+  .ask-ai-control--hero {
+    grid-column: auto;
+    width: auto;
+    min-width: max-content;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .ask-ai-control--hero .ask-ai-control__label {
+    display: none;
+  }
+
+  .ask-ai-control--hero .ask-ai-control__button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mission-hero__actions {
+    gap: 10px;
+  }
+
+  .ask-ai-control--hero {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ask-ai-control--hero .ask-ai-control__label svg,
+  .footer-bottom .ask-ai-control__label svg {
+    animation: none;
   }
 }

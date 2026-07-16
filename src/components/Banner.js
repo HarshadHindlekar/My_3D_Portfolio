@@ -7,6 +7,7 @@ import '../css/Banner.css';
 import { isMobile } from 'react-device-detect';
 import { MissionSection } from './MissionSection';
 import { missionStats } from './MissionData';
+import { AskAi } from './AskAi';
 
 const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
 
@@ -171,6 +172,7 @@ export const Banner = () => {
                     <div className="mission-hero__actions">
                       <a className="mission-btn mission-btn--primary" href="#skills">Explore Skills</a>
                       <a className="mission-btn mission-btn--ghost" href="#projects">See My Work</a>
+                      <AskAi variant="hero" />
                     </div>
                     <div className="mission-metrics">
                       <div className="mission-stats">

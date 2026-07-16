@@ -106,7 +106,10 @@
 
 .mission-hero__actions {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  max-width: 760px;
   gap: 16px;
   margin-top: 28px;
 }

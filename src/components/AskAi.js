@@ -1,5 +1,6 @@
 import { Stars } from 'react-bootstrap-icons';
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import '../css/AskAi.css';
 
 const portfolioUrl = 'https://harshad-portfolio.vercel.app/';
@@ -65,7 +66,7 @@ const aiTools = [
   },
 ];
 
-export const AskAi = () => {
+export const AskAi = ({ variant = 'default' }) => {
   const [pendingTool, setPendingTool] = useState(null);
 
   const handleToolClick = (event, tool) => {
@@ -88,7 +89,7 @@ export const AskAi = () => {
   const handleClose = () => setPendingTool(null);
 
   return (
-    <div className="ask-ai-control" aria-label="Ask an AI tool about Harshad">
+    <div className={`ask-ai-control ask-ai-control--${variant}`} aria-label="Ask an AI tool about Harshad">
       <span className="ask-ai-control__label">
         <Stars aria-hidden="true" /> Ask AI about Harshad
       </span>
@@ -114,7 +115,7 @@ export const AskAi = () => {
           );
         })}
       </div>
-      {pendingTool && (
+      {pendingTool && createPortal(
         <div
           className="ask-ai-dialog-backdrop"
           role="presentation"
@@ -156,7 +157,8 @@ export const AskAi = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
