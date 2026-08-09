@@ -2,10 +2,22 @@ import { useEffect, useState } from 'react';
 import { missionChapters } from './MissionData';
 import { MissionBackground } from './MissionBackground';
 import { MissionRail } from './MissionRail';
+import { trackAnalyticsEvent } from '../analytics';
 
 export const MissionLayout = ({ children }) => {
   const [activeChapter, setActiveChapter] = useState(missionChapters[0].id);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const activeChapterDetails = missionChapters.find((chapter) => chapter.id === activeChapter);
+
+    if (activeChapterDetails) {
+      trackAnalyticsEvent('section_view', {
+        section_id: activeChapterDetails.id,
+        section_name: activeChapterDetails.label,
+      });
+    }
+  }, [activeChapter]);
 
   useEffect(() => {
     const getHeaderOffset = () => {

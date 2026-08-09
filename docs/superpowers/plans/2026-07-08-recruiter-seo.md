@@ -61,7 +61,7 @@ In `public/index.html`, update the metadata near the top of `<head>` to this exa
     <meta property="og:title" content="Harshad Hindlekar | Frontend & Full Stack Developer" />
     <meta
       property="og:description"
-      content="Frontend and full stack developer building recruiter-ready React, Next.js, TypeScript, Vue.js, AWS, and backend projects. View portfolio, projects, testimonials, and resume."
+      content="Frontend and full stack developer building React, Next.js, TypeScript, Vue.js, AWS, and backend projects. View portfolio, projects, testimonials, and resume."
     />
     <meta property="og:url" content="https://harshad-portfolio.vercel.app/" />
     <meta property="og:image" content="https://harshad-portfolio.vercel.app/logo-icon.jpg" />
