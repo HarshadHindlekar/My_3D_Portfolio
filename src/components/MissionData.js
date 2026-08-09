@@ -7,7 +7,7 @@ export const missionChapters = [
 ];
 
 export const missionStats = [
-  { value: '3+', label: 'Years Experience' },
+  { value: '4', label: 'Years Experience' },
   { value: '100+', label: 'Projects & Features' },
   { value: '10+', label: 'Technologies' },
   { value: '\u221e', label: 'Curiosity', ariaLabel: 'Infinite Curiosity' },

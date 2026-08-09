@@ -1,4 +1,4 @@
-import logo from "../assets/img/logo2.svg";
+import logo from "../assets/img/branding/hh-logo.svg";
 import footerPhoto from "../assets/img/me-after.svg";
 import '../css/Footer.css';
 import { ProfileActions } from './ProfileActions';
@@ -34,8 +34,8 @@ export const Footer = () => {
           <div className="footer-logo">
             <img
               src={logo}
-              alt="Logo"
-              aria-label="Logo"
+              alt="HH monogram logo"
+              aria-label="HH monogram logo"
               loading="lazy"
               className="footer-logo-img"
             />

@@ -112,6 +112,8 @@
 }
 
 .form-cointainer button {
+  display: block;
+  margin-left: auto;
   min-height: 42px;
   padding: 0 20px;
   border-radius: 8px;

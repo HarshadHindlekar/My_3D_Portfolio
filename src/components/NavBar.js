@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/img/logo2.svg';
+import logo from '../assets/img/branding/hh-logo.svg';
 import { missionChapters } from "./MissionData";
 import { ProfileActions } from './ProfileActions';
 import '../css/Navbar.css'
@@ -74,7 +74,7 @@ export const NavBar = () => {
     <Navbar expand="lg" className={`portfolio-navbar ${scrolled ? "scrolled" : ""}`} expanded={expanded} onToggle={(expanded) => setExpanded(expanded)}>
       <Container className="nav-container">
         <Navbar.Brand href="/" className="brand-mark">
-          <img src={logo} alt="Logo" className={scrolled ? "logo-img" : ""} />
+          <img src={logo} alt="HH monogram logo" className={scrolled ? "logo-img" : ""} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="portfolio-navbar-nav">
           <span className="navbar-toggler-icon"></span>

@@ -4,18 +4,18 @@
   "description": "Frontend and full stack developer portfolio featuring React, Next.js, TypeScript, Vue.js, AWS, backend projects, testimonials, and resume.",
   "icons": [
     {
-      "src": "logo-icon.jpg",
+      "src": "hh-logo.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/jpg"
+      "type": "image/svg+xml"
     },
     {
-      "src": "logo-icon.jpg",
-      "type": "image/jpg",
+      "src": "hh-logo.svg",
+      "type": "image/svg+xml",
       "sizes": "192x192"
     },
     {
-      "src": "logo-icon.jpg",
-      "type": "image/jpg",
+      "src": "hh-logo.svg",
+      "type": "image/svg+xml",
       "sizes": "512x512"
     }
   ],
