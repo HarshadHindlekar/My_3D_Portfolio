@@ -17,9 +17,10 @@ const MissionStatValue = ({ stat, isVisible }) => {
   const numericValue = Number.parseInt(stat.value, 10);
   const isInfinite = stat.value === '∞';
   const suffix = stat.value.replace(String(numericValue), '');
+  const isInfiniteValue = isInfinite || Number.isNaN(numericValue);
 
   useEffect(() => {
-    if (!isVisible || hasAnimated.current || isInfinite || Number.isNaN(numericValue)) return undefined;
+    if (!isVisible || hasAnimated.current || isInfiniteValue) return undefined;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
@@ -45,9 +46,9 @@ const MissionStatValue = ({ stat, isVisible }) => {
 
     frameId = window.requestAnimationFrame(animate);
     return () => window.cancelAnimationFrame(frameId);
-  }, [isInfinite, isVisible, numericValue]);
+  }, [isInfiniteValue, isVisible, numericValue]);
 
-  if (isInfinite) {
+  if (isInfiniteValue) {
     return (
       <span className="mission-infinity" aria-label={stat.ariaLabel || stat.value}>
         <svg viewBox="0 0 64 32" role="img" aria-hidden="true" focusable="false">
@@ -164,7 +165,7 @@ export const Banner = () => {
         <Container fluid>
           <Row className="align-items-center mission-hero__row">
             <Col xs={12} lg={7} className="mission-hero__content">
-              <TrackVisibility>
+              <TrackVisibility partialVisibility>
                 {({ isVisible }) =>
                   <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                     <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
