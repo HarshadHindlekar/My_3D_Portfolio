@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>A/B testing</title>
+  <rect width="128" height="128" rx="14" fill="#071521"/>
+  <path d="M24 91V37M24 91h80" fill="none" stroke="#63f5e5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M39 79V59M59 79V45M79 79V32" fill="none" stroke="#63f5e5" stroke-width="10" stroke-linecap="round"/>
+  <text x="91" y="103" fill="#f7fbff" font-family="Arial, sans-serif" font-size="18" font-weight="700">A/B</text>
+</svg>

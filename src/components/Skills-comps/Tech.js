@@ -32,7 +32,11 @@ const Tech = () => {
     return (
         <div className="tech-categories-container">
             {Object.entries(techByCategory).map(([category, techs], categoryIndex) => (
-                <div key={category} className="tech-category" style={{ '--category-index': categoryIndex }}>
+                <div
+                    key={category}
+                    className={`tech-category tech-category--${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                    style={{ '--category-index': categoryIndex }}
+                >
                     <h3>{category}</h3>
                     <div className='balls-canvas-cointainer'>
                         {techs.map((tech, techIndex) => (

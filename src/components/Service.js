@@ -20,6 +20,7 @@ import mongodb from '../assets/tech/mongodb.png';
 import pgadmin from '../assets/tech/pgadmin.png'
 import threejs from '../assets/tech/threejs.svg';
 import git from '../assets/tech/git.png';
+import abTesting from '../assets/tech/ab-testing.svg';
 
 const nextjs = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8_YuI-40uCn2rzzrmifB-AQfdFuX0xsGvA&s';
 const vuejs = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQybQ9296S3HQxCEmN2B7gK4a2H5hlUCBYKIA&s';
@@ -32,7 +33,6 @@ const awsS3 = 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_
 const awsEc2 = 'https://files.svgcdn.io/logos/aws-ec2.svg';
 const awsRoute53 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3qaCfwYujU-tlwcLRNAVGsURQYclHXnVgw&s';
 const googleAnalytics = 'https://cdn.simpleicons.org/googleanalytics';
-const abTesting = 'https://cdn.simpleicons.org/optimizely';
 
 
 

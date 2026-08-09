@@ -70,6 +70,7 @@
 
 .tech-category {
   position: relative;
+  min-width: 0;
   min-height: auto;
 }
 
@@ -86,7 +87,21 @@
 .balls-canvas-cointainer {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: clamp(12px, 1vw, 16px);
+}
+
+.tech-category--analytics-experimentation {
+  grid-column: 1 / -1;
+}
+
+.tech-category--analytics-experimentation h3 {
+  text-align: center;
+}
+
+.tech-category--analytics-experimentation .balls-canvas-cointainer {
+  width: min(100%, 360px);
+  margin-inline: auto;
 }
 
 .ball-canvas-size {
