@@ -4,7 +4,8 @@ import { Technologies } from "../Service";
 const categories = {
   'Frontend': ['React JS', 'Next.js', 'Vue.js', 'Nuxt 3', 'shadcn', 'Bootstrap', 'MUI'],
   'Backend / Databases': ['Node.js', 'Spring Boot', 'FastAPI', 'MongoDB', 'PostgreSQL'],
-  'Tools / Cloud': ['git', 'React 3 Fiber', 'AWS Amplify', 'AWS S3', 'AWS EC2', 'AWS Route 53']
+  'Tools / Cloud': ['git', 'React 3 Fiber', 'AWS Amplify', 'AWS S3', 'AWS EC2', 'AWS Route 53'],
+  'Analytics / Experimentation': ['Google Analytics', 'A/B Testing']
 };
 
 

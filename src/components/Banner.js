@@ -169,7 +169,7 @@ export const Banner = () => {
                 {({ isVisible }) =>
                   <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                     <h1>{`Hi! I'm Harshad`} <br /><span className="txt-rotate" data-period="1000" data-rotate={'[' + toRotate + ']'}><span className="wrap">{text}</span></span></h1>
-                    <p className="my-intro">I am a frontend and full stack developer in India building real-time web apps, analytics dashboards, and scalable platforms with React, Next.js, TypeScript, Vue.js, Spring Boot, FastAPI, and AWS. I turn complex product problems into fast, reliable user experiences and I am open to software engineering opportunities.</p>
+                    <p className="my-intro">I am a frontend and full stack developer in India building real-time web apps, analytics dashboards, and scalable platforms with React, Next.js, TypeScript, Vue.js, Spring Boot, FastAPI, AWS, Google Analytics, and A/B testing. I turn complex product problems into fast, reliable user experiences and use data-driven experimentation to improve them. I am open to software engineering opportunities.</p>
                     <div className="mission-hero__actions">
                       <a className="mission-btn mission-btn--primary" href="#skills">Explore Skills</a>
                       <a className="mission-btn mission-btn--ghost" href="#projects">See My Work</a>

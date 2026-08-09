@@ -31,6 +31,8 @@ const awsAmplify = 'https://cloud-icons.onemodel.app/aws/Architecture-Service-Ic
 const awsS3 = 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/aws-s3-9fy4y5f02sp6fm0wxo9qj.png/aws-s3-toi4erj6v293ib57kdic73.png?_a=DATAiZiuZAA0';
 const awsEc2 = 'https://files.svgcdn.io/logos/aws-ec2.svg';
 const awsRoute53 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt3qaCfwYujU-tlwcLRNAVGsURQYclHXnVgw&s';
+const googleAnalytics = 'https://cdn.simpleicons.org/googleanalytics';
+const abTesting = 'https://cdn.simpleicons.org/optimizely';
 
 
 
@@ -187,6 +189,14 @@ export const Technologies = [
     name: "AWS Route 53",
     icon: awsRoute53,
     
+  },
+  {
+    name: "Google Analytics",
+    icon: googleAnalytics,
+  },
+  {
+    name: "A/B Testing",
+    icon: abTesting,
   },
   {
     name: "MongoDB",

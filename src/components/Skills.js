@@ -11,8 +11,8 @@ export const Skills = () => {
           <h2>Engineering the Core Systems</h2>
           <p>
             Recruiter-relevant technologies I use to ship production web products:
-            React, Next.js, TypeScript, Vue.js, Spring Boot, FastAPI, AWS, databases,
-            and interactive 3D interfaces.
+            React, Next.js, TypeScript, Vue.js, Spring Boot, FastAPI, AWS, Google Analytics,
+            A/B testing, databases, and interactive 3D interfaces.
           </p>
           <a className="mission-btn mission-btn--ghost" href="#projects">View Launchpad</a>
         </div>
