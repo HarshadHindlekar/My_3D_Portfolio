@@ -381,6 +381,10 @@ p.danger, p.success {
   border-bottom: 1px solid rgba(99, 245, 229, 0.12);
 }
 
+.mission-section.banner {
+  padding-top: clamp(124px, 11vh, 154px);
+}
+
 .mission-section.testimonials {
   display: block;
   padding-top: 0;
@@ -691,6 +695,10 @@ p.danger, p.success {
     min-height: auto;
     padding: 96px 20px 64px;
     scroll-margin-top: 108px;
+  }
+
+  .mission-section.banner {
+    padding-top: 96px;
   }
 
   .mission-section.banner,
