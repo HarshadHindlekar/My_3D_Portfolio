@@ -1,3 +1,3 @@
 # My First 3D Portfolio
 
-![Alt text](./src/assets/img/screenshot.png)
+![Harshad Hindlekar's 3D portfolio](./src/assets/img/screenshot.png)
