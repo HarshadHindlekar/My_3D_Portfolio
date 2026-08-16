@@ -1,30 +1,31 @@
 import emailjs from '@emailjs/browser';
 
-const sendEmail = (formDetails, setButtonText, setFormDetails, setStatus, formInitialDetails) => {
+const sendEmail = (formDetails, setButtonText, setFormDetails, setStatus, formInitialDetails, onSuccess) => {
 
     const form = document.createElement('form');
     form.id = 'myForm' + Math.random().toString(36).substr(2, 9);
-    form.innerHTML = `
-    <input type="hidden" name="firstName" value="${formDetails.firstName}" />
-    <input type="hidden" name="lastName" value="${formDetails.lastName}" />
-    <input type="hidden" name="email" value="${formDetails.email}" />
-    <input type="hidden" name="phone" value="${formDetails.phone}" />
-    <input type="hidden" name="message" value="${formDetails.message}" />
-  `;
+    Object.entries(formDetails).forEach(([name, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
+    });
 
     emailjs.sendForm('service_x32hwrr', 'template_3xo4m1d', form, 'hJAFj2ubHF8dnkFaf')
         .then((result) => {
             console.log(result.text);
             setButtonText('Send');
             setFormDetails(formInitialDetails);
-            setStatus({ message: null });
+            setStatus({ success: true, message: 'Message sent successfully' });
+            onSuccess?.();
         })
         .catch((error) => {
             setStatus({ success: false, message: error.text });
         });
 };
 
-export const handleSubmit = (formDetails, setInitialValidationStatus, setStatus, setButtonText, setFormDetails, formInitialDetails) => {
+export const handleSubmit = (formDetails, setInitialValidationStatus, setStatus, setButtonText, setFormDetails, formInitialDetails, onSuccess) => {
     if (formDetails.firstName === '' || !formDetails.firstName.match(/^[A-Za-z]*$/)) {
         setInitialValidationStatus({ firstName: false, email: true, lastName: true, phone: true, message: true });
         setStatus({
@@ -55,20 +56,18 @@ export const handleSubmit = (formDetails, setInitialValidationStatus, setStatus,
     } else if (formDetails.message === '') {
         setInitialValidationStatus({ message: false, firstName: true, email: true, lastName: true, phone: true });
         setStatus({ success: false, message: 'Oops, you forget to type message.' });
-    } else if (!(Number(localStorage.getItem('attempts')) < 3) || localStorage.getItem('attempts') === null) {
+    } else if ((Number(localStorage.getItem('attempts')) || 0) >= 3) {
         setInitialValidationStatus({ firstName: true, email: true, lastName: true, phone: true, message: true });
         setStatus({
             success: false,
-            message: localStorage.getItem('attempts') === null
-                ? 'You can not hack me.'
-                : 'Oops, you can not send us message at a time more than three. Please try later.',
+            message: 'Oops, you can only send three messages at a time. Please try later.',
         });
     } else {
         setButtonText('Sending...');
         setInitialValidationStatus({ firstName: true, email: true, lastName: true, phone: true, message: true });
-        setStatus({ success: true, message: 'Message sent successfully' });
+        setStatus({});
         const attempts = Number(localStorage.getItem('attempts')) || 0;
         localStorage.setItem('attempts', (attempts + 1).toString());
-        sendEmail(formDetails, setButtonText, setFormDetails, setStatus, formInitialDetails);
+        sendEmail(formDetails, setButtonText, setFormDetails, setStatus, formInitialDetails, onSuccess);
     }
 };

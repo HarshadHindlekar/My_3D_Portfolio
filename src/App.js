@@ -8,6 +8,7 @@ import { SectionLoader } from './components/LoadingShell';
 
 const Skills = lazy(() => import("./components/Skills").then((module) => ({ default: module.Skills })));
 const Projects = lazy(() => import("./components/Projects").then((module) => ({ default: module.Projects })));
+const OpenSource = lazy(() => import("./components/OpenSource").then((module) => ({ default: module.OpenSource })));
 const Testimonials = lazy(() => import("./components/Testimonials").then((module) => ({ default: module.Testimonials })));
 const Contact = lazy(() => import("./components/Contact").then((module) => ({ default: module.Contact })));
 const Footer = lazy(() => import("./components/Footer").then((module) => ({ default: module.Footer })));
@@ -35,6 +36,9 @@ function App() {
         </Suspense>
         <Suspense fallback={<SectionLoader section="projects" label="Loading launchpad" />}>
           <Projects />
+        </Suspense>
+        <Suspense fallback={<SectionLoader section="open-source" label="Syncing open-source contribution" />}>
+          <OpenSource />
         </Suspense>
         <Suspense fallback={<SectionLoader section="testimonials" label="Opening signal channel" />}>
           <Testimonials />

@@ -3,7 +3,6 @@ import footerPhoto from "../assets/img/me-after.svg";
 import '../css/Footer.css';
 import { ProfileActions } from './ProfileActions';
 import { useEffect, useState } from 'react';
-import { MissionVisual } from "./MissionVisual";
 import { AskAi } from "./AskAi";
 
 export const Footer = () => {
@@ -20,7 +19,6 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <MissionVisual variant="contact" className="footer-section-visual" alt="Astronaut beside a communication beacon above Earth" />
         <div className="footer-main">
           <div className="footer-photo-wrap">
             <img

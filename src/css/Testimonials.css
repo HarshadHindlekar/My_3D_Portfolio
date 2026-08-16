@@ -10,13 +10,17 @@
 .signals-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.72fr) minmax(260px, 0.28fr);
+  grid-template-areas: 'panel header';
   align-items: center;
   gap: clamp(28px, 4.5vw, 68px);
 }
 
 .testimonial-header {
+  grid-area: header;
   justify-self: end;
   align-self: start;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-header h2 {
@@ -41,6 +45,7 @@
 }
 
 .signals-panel {
+  grid-area: panel;
   position: relative;
   border: 1px solid rgba(99, 245, 229, 0.26);
   border-radius: 8px;
@@ -188,6 +193,9 @@
 
   .signals-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'panel';
     gap: 26px;
   }
 
