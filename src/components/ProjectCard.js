@@ -27,6 +27,8 @@ export const ProjectCard = ({ title, description, imgUrl, href }) => {
     ? 'Analytics'
     : title.includes('Platform')
       ? 'Platform'
+      : title.includes('Book Manager')
+        ? 'Productivity'
       : title.includes('WAR JETS')
         ? 'Multiplayer'
         : 'Web Experience';

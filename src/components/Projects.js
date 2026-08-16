@@ -8,6 +8,7 @@ import { MissionSection } from "./MissionSection";
 import { MissionVisual } from "./MissionVisual";
 
 const priorityTitles = [
+  'Personal Book Manager',
   'APS Security Dashboard',
   'INCOIS Marine Fisheries Platform',
   'Portfolio Management Dashboard',

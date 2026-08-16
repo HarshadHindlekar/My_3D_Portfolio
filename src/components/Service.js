@@ -11,6 +11,7 @@ import apsSecurityDashboard from '../assets/img/aps-security-dashboard.svg'
 import incoisFuturex from '../assets/img/incois-futurex.svg'
 import portfolioManagementDashboard from '../assets/img/portfolio-management-dashboard.svg'
 import nikeCloneVue from '../assets/img/nike-clone-vue.svg'
+import personalBookManager from '../assets/img/personal-book-manager.png'
 
 import bootstrap from '../assets/tech/Bootstrap.png'
 import mui from '../assets/tech/MUI.png'
@@ -55,6 +56,12 @@ export const SocialIcons = [
 ];
 
 export const projects1 = [
+  {
+    title: "Personal Book Manager",
+    description: "A calm reading-list app for saving what is next, tracking what you are reading, and keeping favorite books close.",
+    imgUrl: personalBookManager,
+    href: 'https://harshadhindlekar.github.io/Personal-Book-Manager/',
+  },
   {
     title: "Windows 11 Web Experience",
     description: "A polished Windows 11-inspired web app built with React and Tailwind CSS.",
